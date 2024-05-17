@@ -1,18 +1,20 @@
 # deep-learning
 
-An exploration of the entire history of deep learning progress over the past few decades that got us from simple feed-forward networks to GPT-4o, along with what we can learn from it.
+An exploration of the entire history of deep learning progress that got us from simple feed-forward networks to GPT-4o and what we can learn from it.
 
 Covers all the essentials in depth, including:
 
 - Deep learning basics
 - CNNs
-- Optimization & regularization
+- Optimization
+- Regularization
 - RNNs
 - LSTMs
 - Attention
 - Transformers
 - Embeddings
 - GPTs
+- RLHF
 - Mixture of Experts
 - Multi-modality
 
@@ -27,3 +29,5 @@ Finally, I've included my observations on what this history can teach us about:
 1. how progress is made in deep learning broadly
 2. the constraints that govern the limit on digital intelligence
 3. where the field is going
+
+### Philosophy
