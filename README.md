@@ -25,7 +25,7 @@ Each paper is in its own section with:
 
 1. a copy of the paper itself
 2. my notes highlighting important observations & explaining key concepts
-3. a minimal implementation of key concepts in pytorch when relevant
+3. a fully documented minimal implementation in pytorch when relevant
 
 Finally, I've included my observations on what this history can teach us about:
 
