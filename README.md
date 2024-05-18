@@ -16,6 +16,9 @@ Covers all the essentials in depth, including:
 - GPTs
 - RLHF
 - Mixture of Experts
+- GANs
+- Diffusion
+- VQ-VAEs
 - Multi-modality
 
 Each paper is in its own section with:
