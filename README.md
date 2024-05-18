@@ -37,3 +37,4 @@ Finally, I've included my observations on what this history can teach us about:
 - Hard & technical
 - Approachable
 - Up-to-date
+- Preserve the richness of intuitions from learning from history
