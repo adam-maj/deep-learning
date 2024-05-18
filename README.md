@@ -31,3 +31,9 @@ Finally, I've included my observations on what this history can teach us about:
 3. where the field is going
 
 ### Philosophy
+
+- Complete
+- Minimal
+- Hard & technical
+- Approachable
+- Up-to-date
