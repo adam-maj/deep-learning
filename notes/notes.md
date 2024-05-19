@@ -990,79 +990,79 @@ How do we use the full potential of neural networks? Designing architectures tha
 
 We define a network with $n$ output units, with $m$ input lines. We create the $(m + n)$-tuple $z(t)$, the concatenation of the set of input signals at time $t$, $x(t)$ and the set of output signals at time $t$, $y(t)$. Let the indices $k \in I$ represent the input units and $k \in U$ represent the output units.
 
-$$
+```math
 z_k(t) =
 \begin{cases}
   x_k(t) & \textrm{if } k \in I \\
   y_k(t) & \textrm{if } k \in U
 \end{cases}
-$$
+```
 
 Let the activation of the $k$th unit at time $t$ for $k \in U$ be defined by
 
-$$
+```math
 y_k(t + 1) = f_k(s_k(t))
-$$
+```
 
 With $f_k$ representing the neurons activation function and $s_k$ representing the sum of the neurons weights as defined by
 
-$$
+```math
 s_k(t) = \sum_{i \in U \cup I} w_{ki} z_i(t)
-$$
+```
 
 And the notation $y_k(t+1)$ denoting that the neurons output at time-step $t$ will also be it’s contributing input to the network at time step $t + 1$.
 
 Given $T(t)$ as the subset of neurons $k \in U$with a specific target output value $d_k(t)$ for neuron $k$ at time $t$. We can then define the error function:
 
-$$
+```math
 e_k(t) =
 \begin{cases}
   d_k(t) - y_k(t) & \textrm{if } k \in T(t) \\
   0 & \textrm{otherwise}
 \end{cases}
-$$
+```
 
 > Note that this formulation allows for the possibility that target values are specified for different units at different times. The set of units considered to be visible can thus be time-varying,
 
 Now the error function to compute the total error of the network at time $t$
 
-$$
+```math
 J(t) = 1/2 \sum_{k \in U}[e_k(t)]^2
-$$
+```
 
 And the overall weight change for a weight $w_{ij}$ in the network
 
-$$
+```math
 \Delta w_{ij}(t) = -\alpha\frac{\partial J(t)}{\partial w_{ij}}
-$$
+```
 
-$$
+```math
 \frac{\partial{J(t)}}{\partial{w_{ij}}} = \sum_{k \in U} e_k(t) \frac{\partial{y_k(t)}}{\partial{w_{ij}}}
-$$
+```
 
-$$
+```math
 \frac{\partial{y_k(t+1)}}{\partial{w_{ij}}} = f'_k(s_k(t))[\sum_{i \in U} w_{ki} \frac{\partial{y_i(t)}}{\partial{w_{ij}}} + \delta_{ik}z_j(t)]
-$$
+```
 
 These all obtained just through simple back-propagation on the original setup of our network using the chain-rule. The last $\frac{\partial{y_k(t+1)}}{\partial{w_{ij}}}$ representing the partial of the output neurons of the _current_ time-step with respect to the weights and outputs of the _previous_ time-step, thus enabling back-propagation recursively through time.
 
 Then for convenience we define $p_{ij}^k$ where $k \in U$, $i \in U$, $j \in U \cup I$, $k$ denoting the output neuron who’s gradient to back-propagate to the _previous_ time-step, and $i$, $j$ specifying the weight between an input and output neuron in the previous time-step.
 
-$$
+```math
 p_{ij}^k(t+1) = f'_k(s_k(t))[\sum_{l \in U} w_{kl} p_{ij}^l(t) + \delta_{ik} z_j(t)]
-$$
+```
 
 Thus, the gradient recursively back-propagates through previous time-steps via the recursive use of $p_{ij}^l$ in it’s own definition, hitting a base case at $t = 0$ where we define the the value to be 0 since the output neuron values at this point are un-tethered to any previous time-step.
 
-$$
+```math
 p_{ij}^k(t_0) = 0
-$$
+```
 
 Then, we have the final weight update algorithm at a given time-step $t$
 
-$$
+```math
 \Delta w_{ij}(t) = \alpha \sum_{k \in U} e_k(t) p_{ij}^k (t)
-$$
+```
 
 **2. Real-Time Recurrent Learning**
 
@@ -1126,15 +1126,15 @@ This section is a good indicator of how much work happens at the frontiers of re
 
 We see from analyzing the error flow occurring at a unit $u$ at time step $t$ propagated back into time for $q$ time steps to a unit $v$ (indicated by the quantity $\frac{\partial{\vartheta_v(t-q)}}{\partial{\vartheta_u(t)}})$, we get the following term:
 
-$$
+```math
 \prod_{m=1}^q f'_{l_m}(\textrm{net}_{l_m}(t - m))w_{l_ml_{m-1}}
-$$
+```
 
 And we can see that if
 
-$$
+```math
 |f'_{l_m}(\textrm{net}_{l_m}(t - m))w_{l_ml_{m-1}}| > 1.0
-$$
+```
 
 then the largest product increase exponentially with $q$, meaning that the error blows up. Meanwhile, if the quantity is less than 1.0, the error converges to 0.
 
@@ -1146,17 +1146,17 @@ We want a way to back-propagate error through previous time-steps without the er
 
 We know (confirmed from the RNN paper) that we can define the back-propagated error signal to unit j as:
 
-$$
+```math
 \vartheta_j(t) = f'_j(\textrm{net}_j(t)) \sum_i w_{ij} \vartheta_i(t+1)
-$$
+```
 
 Where the error pathway flows backward via the recursive $\vartheta(t+1)$ pipeline all the way from the most recent time-step where the original error originates.
 
 Thus, we can simplify a unit j’s local error back-flow if it has only a single connection to itself in the previous time-step (for the sake of simplicity) as
 
-$$
+```math
 \vartheta_j(t) = f'_j(\textrm{net}_j(t)) \vartheta_j(t+1) w_{jj}
-$$
+```
 
 And to make sure that we have constant error flow backward through this pathway without vanishing/exploding gradients, we know that $f_j(x) = x$ as the activation function and $w_{jj}$ as the weight value are satisfactory.
 
@@ -1204,10 +1204,10 @@ This linear unit represents the CEC which persists the cell state (long-term mem
 
 Here, most importantly, we have the linear long-term error pathway through the middle with the recurrence, where we have
 
-$$
+```math
 s_{c_j}(0) = 0 \\
 s_{c_j}(t) = s_{c_j}(t-1) + y^{\textrm{in}_j}(t)g(\textrm{net}_{c_j}(t))
-$$
+```
 
 Indicating that the linear CEC pathway is just the sum of it’s value in the previous time-step, plus the value computed by the multiple of the activation of the current cells input, and the activation of the previous cells output (short-term memory).
 
@@ -1215,9 +1215,9 @@ Intuitively, the activation of the cells input can be thought of as the “value
 
 Similarly, the output can be calculated as
 
-$$
+```math
 y^{c_j}(t) = y^{\textrm{out}_j}(t)h(s_{c_j}(t))
-$$
+```
 
 Which can be thought of as the multiple of the output gate activation to this cell which is the “relevance” of the long-term memory in this case, as well as the actual activation on the current long-term memory pathway, which is the “value” of long-term memory to pull from as the output of this cell.
 
@@ -1225,23 +1225,23 @@ In-terms of actual weight and bias connections to other cells, there are a few r
 
 First, the actual “input” value to the cell, contributing the input gate is a function of the weights and outputs of other cells (coming from their short-term memory outputs) in the previous time-step.
 
-$$
+```math
 y^{\textrm{in}_j}(t) = f_{\textrm{in}_j}(\textrm{net}_{\textrm{in}_j}(t)) \\
 \textrm{net}_{\textrm{in}_j} = \sum_u w_{\textrm{in}_ju}y^u(t-1)
-$$
+```
 
 And similarly, the actual “output” value contributing to the “relevance” of the long-term memory pathway for the cell is influenced by the weights and outputs of other cells in the previous time-step
 
-$$
+```math
 y^{\textrm{out}_j}(t) = f_{\textrm{out}_j}(\textrm{net}_{\textrm{out}_j}(t)) \\
 \textrm{net}_{\textrm{out}_j} = \sum_u w_{\textrm{out}_ju}y^u(t-1)
-$$
+```
 
 And finally, that the actual previous short-term memory coming from this cell specifically in the previous time step is considered via
 
-$$
+```math
 \textrm{net}_{c_j}(t) = \sum_u w_{c_ju} y^u (t-1)
-$$
+```
 
 **2. Why Gate Units?**
 
@@ -1419,10 +1419,10 @@ They want to create a solution that doesn’t require any previous knowledge, an
 
 The forget gate has a similar activation as the other gates.
 
-$$
+```math
 y^{\varphi_j}(t) = f_{\varphi_j}(\textrm{net}_{\varphi_j}(t)) \\
 \textrm{net}_{\varphi_j}(t) = \sum_m w_{\varphi_jm}y^m(t-1)
-$$
+```
 
 > We use the logistic sigmoid as squashing function, hence the forget gate’s activation $y^\varphi$ ranges between 0 and 1.
 
@@ -1685,9 +1685,9 @@ This task is especially conducive to creating useful context in the word embeddi
 
 > Formally, given a sequence of training words $w_1, w_2, w_3, …, w_T$, the objective of the Skip-gram model is to maximize the average log probability
 
-$$
+```math
 \frac{1}{T}\sum_{t=1}^{T} \sum_{-c \leq j \leq c, j \neq 0} \log p(w_{t+j}|w_t)
-$$
+```
 
 Meaning, for each word (summation over $T$ terms), we want to increase the total chance that the model predicts the presence of all surrounding words within context window $c$ (summation over $j$ terms, bounded by $c$).
 
@@ -1695,9 +1695,9 @@ This can be framed as a minimization by changing the main term to a $- \log$ pro
 
 > The basic Skip-gram formulation defines $p(w_{t+j}|w_t)$ using the softmax function:
 
-$$
+```math
 p(w_O|w_I) = \frac{\exp({v'_{w_O}}^Tv_{w_I})}{\sum_{w=1}^W \exp{{v'_w}^Tv_{w_I}}}
-$$
+```
 
 > This formulation is impractical because the cost of computing $\nabla \log p(w_O|w_I)$ is proportional to $W$.
 
@@ -1739,9 +1739,9 @@ All the words that are context words should converge toward being predicted as n
 
 Instead of NCE, we use a simplified version called NEG
 
-$$
+```math
 \log \sigma({v'_{w_O}}^Tv_{w_I}) + \sum_{i=1}^k \mathbb{E}_{w_i \sim P_n(w)}[\log \sigma({-v'_{w_i}}^Tv_{w_I})]
-$$
+```
 
 Here, we want to maximize the probability $\log \sigma({v'_{w_O}}^Tv_{w_I})$, meaning we want to maximize the dot products (similarities) of the target word embedding vector with the embedding vectors of the correct context words.
 
@@ -1765,9 +1765,9 @@ Frequent words in the corpus don’t add much information to the embeddings of o
 
 > To counter the imbalance between the rare and frequent words, we used a simple subsampling approach: each word in the training set is discarded with probability computed by the formula
 
-$$
+```math
 P(w_i) = 1 - \sqrt{\frac{t}{f(w_i)}}
-$$
+```
 
 > where $f(w_i)$ is the frequency of word $w_i$ and $t$ is a chosen threshold, typically around $10^{-5}$
 
@@ -1791,9 +1791,9 @@ This effectively compresses the frequencies in the dataset to maintain the same 
 
 > Phrases are formed based on the unigram and bigram counts. The $\delta$ is used as a discounting coefficient and prevents too many phrases consisting of very infrequent words to be formed.
 
-$$
+```math
 \textrm{score}(w_i, w_j) = \frac{\textrm{count}(w_iw_j) - \delta}{\textrm{count}(w_i) \times \textrm{count}(w_j)}
-$$
+```
 
 > The bigrams with score above the chosen threshold are then used as
 > phrases.
@@ -1870,9 +1870,9 @@ Similar to the embeddings papers - it appears that this model creates a constrai
 
 > The two components of the proposed RNN Encoder–Decoder are jointly trained to maximize the conditional log-likelihood.
 
-$$
+```math
 \max_\theta \frac{1}{N}\sum_{n=1}^N \log p_\theta(y_n|x_n)
-$$
+```
 
 > Once the RNN Encoder–Decoder is trained, the model can be used in two ways. One way is to use the model to generate a target sequence given an input sequence. On the other hand, the model can be used to score a given pair of input and output sequences, where the score is simply a probability $p_\theta(y|x)$.
 
@@ -1888,9 +1888,9 @@ They add a reset and update gate to a new unit in the RNN.
 
 > In a commonly used statistical machine translation system (SMT), the goal of the system (decoder, specifically) is to find a translation $f$ given a source sentence $e$, which maximizes
 
-$$
+```math
 p(f|e) \propto p(e|f)p(f)
-$$
+```
 
 The $p(e|f)$ term is known as the _translation model_ and determines whether a given translation is likely to be equivalent to the source sentence.
 
@@ -1898,9 +1898,9 @@ The $p(f)$ term is the _language model_ and determines how grammatically and syn
 
 > Most SMT systems model $\log p(f | e)$ as a log-linear model with addition features and corresponding weights
 
-$$
+```math
 \log p(f|e) = \sum_{n=1}^N w_nf_n(f,e) + \log Z(e)
-$$
+```
 
 > Recently, […] there has been interest in training neural networks to score the translated sentence (or phrase pairs) using a representation of the source sentence as an additional input.
 
@@ -1960,9 +1960,9 @@ The three main changes from the default LSTM formulation.
 
 > Once training is complete, we produce translation by finding the most likely translation according to the LSTM
 
-$$
+```math
 \hat{T} = \arg \max_T p(T|S)
-$$
+```
 
 > We search for the most likely translation using a simple left-to-right beam search decoder which maintains a small number $B$ of partial hypotheses, where a partial hypothesis is a prefix of some translation.
 
@@ -2041,9 +2041,9 @@ Instead of just using a single vector in the encoded representation, the model s
 
 The conditional probability of the next word given the previous words
 
-$$
+```math
 p(y_i|y_1,...y_{i-1},x) = g(y_{i-1}, s_i, c_i)
-$$
+```
 
 Where it represents activation of $g$ on a function of the last word $y_{i-1}$, some RNN hidden states $s_i$, and a distinct context vector $c_i$ for each word.
 
@@ -2051,17 +2051,17 @@ Where it represents activation of $g$ on a function of the last word $y_{i-1}$, 
 
 > The context vector $c_i$ is, then, computed as a weighted sum of these annotations $h_i$
 
-$$
+```math
 c_i = \sum_{j=1}^{T_x} a_{ij}h_j
-$$
+```
 
 Here, the context vector is a weighted sum of annotations and their respective weights. The annotations then represent the “values” for each previous segment of the sequence, and the weights $a_{ij}$ represent the “relevance” of these values to predicting the current next word.
 
-$$
+```math
 a_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})} \\
 
 e_{ij} = a(s_{i-1}, h_j)
-$$
+```
 
 Here, the model for all $e_{ij}$ use the _alignment model_ $a$ which computes the relevance of the inputs at position $j$ to the output at position $i$, all using a single model. This model is then used to calculate the relative weights by getting the absolute weights for each input and taking the softmax of everything to calculate the relative importance of each input.
 
@@ -2173,9 +2173,9 @@ Masked multi-head attention is used in the decoder to ensure that output words c
 
 ![Screenshot 2024-05-15 at 11.54.43 PM.png](../images/Screenshot_2024-05-15_at_11.54.43_PM.png)
 
-$$
+```math
 \textrm{Attention}(Q,K,V) = \textrm{softmax}(\frac{QK^T}{\sqrt{d_k}})V
-$$
+```
 
 Both dot-product and additive attention were viable choices. However:
 
@@ -2192,10 +2192,10 @@ The scaling factor is just to keep the outputs of the softmax function in the re
 
 The primary affect of multi-headed attention is to enable the model to soak up context from multiple distinct potential information sources for each word - something that couldn’t happen as easily with just a single head due to the fact that individual heads take weighted averages of the
 
-$$
+```math
 \textrm{MultiHead}(Q,K,V) = \textrm{Concat}(\textrm{head}_1,...,\textrm{head}_h)W^O \\
 \textrm{where head}_i = \textrm{Attention}(QW_i^Q, KW_i^K, VW_i^V)
-$$
+```
 
 Each multi-headed attention block concatenates the results of each of its head into the final vector that’s passed to the feed-forward layer.
 
@@ -2209,9 +2209,9 @@ In this case, that means that the feed-forward layer is actually receiving 8 dif
 
 > In addition to attention sub-layers, each of the layers in our encoder and decoder contains a fully connected feed-forward network, which is applied to each position separately and identically. This consists of two linear transformations with a ReLU activation in between.
 
-$$
+```math
 \textrm{FFN}(x) = \max(0, xW_1 + b_1)W_2 + b_2
-$$
+```
 
 > While the linear transformations are the same across different positions, they use different parameters from layer to layer. Another way of describing this is as two convolutions with kernel size 1.
 
@@ -2229,10 +2229,10 @@ This is what enables Transformers to still maintain information about word posit
 
 > In this work, we use sine and cosine functions of different frequencies:
 
-$$
+```math
 PE_{(pos,  2i)} = \sin(pos/1000^{2i/d_{\textrm{model}}}) \\
 PE_{(pos,  2i+1)} = \cos(pos/1000^{2i/d_{\textrm{model}}})
-$$
+```
 
 ### Why Self-Attention
 
@@ -2722,9 +2722,9 @@ LoRA lets the same base model be used for different tasks, makes training more e
 
 > For $h = W_0x$, our modified forward pass yields:
 
-$$
+```math
 h = W_0x + \Delta Wx = W_0x + BAx
-$$
+```
 
 Instead of optimizing a completely new set of parameters $\Delta W$ with dimension $d \times d$ in order to adapt the parameters of the original matrix $W_0$, we can instead create a low-rank decomposition of matrix $\Delta W = BA$ where the dimensions of $B$ and $A$ are $d \times r$ and $r \times d$ respectively. Thus, if $r \ll d$, this decomposition still yields a matrix of dimension $d \times d$ while needing to optimize $2rd$ parameters instead of $d^2$ parameters, which is a massive optimization.
 
@@ -2860,9 +2860,9 @@ They’re getting creative here. Using the strategies from VQ-VAE to compress th
 
 > We can model the overall procedure as maximizing the evidence lower bound (ELB) on the joint likelihood of the model distribution over images $x$, captions $y$ and the tokens $z$ for the encoded RGB image.
 
-$$
+```math
 \ln p_{\theta,\psi}(x,y) \geqslant \mathbb{E}_{z \sim q_{\phi}(z | x)} (\ln p_\theta(x|y,z) - \beta D_{KL} (q_\phi(y, z|x), p_{\psi}(y, z))
-$$
+```
 
 Here, we model the ELB with $p_{\theta,\psi}(x,y)$ representing the target probability to minimize - the probability of a given image $x$ given that we’re provided with the caption $y$.
 
@@ -3182,9 +3182,9 @@ The prior model is meant to enhance the CLIP image embeddings from the original 
 
 We can model the combined action of the _prior_ and _decoder_ as follows
 
-$$
+```math
 P(x|y) = P(x, z_i|y) = P(x|z_i, y)P(z_i|y)
-$$
+```
 
 Here, we model the distribution of the probability of an image $x$ given the caption $y$ by splitting it into the prior, which models the probability of a given image embedding $z_i$ given the caption $y$, and then the probability of an image $x$ given the image embedding $z_i$, and optionally, the caption $y$ as well.
 
@@ -3316,9 +3316,9 @@ The procedure is:
 
 > Let us denote by $G(x)$ and $E_i(x)$ the output of the gating network and the output of the $i$-th expert network for a given input $x$. The output $y$ of the MoE module can be written as follows:
 
-$$
+```math
 y = \sum_{i=1}^n G(x)_i E_i(x)
-$$
+```
 
 > We save computation based on the sparsity of the output of $G(x)$. Wherever $G(x)_i$ = 0, we need not compute $E_i(x)$. In our experiments, we have up to thousands of experts, but only need to evaluate a handful of them for every example.
 
@@ -3330,17 +3330,17 @@ Hierarchical MoE also exists, further improving compute.
 
 A simple approach for gating would be to use a trainable weight matrix $W_g$ for gating with the softmax function
 
-$$
+```math
 G_\sigma(x) = Softmax(x \cdot W_g)
-$$
+```
 
 > We add two components to the Softmax gating network: sparsity and noise. Before taking the softmax function, we add tunable Gaussian noise, then keep only the top k values, setting the rest to $-\infty$.
 
-$$
+```math
 G(x) = Softmax(KeepTopK(H(x), k)) \\
 
 H(x)_i = (x \cdot W_g)_i + Gaussian() \cdot Softplus((x \cdot W_{noise})_i)
-$$
+```
 
 ### Addressing Performance Challenges
 
@@ -3368,11 +3368,11 @@ If left unattended, expert networks will naturally prioritize certain experts, a
 
 To ensure equal importance of all experts across the batch, we introduce an additional importance term to the loss function.
 
-$$
+```math
 Importance(X) = \sum_{x \in X} G(x) \\
 
 L_{importance}(X) = w_{importance} \cdot CV(Importance(X))^2
-$$
+```
 
 This function calculates the total importance of each expert across a batch by summing the gates for that expert for each training example, taking the square of the coefficient of variation, and multiplying it by a scaling factor $w_{importance}$.
 
@@ -3402,10 +3402,10 @@ This function calculates the total importance of each expert across a batch by s
 
 > In other words, $D$ and $G$ play the following two-player minimax game with value function $V(G,D)$
 
-$$
+```math
 \underset{G}{\textrm{min}} \, \underset{D}{\textrm{max}} \,
 V(D,G) = \mathbb{E}_{x \sim p_{\textrm{data}}(x)} [\log D(x)] + \mathbb{E}_{z \sim p_x(z)} [\log(1 - D(G(z))]
-$$
+```
 
 > Rather than training G to minimize $\log(1 − D(G(z)))$ we can train $G$ to maximize $\log D(G(z))$. This objective function results in the
 > same fixed point of the dynamics of $G$ and $D$ but provides much stronger gradients early in learning.
@@ -3504,17 +3504,17 @@ We introduce a “recognition model” $q_\phi(z|x)$ meant to model the true pos
 
 > The marginal likelihood is composed of a sum over the marginal likelihoods of individual datapoints $\log p_\theta(x^{(1)}, …, x^{(N)}) = \sum_{i=1}^N \log p_\theta(x^{(i)})$, which can be rewritten as:
 
-$$
+```math
 \log p_\theta(x^{(i)}) = D_{KL}(q_\phi(z|x^{(i)}), p_\theta(z|x^{(i)})) + \mathcal{L}(\theta, \phi; x^{(i)})
-$$
+```
 
 The KL divergence models the difference between our approximate distribution and the true distribution of the latent variables $z$ given the actual sampled value $x^{(i)}$.
 
 The second term $\mathcal{L}$, known as the _variation lower bound_, marks the lower bound of the probability of any observed data-point appearing in our distribution:
 
-$$
+```math
 \log p_\theta(x^{(i)}) \geq \mathcal{L}(\theta, \phi; x^{(i)}) = \mathbb{E}_{q_\phi(z|x)}[-\log q_\phi(z|x) + \log p_\theta(x,z)]
-$$
+```
 
 This term re presents the evidence lower bound. We take the expectation of values sampled over our approximate distribution $q_\phi$ for all values $z$ sampled given $x$, weighted by their relative probabilities.
 
@@ -3528,13 +3528,13 @@ Meanwhile, the second term is saying “focus on the values of $z$ that effectiv
 
 We can then rewrite the above equation for the ELBO using the KL divergence as follows:
 
-$$
+```math
 \mathcal{L}(\theta, \phi; x^{(i)}) = \mathbb{E}_{q_\phi(z|x)}[\log p_\theta(z) + \log p_\theta(x|z) - \log q_\phi(z|x)] \\
 
 D_{KL}(q_\phi(z|x), p_\theta(z)) = \mathbb{E}_{q_\phi(z|x)}[\log q_\theta(z|x) - \log p_\theta(z)] \\
 
 \mathcal{L}(\theta, \phi; x^{(i)}) = \mathbb{E}_{q_\phi(z|x)}[\log p_\theta(x|z)] - D_{KL}(q_\phi(z|x), p_\theta(z))
-$$
+```
 
 Thus, the first term of this maximizes the probability that our decoder can produce $x$ from the $z$ values sampled from the encoder, and the second term minimizes the difference between the approximate distributions condition $z|x$ and the overall sampling of $z$.
 
@@ -3546,17 +3546,17 @@ Here, we address the ability to model our evidence lower bound for maximization 
 
 > Under certain mild conditions […] for a chosen approximate posterior $q_\phi (z|x)$ we can reparameterize random variable $\hat{z} \sim q_\phi(z|x)$ using a differentiable transformation $g_\phi(\epsilon, x)$ of an (auxiliary) noise variable $\epsilon$
 
-$$
+```math
 \hat{z} = g_\phi(\epsilon, x) \textrm{ with } \epsilon \sim p(\epsilon) \\
 
 E_{q_\phi(z|x^{(i)})}[f(z)] = E_{p(\epsilon)}[f(g_\phi(\epsilon, x^{(i)}))] \simeq \frac{1}{L} \sum_{l=1}^L f(g_\phi(\epsilon^{(l)}, x^{(i)})) \\
-$$
+```
 
 Here, we create a re-parameterized estimator introducing some random noise through the variable $\epsilon$ which introduces noise. Then, you can take the expectation by taking the average over a number of samples influenced by this random noise, rather than calculating the integral through analytical means.
 
 We can apply this sampling method to our calculation of $\mathcal{L}$ to create an estimator function $\mathcal{L}^A(\theta, \phi; x)$ that can be used to optimize the ELBO.
 
-> The KL-divergence term can then be interpreted as regularizing $\phi$$, encouraging the approximate posterior to be close to the prior $p_\theta(z)$.
+> The KL-divergence term can then be interpreted as regularizing $\phi```, encouraging the approximate posterior to be close to the prior $p_\theta(z)$.
 
 > A connection with auto-encoders becomes clear when looking at the objective function. The first term is (the KL divergence of the approximate posterior from the prior) acts as a regularizer, while the second term is a an expected negative reconstruction error.
 
@@ -3612,12 +3612,12 @@ This model uses an encoder producing an output $z_e(x)$ for each input $x$.
 
 Then, this value $z_e(x)$ is passed through a posterior categoorical distribution that collapses the output value into 1-of-K embedding vectors
 
-$$
+```math
 q(z = k|x) = \begin{cases}
   1 & \textrm{for } k = \textrm{argmin}_j || z_e(x) - e_j ||_2 \\
   0 & \textrm{otherwise}
 \end{cases}
-$$
+```
 
 > The representation $z_e(x)$ is passed through a discretisation bottleneck followed by mapping onto the nearest element of embedding $e$.
 
@@ -3633,9 +3633,9 @@ The actual embedding space is disconnected from the main gradient flow directly,
 
 > To make sure the encoder commits to an embedding and its output does not grow, we add a commitment loss, the third term in the [loss equation]. Thus, the total training objective becomes:
 
-$$
+```math
 L = \log p(x|z_q(x)) + || \textrm{sg}[z_e(x)] - e ||_2^2 | - \beta || z_e(x) - sg[e] ||_2^2
-$$
+```
 
 > where _sg_ stands for the stop-gradient operator that is defined as identity at forward computation time and has zero partial derivatives, thus effectively constraining its operand to be a non-updated constant.
 
@@ -3713,9 +3713,9 @@ The decoder maps the received indices of vectors in the codebook and uses it to 
 
 In addition, the VQ-VAE has _codebook loss_ to make the codebook match more closely with the encoder outputs, and the _commitment loss_ to encourage the output of the decoder to stay closer to the codebook.
 
-$$
+```math
 \mathcal{L}(x, D(e)) = ||x - D(e)||_2^2 + ||sg[E(x)] - e||_2^2 + \beta || sg[e] - E(x) ||_2^2
-$$
+```
 
 **2. PixelCNN Family of Autoregressive Models**
 
@@ -3824,17 +3824,17 @@ The diffusion process slowly converts distributions from more noisy to more stru
 
 > The data distribution is gradually converted into a well behaved distribution $\pi (y)$ by repeated application of a Markov diffusion kernel $T_\pi(y|y’; \beta)$ for $\pi(y)$ where $\beta$ is the diffusion rate.
 
-$$
+```math
 \pi(y) = \int dy' T_\pi(y|y';\beta)\pi(y') \\
 
 q(x^{(t)}|x^{(t-1)}) = T_\pi(x^{(t)}|x^{(t-1)}; \beta_t)
-$$
+```
 
 > The forward trajectory corresponding to starting at the data distribution and performing $T$ steps of diffusion is thus
 
-$$
+```math
 q(x^{(0...T)}) = q(x^{(0)}) \prod_{t=1}^T q(x^{(t)}|x^{(t-1)})
-$$
+```
 
 **2. Reverse Trajectory**
 
@@ -3849,25 +3849,25 @@ p(x^{(0...T)} = p(x^{(T)}) \prod_{t=1}^T p(x^{(t-1)}|x^{(t)})
 
 > The probability the generative model assigns to the data is
 
-$$
+```math
 p(x^{(0)}) = \int dx^{(1...T)} p(x^{(0...T)})
-$$
+```
 
 In order to actually be able to calculate this integral
 
 > We can instead evaluate the relative probability of the forward and reverse trajectories, averaged over forward trajectories.
 
-$$
+```math
 p(x^{(0)}) = \int dx^{(1...T)}q(x^{(1...T)}|x^{(0)}) \cdot p(x^{(T)}) \prod_{t=1}^T \frac{p(x^{(t-1)}|x^{(t)})}{q(x^{(t)}|x^{(t-1)})}
-$$
+```
 
 **4. Training**
 
 Training amounts to maximizing the model log likelihood
 
-$$
+```math
 L = \int dx^{(0)} q(x^{(0)}) \log p(x^{(0)})
-$$
+```
 
 Here, we maximize the likelihood that the model $p$ generates the state $x^{(0)}$ from some noisy state, conditioned by the weight of the actual sample in the dataset $q(x^{(0)})$.
 
