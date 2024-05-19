@@ -3840,11 +3840,10 @@ $$
 
 > The generative distribution will be trained to describe the same trajectory, but in reverse.
 
-$$
+```math
 p(x^{(T)}) = \pi(x^{(T)}) \\
-
 p(x^{(0...T)} = p(x^{(T)}) \prod_{t=1}^T p(x^{(t-1)}|x^{(t)})
-$$
+```
 
 **3. Model Probability**
 
