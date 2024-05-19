@@ -54,3 +54,25 @@ In my experience, you develop much more robust intuitions by going through the h
 **5. Practicality first:**
 
 I've prioritized highlighting concepts that have led to the development of significant breakthroughs in AI that are already in production. I've avoided highlighting interesting research frontiers since (1) most frontiers will soon be obselete by definition, so the time spend is not worth it in introductory learning (2) I'm not qualified to suggest research frontiers.
+
+### Implementations
+
+Each of the following will be implemented:
+
+Architectures:
+
+- DNN
+- CNN
+- RNN
+- LSTM
+- Transformer
+- GAN
+- VAE
+- UNet
+- Diffusion
+
+Optimization:
+
+- Adam
+- Dropout
+- LayerNorm
