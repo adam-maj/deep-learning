@@ -6,10 +6,7 @@ Created: May 9, 2024 9:26 AM
 
 # LeNet
 
-<aside>
-📜 [Back-propagation Applied to Handwritten  Zip Code Recognition](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
-
-</aside>
+📜 [Back-propagation Applied to Handwritten Zip Code Recognition](http://yann.lecun.com/exdb/publis/pdf/lecun-89e.pdf)
 
 > The ability of learning networks to generalize can be greatly enhanced by providing constraints from the task domain.
 
@@ -103,10 +100,7 @@ Adding these constraints/priors into the network architecture significantly redu
 
 # AlexNet
 
-<aside>
 📜 [ImageNet Classification with Deep Convolutional Neural Networks](https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf)
-
-</aside>
 
 > Despite the attractive qualities of CNNs, and despite the relative efficiency of their local architecture, they have still been prohibitively expensive to apply in large scale to high-resolution images.
 
@@ -224,10 +218,7 @@ Depth is critical for the network to work effectively.
 
 # ResNet
 
-<aside>
 📜 [Deep Residual Learning for Image Recognition](https://arxiv.org/abs/1512.03385)
-
-</aside>
 
 > We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions. We provide comprehensive empirical evidence showing that these residual networks are easier to optimize, and can gain accuracy from considerably increased depth.
 
@@ -306,10 +297,7 @@ In terms of identity vs. projection shortcuts ($W_s$ is the identity matrix or d
 
 # ReLU
 
-<aside>
 📜 [Deep Sparse Rectified Neural Networks](https://www.researchgate.net/publication/215616967_Deep_Sparse_Rectifier_Neural_Networks)
-
-</aside>
 
 > Many differences exist between the neural network models used by machine learning researchers and those used by computational neuroscientists.
 
@@ -411,10 +399,7 @@ So they use the $L_1$ penalty on the activation values which also promotes addit
 
 # Batch Normalization
 
-<aside>
 📜 [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/pdf/1502.03167)
-
-</aside>
 
 > Training Deep Neural Networks is complicated by the fact that the distribution of each layer’s inputs changes during training, as the parameters of the previous layers change.
 
@@ -531,7 +516,7 @@ Just adding Batch Normalization to a network does not take full advantage of wha
 
 (2) _Remove dropout_ - BN speeds up training without increasing overfitting
 
-(3) _Reduce the $L_{2}$ weight regularization_ - since weight decay isn’t needed as much since activations are already scaled to be low
+(3) _Reduce the $L_{2}$ weight regularization\_ - since weight decay isn’t needed as much since activations are already scaled to be low
 
 (4) _Accelerate the learning rate decay_
 
@@ -559,10 +544,7 @@ Important that the normalization is part of the network so back-propagation has 
 
 # Layer Normalization
 
-<aside>
 📜 [Layer Normalization](https://arxiv.org/pdf/1607.06450)
-
-</aside>
 
 > The effect of batch normalization is dependent on the mini-batch size and it is not obvious how to apply it to recurrent neural networks.
 
@@ -669,10 +651,7 @@ For now, it appears that Layer Normalization is more effective than Batch Normal
 
 # Dropout
 
-<aside>
 📜 [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](https://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)
-
-</aside>
 
 > With limited training data, however, many of these complicated relationships will be the result of sampling noise, so they will exist in the training set but not in real test data even if it is drawn from the same distribution. This leads to overfitting and many methods have been developed for reducing it.
 
@@ -834,10 +813,7 @@ Dropout takes significantly longer in training time (increases time to convergen
 
 # GELU
 
-<aside>
 📜 [Gaussian Error Linear Units (GELUs)](https://arxiv.org/pdf/1606.08415)
-
-</aside>
 
 > Despite having less of a statistical motivation, the ReLU remains a competitive engineering solution which often enables faster and better convergence than sigmoids.
 
@@ -886,10 +862,7 @@ Basically, $x$ gets prioritized to be mapped to the identity function if it is o
 
 # Adam
 
-<aside>
 📜 [Adam: A Method for Stochastic Optimization](https://arxiv.org/pdf/1412.6980)
-
-</aside>
 
 > The method is straightforward to implement, is computationally efficient, has little memory requirements, is invariant to diagonal rescaling of the gradients, and is well suited for problems that are large in terms of data and/or parameters.
 
@@ -975,10 +948,7 @@ As we get farther into the future the denominator will get closer and closer to 
 
 # Weight Decay
 
-<aside>
 📜 [A Simple Weight Decay Can Improve Generalization](https://proceedings.neurips.cc/paper/1991/file/8eefcfdf5990e441f0fb6f3fad709e21-Paper.pdf)
-
-</aside>
 
 > It is proven that a weight decay has two effects in a linear network. First, it suppresses any irrelevant components of the weight vector by choosing the smallest vector that solves the learning problem. Second, if the size is chosen right, a weight decay can suppress some of the effects of static noise on the targets, which improves generalization quite a lot.
 
@@ -1004,10 +974,7 @@ Smaller weights means less ability to fit noise.
 
 # RNN
 
-<aside>
 📜 [A Learning Algorithm for Continually Running Fully Recurrent Neural Networks](https://gwern.net/doc/ai/nn/rnn/1989-williams-2.pdf)
-
-</aside>
 
 > A major problem in connectionist theory is to develop learning algorithms that can tap the full computational power of neural networks.
 
@@ -1121,10 +1088,7 @@ Interpretability has been near impossible, even from the beginning.
 
 # LSTM
 
-<aside>
 📜 [Long Short-Term Memory](https://deeplearning.cs.cmu.edu/F23/document/readings/LSTM.pdf)
-
-</aside>
 
 > Learning to store information over extended time intervals by recurrent backpropagation takes a very long time, mostly because of insufficient, decaying error back-flow.
 
@@ -1392,7 +1356,6 @@ This experiment really shows the superiority of LSTMs over RNNs in being able to
 
 > Two gate units learn to open and close access to error flow within each memory cell’s CEC. The multiplicative input gate affords protection of the CEC from perturbation by irrelevant inputs. Similarly, the multiplicative output gate protects other units from perturbation by currently irrelevant memory contents.
 
-<aside>
 💬 **Comments**
 In some ways, it seems like the LSTM is also about context and attention, just like the Transformer, but it’s just far less efficient in training due to it’s lack of parallelization.
 
@@ -1400,14 +1363,9 @@ Having individual cell blocks let’s the network learn about the relevance betw
 
 Really, what a memory cell is learning to do over time is recognize some important piece of information, store it over time and don’t modify it while it is irrelevant/nothing contributes useful information to it, and then release that information when it becomes relevant. In many ways, this is like attention and context where words can store their values over time, waiting to contribute their values to other relevant words.
 
-</aside>
-
 # Learning to Forget
 
-<aside>
 📜 [Learning to Forget: Continual Prediction with LSTM](https://www.researchgate.net/profile/Felix-Gers/publication/12292425_Learning_to_Forget_Continual_Prediction_with_LSTM/links/5759414608ae9a9c954e84c5/Learning-to-Forget-Continual-Prediction-with-LSTM.pdf)
-
-</aside>
 
 > We identify a weakness of LSTM networks processing continual input streams that are not _a priori_ segmented into subsequences with explicitly marked ends at which the network's internal state could be reset.
 
@@ -1522,10 +1480,7 @@ Interesting how the appeal to neuroscience seems to be something that researches
 
 # Word2Vec
 
-<aside>
 📜 [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781)
-
-</aside>
 
 > We propose two novel model architectures for computing continuous vector representations of words from very large data sets
 
@@ -1671,7 +1626,6 @@ The skip-gram model performs best overall.
 
 > Using the DistBelief distributed framework, it should be possible to train the CBOW and Skip-gram models even on corpora with one trillion words, for basically unlimited size of the vocabulary.
 
-<aside>
 💬 **Comments**
 This paper introduces the intuition for embeddings - it’s actually not a model trained to produce embeddings, but a model trained for a task, and created in a way so that the model is forced to create embeddings somewhere in order to accomplish it’s goal.
 
@@ -1683,14 +1637,9 @@ It’s actually very surprising that this happens naturally in the way that the 
 
 The intuition of embeddings is to isolate the available representation space models have to learn so that when they optimize their model of language in their representation space, that space can then be used practically.
 
-</aside>
-
 # Phrase2Vec
 
-<aside>
 📜 [Distributed Representations of Words and Phrases and their Compositionality](https://arxiv.org/pdf/1310.4546)
-
-</aside>
 
 > The recently introduced continuous Skip-gram model is an efficient method for learning high-quality distributed vector representations that capture a large number of precise syntactic and semantic word relationships.
 
@@ -1884,7 +1833,6 @@ The training objectives in the creation of embedding models are heavily responsi
 
 > Another approach for learning representations of phrases presented in this paper is to simply represent the phrases with a single token. Combination of these two approaches gives a powerful yet simple way how to represent longer pieces of text, while having minimal computational complexity
 
-<aside>
 💬 **Comments**
 The quality and properties of the embedding model is a result of the specific training methods and objective functions used for the model. The relationships between words are enforced by the types of representations learned to model the training problem.
 
@@ -1892,14 +1840,9 @@ This paper mainly introduces the technical details of the skip-gram model and ho
 
 It also shows us how to add the ability to embed complex phrases into the embeddings model.
 
-</aside>
-
 # Encoder-Decoder
 
-<aside>
 📜 [Learning Phrase Representations using RNN Encoder–Decoder for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078)
-
-</aside>
 
 > In this paper, we propose a novel neural network model called RNN Encoder–Decoder that consists of two recurrent neural networks.
 
@@ -1987,10 +1930,7 @@ In this section, they propose using the RNN Encoder-Decoder’s ability to produ
 
 # Seq2Seq
 
-<aside>
 📜 [Sequence to Sequence Learning with Neural Networks](https://arxiv.org/pdf/1409.3215)
-
-</aside>
 
 > In this paper, we present a general end-to-end approach to sequence learning that makes minimal assumptions on the sequence structure.
 
@@ -2070,10 +2010,7 @@ By reversing the sentence order, this “minimal time lag” is reduced, which c
 
 # Attention
 
-<aside>
 📜 [Neural Machine Translation By Jointly Learning To Align And Translate](https://arxiv.org/pdf/1409.0473)
-
-</aside>
 
 > The models proposed recently for neural machine translation often belong to a family of encoder–decoders and encode a source sentence into a fixed-length vector from which a decoder generates a translation.
 
@@ -2182,10 +2119,7 @@ Soft-alignment meaning the ability for the model to align across multiple of the
 
 # Transformer
 
-<aside>
 📜 [Attention Is All You Need](https://arxiv.org/pdf/1706.03762)
-
-</aside>
 
 > We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.
 
@@ -2346,10 +2280,7 @@ Multi-headed attention appears to model highly interpretable behaviors, somethin
 
 # BERT
 
-<aside>
 📜 [BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding](https://arxiv.org/pdf/1810.04805)
-
-</aside>
 
 > We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers.
 
@@ -2441,10 +2372,7 @@ Adding this task into the model forces the model to learn whether two sentences 
 
 # RoBERTa
 
-<aside>
 📜 [RoBERTa: A Robustly Optimized BERT Pre-training Approach](https://arxiv.org/pdf/1907.11692)
-
-</aside>
 
 > We find that BERT was significantly undertrained, and can match or exceed the performance of every model published after it.
 
@@ -2501,10 +2429,7 @@ RoBERTa uses a larger mini-batch size for training.
 
 # Adapters
 
-<aside>
 📜 [Parameter-Efficient Transfer Learning for NLP](https://arxiv.org/pdf/1902.00751)
-
-</aside>
 
 > As an alternative, we propose transfer with adapter modules. Adapter
 > modules yield a compact and extensible model; they add only a few trainable parameters per task, and new tasks can be added without revisiting previous ones.
@@ -2573,10 +2498,7 @@ Adapters need to be initialized to preserve the identity mapping.
 
 # T5
 
-<aside>
 📜 [Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer](https://arxiv.org/pdf/1910.10683)
-
-</aside>
 
 > In this paper, we explore the landscape of transfer learning techniques for NLP by introducing a unified framework that converts all text-based language problems into a text-to-text format.
 
@@ -2658,10 +2580,7 @@ An explicit discussion of scaling laws starting to seem like a very attractive b
 
 # GPT-2
 
-<aside>
 📜 [Language Models are Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
-
-</aside>
 
 > We demonstrate that language models begin to learn these tasks without any explicit supervision when trained on a new dataset of millions of webpages called WebText.
 
@@ -2716,10 +2635,7 @@ We see improvements in taste on the dataset (determined by humans) improving the
 
 # GPT-3
 
-<aside>
 📜 [Language Models are Few-Shot Learners](https://arxiv.org/pdf/2005.14165)
-
-</aside>
 
 > Here we show that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuning approaches.
 
@@ -2767,10 +2683,7 @@ However, it’s interesting to see the effects of how society has quickly adjust
 
 # LoRA
 
-<aside>
 📜 [Low-Rank Adaptation of Large Language-Models](https://arxiv.org/pdf/2106.09685)
-
-</aside>
 
 > As we pre-train larger models, full fine-tuning, which retrains all model parameters, becomes less feasible.
 
@@ -2867,10 +2780,7 @@ This discovery is actually generally valuable for all fine-tuning and transfer l
 
 # Image Transformers
 
-<aside>
 📜 [An Image Is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/pdf/2010.11929)
-
-</aside>
 
 > When trained on mid-sized datasets such as ImageNet without strong regularization, these [transformer] models yield modest accuracies of a few percentage points below ResNets of comparable size
 
@@ -2914,10 +2824,7 @@ Transformers has almost no inductive bias compared with what the CNNs have, but 
 
 # DALL E
 
-<aside>
 📜 [Zero-Shot Text-to-Image Generation](https://arxiv.org/pdf/2102.12092)
-
-</aside>
 
 > Text-to-image generation has traditionally focused on finding better modeling assumptions for training on a fixed dataset.
 
@@ -3071,10 +2978,7 @@ Here’s the beginning of editing images with text - the model can update existi
 
 # CLIP
 
-<aside>
 📜 [Learning Transferable Visual Models From Natural Language Supervision](https://arxiv.org/pdf/2103.00020)
-
-</aside>
 
 > We demonstrate that the simple pre-training task of predicting which caption goes with which image is an efficient and scalable way to learn SOTA image representations from scratch on a dataset of 400 million (image, text) pairs collected from the internet.
 
@@ -3250,10 +3154,7 @@ The trend continues - large-scale pre-trained models with transfer learning can 
 
 # DALL E 2
 
-<aside>
 📜 [Hierarchical Text-Conditional Image Generation with CLIP Latents](https://arxiv.org/pdf/2204.06125)
-
-</aside>
 
 > We propose a two-stage model: a prior that generates a CLIP image embedding given a text caption, and a decoder that generates an image conditioned on the image embedding.
 
@@ -3321,10 +3222,7 @@ Here, we model the distribution of the probability of an image $x$ given the cap
 
 # InstructGPT
 
-<aside>
 📜 [Training language models to follow instructions with human feedback](https://arxiv.org/pdf/2203.02155)
-
-</aside>
 
 > Making language models bigger does not inherently make them better at following a user’s intent.
 
@@ -3393,10 +3291,7 @@ The procedure is:
 
 # Mixture of Experts
 
-<aside>
 📜 [Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer](https://arxiv.org/pdf/1701.06538)
-
-</aside>
 
 > The capacity of a neural network to absorb information is limited by its number of parameters.
 
@@ -3493,10 +3388,7 @@ This function calculates the total importance of each expert across a batch by s
 
 # GAN
 
-<aside>
 📜 [Generative Adversarial Nets](https://arxiv.org/pdf/1406.2661v1)
-
-</aside>
 
 > We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model $G$ that captures the data distribution, and a discriminative model $D$ that estimates the probability that a sample came from the training data rather than $G$.
 
@@ -3534,10 +3426,7 @@ Generative adversarial models are far more computationally efficient than the pr
 
 # VAE
 
-<aside>
 📜 [Auto-Encoding Variational Bayes](https://arxiv.org/pdf/1312.6114)
-
-</aside>
 
 > How can we perform efficient inference and learning in directed probabilistic models, in the presence of continuous latent variables with intractable posterior distributions, and large datasets?
 
@@ -3693,10 +3582,7 @@ This reframing (re-parameterization) allows us to make the sampling of the rando
 
 # VQ VAE
 
-<aside>
 📜 [Neural Discrete Representation Learning](https://arxiv.org/pdf/1711.00937)
-
-</aside>
 
 > In this paper, we propose a simple yet powerful generative model that learns […] discrete representations [without supervision].
 
@@ -3904,10 +3790,7 @@ Using this method, they can classify the quality of the samples by their proximi
 
 # Diffusion
 
-<aside>
 📜 [Deep Unsupervised Learning Using Non-equilibrium Thermodynamics](https://arxiv.org/pdf/1503.03585)
-
-</aside>
 
 > A central problem in machine learning involves modeling complex data-sets using highly flexible families of probability distributions in which learning, sampling, inference, and evaluation are still analytically or computationally tractable.
 
@@ -4005,10 +3888,7 @@ Here, we maximize the likelihood that the model $p$ generates the state $x^{(0)}
 
 # Denoising Diffusion
 
-<aside>
 📜 [Denoising Diffusion Probabilistic Models](https://arxiv.org/pdf/2006.11239)
-
-</aside>
 
 > We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from non-equilibrium thermodynamics.
 
