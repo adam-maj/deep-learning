@@ -82,7 +82,7 @@ So let's look at each one in depth.
 
 # 2.1. Data
 
-## True vs. Empirical Distribution
+### True vs. Empirical Distribution
 
 We want our system to effectively understand reality.
 
@@ -100,7 +100,7 @@ The samples provide information about an _approximation_ of the true distributio
 
 At best, we can expect to learn to model this empirical distribution from the dataset.
 
-## A Good Approximation
+### A Good Approximation
 
 The original goal was to effectively model the true distribution, not the empirical distribution.
 
@@ -108,7 +108,7 @@ So, the empirical distribution needs to be as close as possible to the true dist
 
 The empirical distribution becomes a better approximation of the true distribution as we add more data points.
 
-## Data Quantity & Quality
+### Data Quantity & Quality
 
 We can use (simple) information theory to understand how to make the empirical distribution a good approximation of the true distribution.
 
@@ -116,7 +116,7 @@ We need more information about the true distribution in the true distribution - 
 
 So to make our dataset a good approximation of the true distribution, we have two levers: increase quantity of data, and increase quality of data.
 
-## Progress
+### Progress
 
 While deep-learning was getting started, data was collected manually [CNN, LeNet]. This worked at a small scale, but couldn't go very far. Very limited quantity.
 
@@ -184,7 +184,7 @@ The best case would be to access data about the world directly. With recent huma
 
 [Figure, Optimus, Boston Dynamics]
 
-## Modeling Data
+### Modeling Data
 
 So the dataset set determines the empirical distribution, which sets the cap on how good of a model we can create. The best model we can create corresponds with how well the empirical distribution approximates the true distribution.
 
@@ -202,7 +202,7 @@ When the complexity of the empirical distribution is still beyond what the netwo
 
 This means adding more parameters per layer and increasing the depth of the network.
 
-## Progress
+### Progress
 
 [1] **Initial scaling of networks** - Networks naturally scaled over time (combined with other improvements) leading to better results [CNN, LeNet, AlexNet, etc.].
 
@@ -226,7 +226,7 @@ First, when you scale up parameters, and especially when you add more depth, the
 
 Second, when you scale up parameters past the complexity of the distribution, the model can overfit. Regularization is used to ensure models learn "good representations" to truly model the empirical distribution and not learn noise.
 
-## Progress
+### Progress
 
 [1] **Vanishing and exploding gradients** - While training deeper networks with many layers, gradients start to get magnified or dissapear to 0, due to the compounding effects of many layers of similar weights.
 
@@ -268,7 +268,7 @@ Many optimization algorithms started to approach this problem by adding the idea
 
 Adam optimizer combined all these ideas to maintain adaptive moments - keeping track of a running list of past gradients for each parameter, and icnreasing momentum where appropriate, drastically decreasing training time in some scenarios [Adam].
 
-## The forgotten constraint
+### The forgotten constraint
 
 All these advancements are used in almost everything today [Transformer], and without them optimization & regularization would be a constraint.
 
@@ -292,7 +292,7 @@ We are telling the model “learn like this.” This is adding _inductive bias_.
 
 Architecture is about more useful representations per group of parameters, which translates to better modeling of apparent distribution, with fewer parameters, meaning more room for parameters, meaning larger effective size again (more useful representations in the mode, more intelligence).
 
-## Progress
+### Progress
 
 [1] **DNN** - Technically, a DNN with non-linearities can model any distribution, given sufficient scale [Link to justification].
 
@@ -354,7 +354,7 @@ During training, specifically back-propagation, the gradient for each parameter 
 
 So we can train a certain number of parameters per device. And then we need to get more devices. And if there's a limit on how many devices we can use together, we've hit a constraint on compute.
 
-## Progress
+### Progress
 
 [1] **GPUs for gaming** - Initial models are trained on CPU, far from being constrained by compute [DNN, CNN, LeNet?]. They are constrained by other things limiting model size, like data & optimization/regularization. Models take a few days to train.
 
@@ -408,7 +408,7 @@ Making effective use of compute (training parameters most efficiently) is not a 
 
 Examples like [FlashAttention] show us that there are large compute breakthroughs that accelerate things waiting to happen.
 
-## Progress
+### Progress
 
 [1] **CUDA** - The first challenge with compute was just being able to work with GPUs. GPUs require a completely different programming paradigm unfamiliar to most people, and was challenging to get right.
 
@@ -508,7 +508,7 @@ This narrative in particular highlights the power of narratives in fundraising [
 
 Where do the ideas that have led to breakthroughs in deep learning come from? By looking at the history, we can see a few common sources of inspiration that appear frequently.
 
-## Neuroscience
+### Neuroscience
 
 **Similar Solutions**
 
@@ -530,19 +530,19 @@ In early papers, there seems to be an attempt to fit ideas to neuroscience as a 
 
 This seems to be an ex-post rationalization of the architecture in an attempt to make it correspond with biology, rather than it actually serving as a source for inspiration (of course, I could be wrong).
 
-## Linear Algebra & Calculus
+### Linear Algebra & Calculus
 
 Most notably, [back-propagation/DNN] and [LoRA] are directly inspired by the math behind neural networks.
 
 [LoRA] (low-rank adaptation) is directly a manipulation on how models are trained by taking advantage of a feature of linear-algebra (decomposing parameters into lower dimensionality matrices).
 
-## Physics & Information Theory
+### Physics & Information Theory
 
 Most notably, [VAEs], [Diffusion], [Score-Models], [Flow-Models] all take inspiration from physics - especially Langevin dynamics.
 
 These are systems involving noisy sampling.
 
-## Nature
+### Nature
 
 In general, all these sources of inspiration are engineering / sources where nature has solved the problem of modeling data in different ways, and we can take ideas from these places.
 
