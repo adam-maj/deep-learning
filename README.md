@@ -8,7 +8,7 @@ On the rest of this page, I provide an overview of everything we can learn from 
 
 **The project is designed so everyone can get most of the value by reading the overview below.**
 
-Then, people curious to dive into the technical details can explore the rest of the repository via the links at the bottom of this page.
+Then, people curious to dive into the technical details can explore the rest of the repository via the links in the [resources](#resources) section.
 
 ## Table of Contents
 
