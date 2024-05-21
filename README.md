@@ -12,7 +12,7 @@ Then, people curious to dive into the technical details can explore the rest of 
 
 ## Table of Contents
 
-- [Overview: The Lessons of History](#overview-the-lessons-of-history)
+- [Overview](#overview-the-lessons-of-history)
   - [1. Introduction](#1-introduction)
   - [2. Constraints](#2-constraints)
     - [2.1. Data](#21-data)
@@ -29,7 +29,7 @@ Then, people curious to dive into the technical details can explore the rest of 
   - [6. Future](#6-future)
 - [Resources](#part-2-the-arrow-of-progress)
 
-# Overview: The Lessons of History
+# Overview
 
 _Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will and Ariel Durant_
 
