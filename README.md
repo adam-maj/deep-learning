@@ -1,21 +1,17 @@
 # deep-learning [WIP]
 
-Digital intelligence has been improving at a staggering rate.
+**Digital intelligence has been improving at a staggering rate.**
 
-With constant innovation at the frontiers, few have had the time to dive deep and fully understand what’s going on.
-
-On top of that, public narratives obscure the reality of the forces at play.
+With constant innovation at the frontiers, few have had the time to dive deep and fully understand what’s going on. On top of that, public narratives obscure the reality of the forces at play.
 
 This project is an effort to surface and spread the true big picture of how things are progressing, informed by the technical details of individual innovations.
 
-It focuses on two simple questions:
+**It focuses on two simple questions:**
 
 - How did we get here?
 - Where are we going?
 
-In order to answer them, we first dive into the history of deep learning, understanding the entire arrow of progress from first principles.
-
-Then, using what we learn from this, we can zoom-out to observe broader trends and understand the direction we are headed in.
+In order to answer them, we first dive into the history of deep learning, understanding the entire arrow of progress from first principles. Then, using what we learn from this, we can zoom-out to observe broader trends and understand the direction we are headed in.
 
 ### Table of Contents
 
