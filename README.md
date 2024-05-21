@@ -32,11 +32,43 @@ In order to answer them, we first dive into the history of deep learning, unders
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
 - [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
-  - [1. Deep Neural Networks](/01-deep-neural-networks/): DNNs, CNNs
-  - [2. Optimization & Regularization](/02-optimization-and-regularization/): Residuals, Normalization, Dropout, Adam, etc.
-  - [3. Sequence Modeling](/03-sequence-modeling/): RNNs, LSTMs, Word2Vec, Seq2Seq, etc.
-  - [4. Transformers](/04-transformers/): Transformers, BERT, GPTs, LoRA, etc.
-  - [5. Image Generation](/05-image-generation/): GANs, VAEs, Diffusion, CLIP, DALL E, etc.
+  - [1. Deep Neural Networks](/01-deep-neural-networks/) - [DNN](/01-deep-neural-networks/01-dnn/), [CNN](/01-deep-neural-networks/02-cnn/), [AlexNet](/01-deep-neural-networks/03-alex-net/), [UNet](/01-deep-neural-networks/04-u-net/)
+  - [2. Optimization & Regularization](/02-optimization-and-regularization/)
+    - [2.1. Weight Decay](/02-optimization-and-regularization/01-weight-decay/)
+    - [2.2. ReLU](/02-optimization-and-regularization/02-relu/)
+    - [2.3. Residuals](/02-optimization-and-regularization/03-residuals/)
+    - [2.4. Dropout](/02-optimization-and-regularization/04-dropout/)
+    - [2.5. Batch Normalization](/02-optimization-and-regularization/05-batch-norm/)
+    - [2.6. Layer Normalization](/02-optimization-and-regularization/06-layer-norm/)
+    - [2.7. GELU](/02-optimization-and-regularization/07-gelu/)
+    - [2.8. Adam](/02-optimization-and-regularization/08-adam/)
+  - [3. Sequence Modeling](/03-sequence-modeling/)
+    - [3.1. RNN](/03-sequence-modeling/01-rnn/)
+    - [3.2. LSTM](/03-sequence-modeling/02-lstm/)
+    - [3.3. Learning to Forget](/03-sequence-modeling/03-learning-to-forget/)
+    - [3.4. Word2Vec](/03-sequence-modeling/04-word2vec/)
+    - [3.5. Encoder-Decoder](/03-sequence-modeling/05-encoder-decoder/)
+    - [3.6. Seq2Seq](/03-sequence-modeling/06-seq2seq/)
+    - [3.7. Attention](/03-sequence-modeling/07-attention/)
+    - [3.8. Mixture of Experts](/03-sequence-modeling/08-mixture-of-experts/)
+  - [4. Transformers](/04-transformers/)
+    - [4.1. Transformer](/04-transformers/01-transformer/)
+    - [4.2. BERT](/04-transformers/02-bert/)
+    - [4.3. RoBERTa](/04-transformers/03-roberta/)
+    - [4.4. T5](/04-transformers/04-t5/)
+    - [4.5. GPT-2](/04-transformers/05-gpt-2/)
+    - [4.6. GPT-3](/04-transformers/06-gpt-3/)
+    - [4.7. LoRA](/04-transformers/07-lora/)
+    - [4.8. InstructGPT](/04-transformers/08-instruct-gpt/)
+    - [4.9. Vision Transformer](/04-transformers/09-vision-transformer/)
+    - [4.10. Mixture of Experts Transformer](/04-transformers/10-moe-transformer/)
+  - [5. Image Generation](/05-image-generation/)
+    - [5.1. GANs](/05-image-generation/01-gan/)
+    - [5.2. VAEs](/05-image-generation/02-vae/)
+    - [5.3. Diffusion](/05-image-generation/03-diffusion/)
+    - [5.4. Stable Diffusion, ControlNet, & SDXL](/05-image-generation/04-stable-diffusion/)
+    - [5.5. CLIP](/05-image-generation/05-clip/)
+    - [5.6. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
 
 ## Structure
 
