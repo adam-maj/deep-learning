@@ -13,7 +13,7 @@ _This project is an effort to surface and spread the true big picture of how thi
 
 In order to answer them, we first dive into the history of deep learning, understanding the entire arrow of progress from first principles. Then, using what we learn from this, we can zoom-out to observe broader trends and understand the direction we are headed in.
 
-### Table of Contents
+## Table of Contents
 
 - [Structure](#structure)
 - [Part 1: The Lessons of History](#part-1-the-lessons-of-history)
