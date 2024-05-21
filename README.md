@@ -1,6 +1,6 @@
 # deep-learning [WIP]
 
-An exploration of the entire history of deep learning from DNNs to GPT-4o through the lens of the constraints governing progress.
+An exploration of the entire history of deep learning from DNNs to GPT-4o through the lens of the constraints limiting progress.
 
 For each critical breakthrough, I include a copy of the paper in the repository, along with my full explanation of high-level intuitions, math, implementation, and broader impact.
 
