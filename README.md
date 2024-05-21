@@ -14,14 +14,14 @@ Then, people curious to dive into the technical details can explore the rest of 
 
 - [Overview](#overview-the-lessons-of-history)
   - [1. Constraints](#2-constraints)
-    - [1.1. Data](#21-data)
-    - [1.2. Size](#22-size)
-    - [1.3. Optimization & Regularization](#23-optimization--regularization)
-    - [1.4. Architecture](#24-architecture)
-    - [1.5. Compute](#25-compute)
-    - [1.6. Compute Efficiency](#26-compute-efficiency)
-    - [1.7. Energy](#27-energy)
-    - [1.8. Constraints & Leverage](#28-constraints--leverage)
+    - [1.1. Data](#11-data)
+    - [1.2. Parameters](#12-parameters)
+    - [1.3. Optimization & Regularization](#13-optimization--regularization)
+    - [1.4. Architecture](#14-architecture)
+    - [1.5. Compute](#15-compute)
+    - [1.6. Compute Efficiency](#16-compute-efficiency)
+    - [1.7. Energy](#17-energy)
+    - [1.8. Constraints & Leverage](#18-constraints--leverage)
   - [3. Narratives](#3-narratives)
   - [4. Inspiration](#4-inspiration)
   - [5. Intelligence](#5-intelligence)
@@ -86,6 +86,8 @@ So let's look at each one in depth.
 <br />
 
 ## 1.1. Data
+
+![constraint-1-data](./images/readme/constraint-1-data.png)
 
 ### True vs. Empirical Distribution
 
@@ -223,7 +225,9 @@ What are the constraints governing how good of a model we can create? These are 
 
 <br />
 
-## 1.2. Size
+## 1.2. Parameters
+
+![constraint-2-parameters](./images/readme/constraint-2-parameters.png)
 
 The model itself needs to have enough degrees of freedom to be able to model the empirical distribution.
 
@@ -258,6 +262,8 @@ Currently, scaling up the size of the model is a clear direction of progress we 
 <br />
 
 ## 1.3. Optimization & Regularization
+
+![constraint-3-optimization-and-regularization](./images/readme/constraint-3-optimization-and-regularization.png)
 
 In practice, you can't just keep scaling up model naively. When scaling up the model, we encounter two classes of problems.
 
@@ -336,6 +342,8 @@ Despite this, we have to remember that these are still very real constraints, al
 <br />
 
 ## 1.4. Architecture
+
+![constraint-4-architecture](./images/readme/constraint-4-architecture.png)
 
 Good optimization & regularization enables us to make larger and deeper models.
 
@@ -423,6 +431,8 @@ GPT-4o is the most obvious example of complete multi-modality, which involves st
 
 ## 1.5. Compute
 
+![constraint-5-compute](./images/readme/constraint-5-compute.png)
+
 With an efficient architecture and effective optimization & regularization, the remaining constraint on the size of the model is compute.
 
 During training, specifically back-propagation, the gradient for each parameter needs to be computed, and then each parameter updated. This takes compute, which takes time. So with more parameters, there are more computations during back-propagation, which is the limitting step.
@@ -491,6 +501,8 @@ There's a heuristic that you get 10x boost from chip to FPGA, then another 10x f
 
 ## 1.6. Compute Efficiency
 
+![constraint-6-compute-efficiency](./images/readme/constraint-6-compute-efficiency.png)
+
 Making effective use of compute (training parameters most efficiently) is not a gaurantee. This is a software problem and takes active effort and optimization.
 
 Examples like [FlashAttention] show us that there are large compute breakthroughs that accelerate things waiting to happen.
@@ -522,6 +534,8 @@ We see in [AlexNet] they write their own GPU code manually (and in other places)
 <br />
 
 ## 1.7. Energy
+
+![constraint-7-energy](./images/readme/constraint-7-energy.png)
 
 Finally, even if we have infinite resources to purchase compute, and more importantly, the supply chain can support any demand, there is still a constraint on compute - energy.
 
