@@ -33,9 +33,11 @@ In order to answer them, we first dive into the history of deep learning, unders
   - [6. Future](#6-future)
 - [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
 
-# Structure
+### Structure
 
 This project is organized into two distinct parts.
+
+**Part 1: The Lessons of History**
 
 The first part (the remainder of this README), is a reframing of the entire history of deep learning through the lens of the fundamental constraints that have always governed the rate of progress.
 
@@ -51,6 +53,7 @@ Through this lens, we can effectively explore these questions:
 
 This part is designed to be readable for everyone, and I’ve made an effort to reference important research, my implementations, and other relevant links (tweets, videos, news, etc.) while keeping it interesting.
 
+**Part 2: The Arrow of Progress**
 The second part (contained within the folders of the repository), is a technical exploration of the individual advancements that led us to the current state of digital intelligence.
 
 A copy of each foundational paper is included in the repository, along with a detailed breakdown of the high-level ideas, mathematical intuitions, code, and relevant societal & cultural impacts for each one.
@@ -59,6 +62,7 @@ I’ve selectively included only the most essential breakthroughs that have both
 
 Of course, many great papers have been left out, but the current list covers most of the important surface area necessary to understand the state of the art.
 
+**How to use this repository**
 My intention is for everyone to be able to start with the broader reframing of deep learning in part 1 (below) and get value from it. Then, for the curious people who want to develop the technical intuitions, they can dive into part 2 to go deeper.
 
 # Part 1: The Lessons of History
