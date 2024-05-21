@@ -74,7 +74,7 @@ Builds model of reality = uses data (samples) from reality (distribution) to app
 
 <br />
 
-## 2. Constraints
+# 2. Constraints
 
 Deep learning is about getting good data, and then using that data to model the world.
 
