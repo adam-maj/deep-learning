@@ -123,6 +123,8 @@ _Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-Hist
 
 # Papers
 
+Below are the citations and official links to the paper highlighted in this repository.
+
 **Deep Neural Networks**
 
 - **DNN** - Learning Internal Representations by Error Propagation (1987), D. E. Rumelhart et al. [[PDF]](https://stanford.edu/~jlmcc/papers/PDP/Volume%201/Chap8_PDP86.pdf)
