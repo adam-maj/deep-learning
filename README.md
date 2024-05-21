@@ -32,11 +32,11 @@ In order to answer them, we first dive into the history of deep learning, unders
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
 - [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
-  - [1. Deep Neural Networks](/01-deep-neural-networks/)
-  - [2. Optimization & Regularization](/02-optimization-and-regularization/)
-  - [3. Sequence Modeling](/03-sequence-modeling/)
-  - [4. Transformers](/04-transformers/)
-  - [5. Image Generation](/05-image-generation/)
+  - [1. Deep Neural Networks](/01-deep-neural-networks/) - DNNs, CNNs
+  - [2. Optimization & Regularization](/02-optimization-and-regularization/) - Activations, Residuals, Normalization, Dropout, Adam, etc.
+  - [3. Sequence Modeling](/03-sequence-modeling/) - RNNs, LSTMs, Word2Vec, Seq2Seq, Attention, MoE, etc.
+  - [4. Transformers](/04-transformers/) - Transformers, BERT, GPTs, LoRA, etc.
+  - [5. Image Generation](/05-image-generation/) - GANs, VAEs, Diffusion, CLIP, DALL E, etc.
 
 ## Structure
 
