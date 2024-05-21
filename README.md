@@ -4,7 +4,7 @@ An exploration of the entire history of deep learning from DNNs to GPT-4o throug
 
 In the repository, I've included a copy of each critical paper, along with my full explanation of high-level intuitions, mathematical intuitions, code implementation, and broader impact.
 
-On the rest of this page, I provide an overview of everything we can learn from this history, inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will & Ariel Durant.
+On the rest of this page, I provide an overview of everything we can learn from this history, inspired by [_The Lessons of History_](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will & Ariel Durant.
 
 The project is designed so everyone can get most of the value by reading the overview below.
 
