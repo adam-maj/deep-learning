@@ -178,13 +178,19 @@ OpenAI manually created datasets of good responses for an assistant model with h
 
 But it made the difference between GPT-3 launch and ChatGPT.
 
-![[Link view of take off after ChatGPT]](https://assets-global.website-files.com/6560400779eab0c1a0c7e271/6560417e1975d5a7c3850eb3_64aacca3a446d8dc44b21b1e_ChatGPT-Website-All-Time-Views.png)
+<div style="text-align:center; max-width:100%;">
+  <img src="https://assets-global.website-files.com/6560400779eab0c1a0c7e271/6560417e1975d5a7c3850eb3_64aacca3a446d8dc44b21b1e_ChatGPT-Website-All-Time-Views.png" style="width:60%; height:auto;">
+  <p style="text-align:center; font-style:italic; font-size:small;">ChatGPT usage instantly takes off</p>
+</div>
 
 [5] **Is this the best we can do? Humanoid robots bump the constraint** - The combination of pre-training on internet-scale and fine-tuning on small datasets seems ideal.
 
 Is there anywhere to go from here to push the constraints further, aside from the ever increasing amount of data on the internet?
 
-![[Link chart of internet data increasing to show scale]](https://cdn.buttercms.com/output=f:webp/ods4p5fQVmXkFeHFP3Zx)
+<div style="text-align:center; max-width:100%;">
+  <img src="https://cdn.buttercms.com/output=f:webp/ods4p5fQVmXkFeHFP3Zx" style="width:60%; height:auto;">
+  <p style="text-align:center; font-style:italic; font-size:small;">Data generated globally is increasing exponentially</p>
+</div>
 
 To keep increasing intelligence, we want our systems to model reality - the distribution we want to model is the laws of reality.
 
