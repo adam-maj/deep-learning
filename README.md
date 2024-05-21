@@ -65,9 +65,9 @@ _Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-Hist
 
 > [!IMPORTANT]
 >
-> All the topics covered in this repository are listed below. Each one links to the folder where the topic is covered.
+> All the topics covered in this repository are linked below.
 >
-> In each folder, you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
+> In the folder for each topic, you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
 
 **1. Deep Neural Networks**
 
