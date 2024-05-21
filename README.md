@@ -33,7 +33,7 @@ In order to answer them, we first dive into the history of deep learning, unders
   - [6. Future](#6-future)
 - [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
 
-### Structure
+## Structure
 
 This project is organized into two distinct parts.
 
