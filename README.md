@@ -128,11 +128,11 @@ So to make our dataset a good approximation of the true distribution, we have tw
 
 <br />
 
-### Progress
+### Breakthrough #1: Public labeled datasets
 
 While deep-learning was getting started, data was collected manually [CNN, LeNet]. This worked at a small scale, but couldn't go very far. Very limited quantity.
 
-[1] **Large labeled datasets** - The first breakthrough was the creatinog of large datasets [MNIST, ImageNet]. These enables much larger datasets (relative increase in data quantity), while still maintaining quality.
+The first breakthrough was the creation of large datasets [MNIST, ImageNet]. These enables much larger datasets (relative increase in data quantity), while still maintaining quality.
 
 Instead of each team making their own data, the effort is spread across everyone working on deep learning, and everyone can benefit from these datasets.
 
@@ -140,7 +140,11 @@ This enabled AlexNet to exist, which completely changed deep learning [AlexNet].
 
 But these datasets are unscalable - manual labeling can only get you so far. High data quality, but capped quantity.
 
-[2] **Large unlabeled datasets** - The internet exists, creates massive amounts of data through network effects.
+<br />
+
+### Breakthrough #2: Network effects create data
+
+The internet exists, creates massive amounts of data through network effects.
 
 These network effects are scalable, and the _only_ reasonable solution to the problem of using large labeled datasets.
 
@@ -152,11 +156,17 @@ This is unlike labeled datasets like ImageNet, where they were clearly for a tas
 
 So internet scale datasets appeared to be unusable for a long time.
 
-[3] **Transfer learning via pre-training and fine-tuning** - For the first time ever, BERT showed that we could actually make internet-scale datasets useful.
+<br />
+
+### Breakthrough #3: Unlocking the internet
+
+**Transfer learning via pre-training and fine-tuning** enabled us to use internet scale data.
+
+For the first time ever, BERT showed that we could actually make internet-scale datasets useful.
 
 BERT introduced the paradigm of pre-training on the internet (large unlabeled dataset), then fine-tuning on smaller labeled datasets to accomplish a specific task.
 
-[\[Google response to BERT\]](https://x.com/TechEmails/status/1756765277478621620)
+> [Graphic] - [Google executive response to BERT](https://x.com/TechEmails/status/1756765277478621620)
 
 This works by acquiring general conceptual knowledge from pre-training on the internet (get the value of high quantity of general data), then repurposing that knowledge for a specific task with a labeled dataset (higher quality data).
 
@@ -170,7 +180,11 @@ Pre-training gives fine-tuning much more leverage with a small amount of data - 
 
 The fine-tuning phase can have much smaller amount of data, effectively showing the model where to focus in it's large distribution. Ex: "you could respond in many different ways, but focus on responding as if you were an assisstant."
 
-[4] **Datasets for assistant models** - InstructGPT was another important breakthrough here. BERT, GPTs, etc. were conceptually interesting, and already making waves
+<br />
+
+### Breakthrough #4: Training assistants
+
+InstructGPT was another important breakthrough here. BERT, GPTs, etc. were conceptually interesting, and already making waves
 
 But still didn't appear that useful. InstructGPT is a demonstration of the importance/leverage on data quality, especially having pre-training on a large amount of data.
 
@@ -178,19 +192,17 @@ OpenAI manually created datasets of good responses for an assistant model with h
 
 But it made the difference between GPT-3 launch and ChatGPT.
 
-<div style="text-align:center; max-width:100%;">
-  <img src="https://assets-global.website-files.com/6560400779eab0c1a0c7e271/6560417e1975d5a7c3850eb3_64aacca3a446d8dc44b21b1e_ChatGPT-Website-All-Time-Views.png" style="width:60%; height:auto;">
-  <p style="text-align:center; font-style:italic; font-size:small;">ChatGPT usage instantly takes off</p>
-</div>
+> [Graphic] - ChatGPT instantly blows up despite GPT-3 existing
 
-[5] **Is this the best we can do? Humanoid robots bump the constraint** - The combination of pre-training on internet-scale and fine-tuning on small datasets seems ideal.
+<br />
+
+### Can we do better?
+
+Humanoid robots bump the constraint\*\* - The combination of pre-training on internet-scale and fine-tuning on small datasets seems ideal.
 
 Is there anywhere to go from here to push the constraints further, aside from the ever increasing amount of data on the internet?
 
-<div style="text-align:center; max-width:100%;">
-  <img src="https://cdn.buttercms.com/output=f:webp/ods4p5fQVmXkFeHFP3Zx" style="width:60%; height:auto;">
-  <p style="text-align:center; font-style:italic; font-size:small;">Data generated globally is increasing exponentially</p>
-</div>
+> [Graphic] - Increasing amount of data generated globally
 
 To keep increasing intelligence, we want our systems to model reality - the distribution we want to model is the laws of reality.
 
@@ -200,7 +212,7 @@ Data quality of the internet is a lossy compression of the true distribution we 
 
 The best case would be to access data about the world directly. With recent humanoid robot arms race, if we see millions of these walking around, they may now have access to start collecting massive amounts of data directly.
 
-[\[Figure, Optimus, Boston Dynamics\]](https://www.figure.ai/)
+> [Graphic] - The robotics arms race: figure, optimus, boston dynamics
 
 ### Modeling Data
 
@@ -222,15 +234,21 @@ When the complexity of the empirical distribution is still beyond what the netwo
 
 This means adding more parameters per layer and increasing the depth of the network.
 
-### Progress
+<br />
 
-[1] **Initial scaling of networks** - Networks naturally scaled over time (combined with other improvements) leading to better results [CNN, LeNet, AlexNet, etc.].
+### Breakthrough #1: Early signs of scaling
+
+Networks naturally scaled over time (combined with other improvements) leading to better results [CNN, LeNet, AlexNet, etc.].
 
 Clearly, size was correlated with better understanding up to a point (until size gets > than distribution complexity).
 
 But at this point, size appears to be _a_ factor, not _the_ factor. Partly, this is because a lot more size was not _needed_ for the types of problems they were solving yet.
 
-[2] **Scaling laws** - GPTs made it clear that for the internet scale dataset, scale is all you need for a while. [GPT-2, GPT-3, GPT-4]
+<br />
+
+### Breakthrough #2: Scaling laws
+
+GPTs made it clear that for the internet scale dataset, scale is all you need for a while. [GPT-2, GPT-3, GPT-4]
 
 [Scaling laws picture]
 
@@ -248,9 +266,11 @@ First, when you scale up parameters, and especially when you add more depth, the
 
 Second, when you scale up parameters past the complexity of the distribution, the model can overfit. Regularization is used to ensure models learn "good representations" to truly model the empirical distribution and not learn noise.
 
-### Progress
+<br />
 
-[1] **Vanishing and exploding gradients** - While training deeper networks with many layers, gradients start to get magnified or dissapear to 0, due to the compounding effects of many layers of similar weights.
+### Breakthrough #1: Taming gradients
+
+**Vanishing and exploding gradients** - While training deeper networks with many layers, gradients start to get magnified or dissapear to 0, due to the compounding effects of many layers of similar weights.
 
 When gradients vanish and explode like this, large groups of neurons (or even entire layers) can get starved of improvement (coming from backpropagation), making it practically infeasible o texpand beyond a certain point.
 
@@ -262,7 +282,11 @@ By creating a pathway for gradients to flow backwards, they massively increase t
 
 Residuals are still used in most large networks today, and are a key component of transformers. The depth of these models would not work without them. [Transformer]
 
-[2] **Network of networks** - Expanding models past the complexity of the distribution (which is difficult to predict in practice) can lead to overfitting, which hurts validation loss.
+<br />
+
+### Breakthrough #2: Networks of networks
+
+Expanding models past the complexity of the distribution (which is difficult to predict in practice) can lead to overfitting, which hurts validation loss.
 
 Conceptually, an ideal way to fix this would be to train a network of many different networks and average their effects together. By doing this, different networks are forced to learn the same important representations, and by taking their average, the noise among them cancels out, and the representations remain [Dropout].
 
@@ -276,19 +300,29 @@ Specifically, groups of neurons can't work together, so they have to learn usefu
 
 This prevents generalization [Dropout], and again is used everywhere after [Transformer]. This solves regularization. Notably, it increases training time.
 
-[3] **Internal covariate shift** - When training even deeper networks, later layers suffer from improving while the outputs of previous layers change, meaning their earlier stages of training are rendered useless.
+<br />
+
+### Breakthrough #3: Taming activations
+
+**Internal covariate shift** - When training even deeper networks, later layers suffer from improving while the outputs of previous layers change, meaning their earlier stages of training are rendered useless.
 
 This again limited how deep networks could get.
 
-Normalization solved this by making sure the input to each neuron stayed within the same input range regardless of preivous layers by normalizing activations after each layer. This enables deeper networks again. [BatchNorm, LayerNorm]
+Normalization solved this by making sure the input to each neuron stayed within the same input range regardless of previous layers by normalizing activations after each layer. This enables deeper networks again. [BatchNorm, LayerNorm]
 
-[4] **Adaptive moments** - The initial optimization algorithm for back-propagation, SGD, takes a finite step at each improvement interval. Initially this was fine.
+<br />
+
+### Breakthrough #4: Momentum
+
+**Adaptive moments** - The initial optimization algorithm for back-propagation, SGD, takes a finite step at each improvement interval. Initially this was fine.
 
 As you start modeling more complex problems, this can get very inefficient. If you have to move in one direction for a long time, continually taking a small step is a waste. If you know you need to go far, you should be taking bigger steps.
 
 Many optimization algorithms started to approach this problem by adding the idea of momentum [AdaGrad, RMSProp].
 
 Adam optimizer combined all these ideas to maintain adaptive moments - keeping track of a running list of past gradients for each parameter, and icnreasing momentum where appropriate, drastically decreasing training time in some scenarios [Adam].
+
+<br />
 
 ### The forgotten constraint
 
@@ -316,19 +350,25 @@ We are telling the model “learn like this.” This is adding _inductive bias_.
 
 Architecture is about more useful representations per group of parameters, which translates to better modeling of apparent distribution, with fewer parameters, meaning more room for parameters, meaning larger effective size again (more useful representations in the mode, more intelligence).
 
-### Progress
-
-[1] **DNN** - Technically, a DNN with non-linearities can model any distribution, given sufficient scale [Link to justification].
+Technically, a DNN with non-linearities can model any distribution, given sufficient scale [Link to justification].
 
 But in practicality, we know there are distributions with so much noise and complexity (like images) that we need some inductive bias beyond basic DNNs to be able to form any useful representations.
 
-[2] **CNN** - The first inductive bias or unique representation really introduced by an architecture [CNN, LeNet, AlexNet], and it's still used today in state of the art generative models [U-Net].
+<br />
+
+### Breakthrough #1: Learning features unlocks images
+
+**CNN** - The first inductive bias or unique representation really introduced by an architecture [CNN, LeNet, AlexNet], and it's still used today in state of the art generative models [U-Net].
 
 These are about _compression_. They give the model a way to explicitly learn to ignore a lot of noise by only paying attention to specific _features_.
 
 This maps directly to the manual feature engineering that ML engineers did before deep-learning, but with a more deep-learning twist, since it allows the model to learn the best features itself.
 
-[3] **RNNs -> LSTMs** [RNN, LSTM, Learning to Forget, Encoder-Decoder, Seq2Seq] - First introduces the ability to understand relationships across time & space via memories (because of the introduction of gates).
+<br />
+
+### Breakthrough #2: Memory unlocks sequence modeling
+
+**RNNs -> LSTMs** [RNN, LSTM, Learning to Forget, Encoder-Decoder, Seq2Seq] - First introduces the ability to understand relationships across time & space via memories (because of the introduction of gates).
 
 We enable the model to think about what parts of the data are important to other parts.
 
@@ -336,13 +376,19 @@ The LSTM made the RNN actually viable, and sequence-modeling actually viable. Th
 
 However, the LSTM was constrained on time.
 
-[4] **Attention & Transformers** - [Attention, Transformer] Understand relationships across space without being blocked by time. This enabled parallelization, which increase compute efficiency and model size.
+<br />
+
+### Breakthrough #3: Attention is all you need
+
+**Attention & Transformers** - [Attention, Transformer] Understand relationships across space without being blocked by time. This enabled parallelization, which increase compute efficiency and model size.
 
 Attention enables every part of an input to learn about every other part of it. Everything is able to enhance the meaning of everything else within context.
 
 The title "Attention Is All You Need" makes the most sense in contrast to previous papers [Encoder-Decoder, Seq2Seq, Attention] that achieved success with RNNs. This paper shows that the _only_ inductive bias you need is attention. This suggests something important about it regarding intelligence.
 
-[5] **Generative Models** - By far the most conceptually complex of all the models.
+### Breakthrough #4: Taming randomness
+
+**Generative Models** - By far the most conceptually complex of all the models.
 
 We’ve talked about how we understand samples from complex distributions (with information and noise).
 
@@ -356,13 +402,17 @@ Diffusion, instead, starts with noise, and learns to add back information to it 
 
 Without these designs, models could never synthesize data.
 
-[6] **Embeddings** - [Word2Vec, VAEs, CLIP] Force models to learn an interesting representation space with semantic and syntactic meaning.
+### Breakthrough #5: Embeddings
+
+**Embeddings** - [Word2Vec, VAEs, CLIP] Force models to learn an interesting representation space with semantic and syntactic meaning.
 
 The classic example of this is that the embeddings allow "King" - "Man" + "Woman" = "Queen"
 
 Embeddings show us the composability of concepts. Transformers use this to soak information into words.
 
-[7] Combining Models - [DALL E, DALL E 2, Stable Diffusion, etc.] - using U-Net, Transformer, CLIP, VAE, Feed-forward, Diffusion all in one.
+### "Don't touch the architecture"
+
+Combining Models - [DALL E, DALL E 2, Stable Diffusion, etc.] - using U-Net, Transformer, CLIP, VAE, Feed-forward, Diffusion all in one.
 
 Many state of the art models combine pieces from many of the different architectures in different sections to work together to do larger tasks like condition images with text, etc.
 
@@ -380,31 +430,39 @@ During training, specifically back-propagation, the gradient for each parameter 
 
 So we can train a certain number of parameters per device. And then we need to get more devices. And if there's a limit on how many devices we can use together, we've hit a constraint on compute.
 
-### Progress
+<br />
 
-[1] **GPUs for gaming** - Initial models are trained on CPU, far from being constrained by compute [DNN, CNN, LeNet?]. They are constrained by other things limiting model size, like data & optimization/regularization. Models take a few days to train.
+### Breakthrough #1: Letting compute communicate
 
-Tailwinds of gaming bring GPUs, which happen to be useful for parallel computing for AI.
-
-![[Image of Jensen handing out early GPUs? Maybe belongs in another section]](https://hothardware.com/ContentImages/NewsItem/38348/content/small_OpenAI_DXG-1.jpg)
-
-[2] **GPU communication** - Using 1 GPU was useful at first, but with larger models, you need to be able to use multiple GPUs at once.
+**GPU communication** - Using 1 GPU was useful at first, but with larger models, you need to be able to use multiple GPUs at once.
 
 You can't do this by just splitting up the work. The GPUs need to communicate with each other - as little as possible, but still at some points, to synchronize weights/pass data to each other, since this is all one model.
 
 Due to gaming, NVIDIA released GPUs that could communicate with each other, which was used by [AlexNet] to train larger model more effectively.
 
-[3] **Gaming tailwinds improve compute** - For most of its time, deep learning was not large enough to justify large companies building dedicated compute for it, especially given how expensive/difficult to execute compute companies are.
+<br />
+
+### Breakthrough #2: Riding tailwinds
+
+**Gaming tailwinds improve compute** - For most of its time, deep learning was not large enough to justify large companies building dedicated compute for it, especially given how expensive/difficult to execute compute companies are.
 
 Deep learning was lucky that the tailwinds of gaming drove increasing compute quality which deep learning benefitted from on the side. [AlexNet, Transformer, etc.]
 
-[4] **AI-first GPUs** - Finally, AI becomes a bet worth taking, NVIDIA releases A100, H100, and now B100 focused on MIG, AI tensor cores, mixed-precision, more FLOPS (smaller floating point numbers).
+<br />
 
-![[Image of NVIDIA B100]](https://qtxasset.com/quartz/qcloud4/media/image/Nvidia%20Blackwell%20and%20Hopper%20held%20by%20Jensen%20Huang.jpg?VersionId=yGn2e67MuvUBbglU4KeNI9qs3nEbUrlZ)
+### Breakthrough #3: AI becomes a priority
 
-![[Jensen delivering GPUs to OpenAI]](https://static.tweaktown.com/news/16x9/97858_nvidia-ceo-jensen-huang-hand-delivers-the-first-dgx-h200-ai-system-to-open-ais-sam-altman.jpg)
+**AI-first GPUs** - Finally, AI becomes a bet worth taking, NVIDIA releases A100, H100, and now B100 focused on MIG, AI tensor cores, mixed-precision, more FLOPS (smaller floating point numbers).
 
-[5] **The compute arms race** - It wasn't always obvious that compute was going to become a huge constraint at a point in time when the AI narrative was also becoming highly consequential, and garnering large power over capital flows.
+> [Graphic] - B100
+
+> [Graphic] - Jensen Huang handing OpenAI a GPU
+
+<br />
+
+### Breakthrough #4: BERT & the compute arms race
+
+**The compute arms race** - It wasn't always obvious that compute was going to become a huge constraint at a point in time when the AI narrative was also becoming highly consequential, and garnering large power over capital flows.
 
 This trend was first crafted and visible by OpenAI with [BERT, GPT-2, GPT-3], [SoRA example is another nice example].
 
@@ -414,15 +472,17 @@ Zuck unrelated buys a lot of GPUs because he sees they could be useful, and now 
 
 The arms race really begins - NVIDIA, TSMC, ASML, etc. semi-conductor supply chain prices sky-rocket.
 
-[Picture of all the stock prices]
+> [Graphic] - Stock prices of all the semi-conductor supply chain companies rising
 
-[Sam Altman $7T fundraising announcement, although not true]
+### Adjusting supply chains
 
-[6] **Adjusting supply chains:** The current constraint on compute is not about people not having funding to buy compute. It's about the compute supply chains not creating enough supply.
+**Adjusting supply chains:** The current constraint on compute is not about people not having funding to buy compute. It's about the compute supply chains not creating enough supply.
 
 Because compute supply chains have a long production cycle (a few months), they rely on predictions. These supply chains did not predict the boom in demand for compute that came from the AI cycle, so they got constrained.
 
 These supply chains will soon adjust to demand, and the constraint on compute will no longer be due to constrained supply chains - instead it will become a resource problem.
+
+### AI ASICs
 
 [7] **AI-accelerator ASICs:** Another wave that may impact compute - in the recent cycles, many companies have raised large amounts of money to built ASICs for AI inference, and now AI training [links? Tenstorrent? etc.]
 
@@ -436,17 +496,29 @@ Making effective use of compute (training parameters most efficiently) is not a 
 
 Examples like [FlashAttention] show us that there are large compute breakthroughs that accelerate things waiting to happen.
 
-### Progress
+<br />
 
-[1] **CUDA** - The first challenge with compute was just being able to work with GPUs. GPUs require a completely different programming paradigm unfamiliar to most people, and was challenging to get right.
+### Breakthrough #1: CUDA
+
+**CUDA** - The first challenge with compute was just being able to work with GPUs. GPUs require a completely different programming paradigm unfamiliar to most people, and was challenging to get right.
 
 NVIDIA built CUDA for this, a programming pattern native to C which devs were more used to.
 
 We see in [AlexNet] they write their own GPU code manually (and in other places).
 
-[2] **Kernel Libraries** - People stopped having to write their own kernels as frequently dropping the barrier to entry - solved both by NVIDIAs on kernels and libaries like [TensorFlow], [PyTorch], [JAX] that handle compute side for you.
+<br />
 
-[3] **Efficient Implementations** - Even past the point where people write kernels, now that kernel libraries are all available, there are still compute efficiency optimizations lying around. [FlashAttention] notably increased the performance of the Transformer by a huge margin.
+### Breakthrough #2: Kernel libraries
+
+**Kernel Libraries** - People stopped having to write their own kernels as frequently dropping the barrier to entry - solved both by NVIDIAs on kernels and libaries like [TensorFlow], [PyTorch], [JAX] that handle compute side for you.
+
+<br />
+
+### Improvement never ends
+
+**Efficient Implementations** - Even past the point where people write kernels, now that kernel libraries are all available, there are still compute efficiency optimizations lying around. [FlashAttention] notably increased the performance of the Transformer by a huge margin.
+
+> [Graphic] - Sam Altman talking about compute efficiency being good too
 
 <br />
 
@@ -460,13 +532,11 @@ So compute must all be clustered together in data centers, and the data center w
 
 But with amounts of compute being discussed right now in data centers, the data centers may not actually be able to supply this energy.
 
-[News of OpenAI & microsoft building a giant super computer data center for AI]
-
-[Facebook compute numbers/data centers]
+> [Graphic] - Microsoft & OpenAI data center
 
 This is because the available energy you can draw from the grid at once place is actually limited to [X GW]. The grid capacity will have to adjust over time to increase this constraint.
 
-[\[Link to Zuck clip about this\]](https://www.youtube.com/watch?v=i-o5YbNfmh0)
+> [Graphic] - [Zuck clip about energy](https://www.youtube.com/watch?v=i-o5YbNfmh0)
 
 <br />
 
@@ -498,33 +568,47 @@ With this perspective, a few key milestones stand out above the rest that comple
 
 These narrative shifts alone had a big impact on progress in the industry [Narrative Distillation, Mimetics].
 
+<br />
+
+### Narrative #1: Deep learning works
+
 [1] **AlexNet: deep learning is pointless -> deep learning is viable** - For a long time, machine learning community viewed deep learning as naive. The idea of feature engineering and logic-based ML appealed much more to the narratives we liked about intelligence (logic).
 
-[Link to early opinions on deep learning]
+> [Graphic] - AlphaGo, early opinions on deep learning
 
 Papers like [DNN, CNN, LeNet] shifted the narrative of the viability of deep learning. Then, especially [AlexNet] showed people that it should be taken seriously, and really shifted the narrative.
 
-[For these narratives ones, useful quotes are very important].
-
 These also demonstrated the first arhictectural breakthrough, and as we saw above, AlexNet appears in innovations in always every single section. They pushed constraints in every direction.
 
-[2] **LSTMs make sequence modeling interesting, and unlock new data** - RNNs were the subject of much effort [RNN] but due to the vanishing/exploding gradients by nature of how RNNs work, they were thought to be completley impractical.
+<br />
+
+### Narrative #2: Sequence modeling works
+
+**LSTMs make sequence modeling interesting, and unlock new data** - RNNs were the subject of much effort [RNN] but due to the vanishing/exploding gradients by nature of how RNNs work, they were thought to be completley impractical.
 
 LSTMs made recurrence and sequence modeling viable again [LSTM, Learning to Forget] (results), also creating a large line of work in sequence modeling which eventually led us in the direction of GPTs [Encoder/Decoder, Seq2Seq, Attention].
 
-[Ilya quote on LSTMs ability to have gone far if we had scaled them up]
+> [Graphic] - Ilya quote on LSTMs being scalable
 
 Importantly, this shift to sequence modeling as a viable problem now unlocks the first internet scale dataset as a viable data source - all web pages/text on the internet. But, it was initially unclear how this could be used effectively, and the recurrence of the LSTM architecture makes it less efficient training on this data.
+
+<br />
+
+### Narrative #3: Unlocking more data
 
 [3] **Attention is all you need, can process data** - [Attention, Attention is All You Need] Massive architectural breakthrough that has great results, and most importantly, removes the bottleneck of LSTMs to increase parallelization, meaning we can scale up more and use compute more efficiently.
 
 Contrary to what may seem true, this paper alone is not what caused the biggest narrative shifts. It was still unclear how internet scale data could be used.
 
+<br />
+
+### Narrative #4: Scaling laws dominate
+
 [4] **The shift to transfer learning unlocks internet scale data, scaling laws begin** - This may be the biggest recent shift. The pre-training and fine-tuning paradigm introduced by [BERT, RoBERTa, GPT-2, GPT-3, InstructGPT] unlock internet-scale data for the first time ever.
 
 The results from BERT alone cause a narrative shift - these things start to look way more powerful.
 
-[\[Google leaders thoughts on AI\]](https://x.com/TechEmails/status/1756765277478621620)
+> [Graphic] - Google executive thoughts on BERT
 
 Then, GPT-2, GPT-3 start to reveal scaling laws. We finally have a dataset complex enough but useful enough to reveal the nature of scaling laws empirically.
 
@@ -534,15 +618,15 @@ OpenAI noticed this early and takes a bet on it. We see this bet playing out ove
 
 This narrative in particular highlights the power of narratives in fundraising [Narrative Distillation]. This cycle single-handedly revives SF, billions dumped into AI.
 
-[graph of funding in AI]
-
-[$7T for SAMA]
+> [Graphic] - Graph of funding in AI, Sam Altman $7T
 
 <br />
 
 # 4. Inspiration
 
 Where do the ideas that have led to breakthroughs in deep learning come from? By looking at the history, we can see a few common sources of inspiration that appear frequently.
+
+<br />
 
 ### Neuroscience
 
@@ -566,17 +650,23 @@ In early papers, there seems to be an attempt to fit ideas to neuroscience as a 
 
 This seems to be an ex-post rationalization of the architecture in an attempt to make it correspond with biology, rather than it actually serving as a source for inspiration (of course, I could be wrong).
 
+<br />
+
 ### Linear Algebra & Calculus
 
 Most notably, [back-propagation/DNN] and [LoRA] are directly inspired by the math behind neural networks.
 
 [LoRA] (low-rank adaptation) is directly a manipulation on how models are trained by taking advantage of a feature of linear-algebra (decomposing parameters into lower dimensionality matrices).
 
+<br />
+
 ### Physics & Information Theory
 
 Most notably, [VAEs], [Diffusion], [Score-Models], [Flow-Models] all take inspiration from physics - especially Langevin dynamics.
 
 These are systems involving noisy sampling.
+
+<br />
 
 ### Nature
 
