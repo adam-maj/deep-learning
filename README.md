@@ -1,78 +1,98 @@
 # deep-learning [WIP]
 
-An exploration of the entire history of deep learning progress that got us from simple feed-forward networks to GPT-4o and what we can learn from it.
+Digital intelligence has been improving at a staggering rate.
 
-Covers all the essentials in depth, including:
+With constant innovation at the frontiers, few have had the time to dive deep and fully understand what’s going on.
 
-- Deep learning basics
-- CNNs
-- Optimization
-- Regularization
-- RNNs
-- LSTMs
-- Attention
-- Transformers
-- Embeddings
-- GPTs
-- RLHF
-- Mixture of Experts
-- GANs
-- Diffusion
-- VQ-VAEs
-- Multi-modality
+On top of that, public narratives obscure the reality of the forces at play.
 
-Each paper is in its own section with:
+This project is an effort to surface and spread the true big picture of how things are progressing, informed by the technical details of individual innovations.
 
-1. a copy of the paper itself
-2. my notes highlighting important observations & explaining key concepts
-3. a fully documented minimal implementation in pytorch when relevant
+It focuses on two simple questions:
 
-Finally, I've included my observations on what this history can teach us about:
+- How did we get here?
+- Where are we going?
 
-1. how progress is made in deep learning broadly
-2. the constraints that govern the limit on digital intelligence
-3. where the field is going
+In order to answer them, we first dive into the history of deep learning, understanding the entire arrow of progress from first principles.
 
-### Philosophy
+Then, using what we learn from this, we can zoom-out to observe broader trends and understand the direction we are headed in.
 
-**1. Minimal but complete:**
+### Table of Contents
 
-Covers all the essentials while leaving out all the noise and less important details. I've tried to curate the list of papers highlighted here to make sure that each one brings significant unique value, and have cut out everything non-essential.
+- [Structure](#structure)
+- [Part 1: The Lessons of History](#part-1-the-lessons-of-history)
+  - [1. Introduction](#1-introduction)
+  - [2. Constraints](#2-constraints)
+    - [2.1. Data](#21-data)
+    - [2.2. Size](#22-size)
+    - [2.3. Optimization & Regularization](#23-optimization--regularization)
+    - [2.4. Architecture](#24-architecture)
+    - [2.5. Compute](#25-compute)
+    - [2.6. Compute Efficiency](#26-compute-efficiency)
+    - [2.7. Energy](#27-energy)
+    - [2.8. Constraints & Leverage](#28-constraints--leverage)
+  - [3. Narratives](#3-narratives)
+  - [4. Inspiration](#4-inspiration)
+  - [5. Intelligence](#5-intelligence)
+  - [6. Future](#6-future)
+- [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
 
-**2. Technical but approachable:**
+# Structure
 
-By going through papers & implementations (rather than dumbed down high-level explanations), you're forced to grapple with and fully understand the technical details at the lowest level. I've tried to make this process more approachable by including my own notes and observations.
+This project is organized into two distinct parts.
 
-**3. Up-to-date:**
+The first part (the remainder of this README), is a reframing of the entire history of deep learning through the lens of the fundamental constraints that have always governed the rate of progress.
 
-The list contains everything you need to understand the fundamentals of all the state-of-the-art models as of 2024.
+These constraints are not initially obvious, and they add a new depth to what we can learn from studying the history.
 
-**4. Focused on building intuitions:**
+Through this lens, we can effectively explore these questions:
 
-In my experience, you develop much more robust intuitions by going through the history yourself, observing what worked and what didn't, how progress was made, etc. rather than just getting a dilluted version from secondary sources.
+- How is progress made in deep learning?
+- Where do the ideas that drive progress in deep learning come from?
+- How have our narratives about digital intelligence changed over time?
+- How does this change our understanding of intelligence, and of ourselves?
+- Where are we headed, and how far off is AGI?
 
-**5. Practicality first:**
+This part is designed to be readable for everyone, and I’ve made an effort to reference important research, my implementations, and other relevant links (tweets, videos, news, etc.) while keeping it interesting.
 
-I've prioritized highlighting concepts that have led to the development of significant breakthroughs in AI that are already in production. I've avoided highlighting interesting research frontiers since (1) most frontiers will soon be obselete by definition, so the time spend is not worth it in introductory learning (2) I'm not qualified to suggest research frontiers.
+The second part (contained within the folders of the repository), is a technical exploration of the individual advancements that led us to the current state of digital intelligence.
 
-### Implementations
+A copy of each foundational paper is included in the repository, along with a detailed breakdown of the high-level ideas, mathematical intuitions, code, and relevant societal & cultural impacts for each one.
 
-Each of the following will be implemented:
+I’ve selectively included only the most essential breakthroughs that have both impacted the field, and contribute important intuitions to the broader understanding of deep learning covered in part 1.
 
-Architectures:
+Of course, many great papers have been left out, but the current list covers most of the important surface area necessary to understand the state of the art.
 
-- DNN
-- CNN
-- RNN
-- LSTM
-- Transformer
-- GAN
-- VAE
-- UNet
-- Diffusion
+My intention is for everyone to be able to start with the broader reframing of deep learning in part 1 (below) and get value from it. Then, for the curious people who want to develop the technical intuitions, they can dive into part 2 to go deeper.
 
-Optimization:
+# Part 1: The Lessons of History
 
-- Adam
-- Dropout
-- LayerNorm
+## 1. Introduction
+
+## 2. Constraints
+
+### 2.1. Data
+
+### 2.2. Size
+
+### 2.3. Optimization & Regularization
+
+### 2.4. Architecture
+
+### 2.5. Compute
+
+### 2.6. Compute Efficiency
+
+### 2.7. Energy
+
+### 2.8. Constraints & Leverage
+
+## 3. Narratives
+
+## 4. Inspiration
+
+## 5. Intelligence
+
+## 6. Future
+
+# Part 2: The Arrow of Progress
