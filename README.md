@@ -65,9 +65,9 @@ _Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-Hist
 
 > [!IMPORTANT]
 >
-> All the topics covered in this repository are listed below.
+> All the topics covered in this repository are listed below. Each one links to the folder where the topic is covered.
 >
-> Each one links to the folder where the topic is covered, where you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
+> In each folder, you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
 
 All the topics covered in this repository are listed below. Each one links to the folder where the topic is covered, where you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
 
