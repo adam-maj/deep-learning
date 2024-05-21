@@ -65,6 +65,8 @@ _Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-Hist
 
 **1. Deep Neural Networks**
 
+All the topics covered in this repository are listed below. Each one links to the folder where the topic is covered, where you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
+
 - [1.1. DNN](/01-deep-neural-networks/01-dnn/)
 - [1.2. CNN](/01-deep-neural-networks/02-cnn/)
 - [1.3. AlexNet](/01-deep-neural-networks/03-alex-net/)
