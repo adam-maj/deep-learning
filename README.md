@@ -50,7 +50,7 @@ Through answering these questions, it also explores:
 - How have our narratives about digital intelligence changed over time?
 - What does deep learning teach us about our own intelligence?
 
-## 1. Context
+# 1. Context
 
 > Note: If you're already very familiar, skip
 
@@ -68,7 +68,7 @@ Intelligence = builds model of reality
 
 Builds model of reality = uses data (samples) from reality (distribution) to approximate reality
 
-## 2. Constraints
+# 2. Constraints
 
 Deep learning is about getting good data, and then using that data to model the world.
 
@@ -80,9 +80,9 @@ It's impossible to understand where we're going without understanding how we got
 
 So let's look at each one in depth.
 
-### 2.1. Data
+## 2.1. Data
 
-**True vs. Empirical Distribution**
+### True vs. Empirical Distribution
 
 We want our system to effectively understand reality.
 
@@ -100,7 +100,7 @@ The samples provide information about an _approximation_ of the true distributio
 
 At best, we can expect to learn to model this empirical distribution from the dataset.
 
-**A Good Approximation**
+### A Good Approximation
 
 The original goal was to effectively model the true distribution, not the empirical distribution.
 
@@ -108,7 +108,7 @@ So, the empirical distribution needs to be as close as possible to the true dist
 
 The empirical distribution becomes a better approximation of the true distribution as we add more data points.
 
-**Data Quantity & Quality**
+### Data Quantity & Quality
 
 We can use (simple) information theory to understand how to make the empirical distribution a good approximation of the true distribution.
 
@@ -116,7 +116,7 @@ We need more information about the true distribution in the true distribution - 
 
 So to make our dataset a good approximation of the true distribution, we have two levers: increase quantity of data, and increase quality of data.
 
-**Progress**
+### Progress
 
 While deep-learning was getting started, data was collected manually [CNN, LeNet]. This worked at a small scale, but couldn't go very far. Very limited quantity.
 
@@ -184,7 +184,7 @@ The best case would be to access data about the world directly. With recent huma
 
 [Figure, Optimus, Boston Dynamics]
 
-**Modeling Data**
+### Modeling Data
 
 So the dataset set determines the empirical distribution, which sets the cap on how good of a model we can create. The best model we can create corresponds with how well the empirical distribution approximates the true distribution.
 
@@ -192,7 +192,7 @@ But creating the best model for a dataset is itself a challenging task. With cur
 
 What are the constraints governing how good of a model we can create? These are the remainder of the constraints we'll focus on.
 
-### 2.2. Size
+## 2.2. Size
 
 The model itself needs to have enough degrees of freedom to be able to model the empirical distribution.
 
