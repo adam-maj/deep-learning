@@ -66,13 +66,13 @@ In order to answer them, we first dive into the history of deep learning, unders
     - [4.8. InstructGPT](/04-transformers/08-instruct-gpt/)
     - [4.9. Vision Transformer](/04-transformers/09-vision-transformer/)
     - [4.10. Mixture of Experts Transformer](/04-transformers/10-moe-transformer/)
-- [5. Image Generation](/05-image-generation/)
-  - [5.1. GANs](/05-image-generation/01-gan/)
-  - [5.2. VAEs](/05-image-generation/02-vae/)
-  - [5.3. Diffusion](/05-image-generation/03-diffusion/)
-  - [5.4. Stable Diffusion, ControlNet, & SDXL](/05-image-generation/04-stable-diffusion/)
-  - [5.5. CLIP](/05-image-generation/05-clip/)
-  - [5.6. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
+  - [5. Image Generation](/05-image-generation/)
+    - [5.1. GANs](/05-image-generation/01-gan/)
+    - [5.2. VAEs](/05-image-generation/02-vae/)
+    - [5.3. Diffusion](/05-image-generation/03-diffusion/)
+    - [5.4. Stable Diffusion, ControlNet, & SDXL](/05-image-generation/04-stable-diffusion/)
+    - [5.5. CLIP](/05-image-generation/05-clip/)
+    - [5.6. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
 
 ## Structure
 
