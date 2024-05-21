@@ -34,8 +34,6 @@ Then, people curious to dive into the technical details can explore the rest of 
 
 # Overview
 
-_Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will and Ariel Durant_
-
 Digital intelligence is improving quickly, and few have had time to dive deep and fully understand what's going on.
 
 This overview is an effort to highlight the true big picture of how things are progressing, informed by the technical details of individual innovations.
@@ -108,6 +106,8 @@ The samples provide information about an _approximation_ of the true distributio
 
 At best, we can expect to learn to model this empirical distribution from the dataset.
 
+<br />
+
 ### A Good Approximation
 
 The original goal was to effectively model the true distribution, not the empirical distribution.
@@ -116,6 +116,8 @@ So, the empirical distribution needs to be as close as possible to the true dist
 
 The empirical distribution becomes a better approximation of the true distribution as we add more data points.
 
+<br />
+
 ### Data Quantity & Quality
 
 We can use (simple) information theory to understand how to make the empirical distribution a good approximation of the true distribution.
@@ -123,6 +125,8 @@ We can use (simple) information theory to understand how to make the empirical d
 We need more information about the true distribution in the true distribution - this means more samples (data quantity) where each sample contains a lot of information about the true distribution we want to model (data quality).
 
 So to make our dataset a good approximation of the true distribution, we have two levers: increase quantity of data, and increase quality of data.
+
+<br />
 
 ### Progress
 
@@ -152,7 +156,7 @@ So internet scale datasets appeared to be unusable for a long time.
 
 BERT introduced the paradigm of pre-training on the internet (large unlabeled dataset), then fine-tuning on smaller labeled datasets to accomplish a specific task.
 
-[Google response to BERT]
+[\[Google response to BERT\]](https://x.com/TechEmails/status/1756765277478621620)
 
 This works by acquiring general conceptual knowledge from pre-training on the internet (get the value of high quantity of general data), then repurposing that knowledge for a specific task with a labeled dataset (higher quality data).
 
@@ -174,13 +178,13 @@ OpenAI manually created datasets of good responses for an assistant model with h
 
 But it made the difference between GPT-3 launch and ChatGPT.
 
-[Link view of take off after ChatGPT]
+![[Link view of take off after ChatGPT]](https://assets-global.website-files.com/6560400779eab0c1a0c7e271/6560417e1975d5a7c3850eb3_64aacca3a446d8dc44b21b1e_ChatGPT-Website-All-Time-Views.png)
 
 [5] **Is this the best we can do? Humanoid robots bump the constraint** - The combination of pre-training on internet-scale and fine-tuning on small datasets seems ideal.
 
 Is there anywhere to go from here to push the constraints further, aside from the ever increasing amount of data on the internet?
 
-[Link chart of internet data increasing to show scale]
+![[Link chart of internet data increasing to show scale]](https://cdn.buttercms.com/output=f:webp/ods4p5fQVmXkFeHFP3Zx)
 
 To keep increasing intelligence, we want our systems to model reality - the distribution we want to model is the laws of reality.
 
@@ -190,7 +194,7 @@ Data quality of the internet is a lossy compression of the true distribution we 
 
 The best case would be to access data about the world directly. With recent humanoid robot arms race, if we see millions of these walking around, they may now have access to start collecting massive amounts of data directly.
 
-[Figure, Optimus, Boston Dynamics]
+[\[Figure, Optimus, Boston Dynamics\]](https://www.figure.ai/)
 
 ### Modeling Data
 
@@ -376,7 +380,7 @@ So we can train a certain number of parameters per device. And then we need to g
 
 Tailwinds of gaming bring GPUs, which happen to be useful for parallel computing for AI.
 
-[Image of Jensen handing out early GPUs? Maybe belongs in another section]
+![[Image of Jensen handing out early GPUs? Maybe belongs in another section]](https://hothardware.com/ContentImages/NewsItem/38348/content/small_OpenAI_DXG-1.jpg)
 
 [2] **GPU communication** - Using 1 GPU was useful at first, but with larger models, you need to be able to use multiple GPUs at once.
 
@@ -390,9 +394,9 @@ Deep learning was lucky that the tailwinds of gaming drove increasing compute qu
 
 [4] **AI-first GPUs** - Finally, AI becomes a bet worth taking, NVIDIA releases A100, H100, and now B100 focused on MIG, AI tensor cores, mixed-precision, more FLOPS (smaller floating point numbers).
 
-[Image of NVIDIA B100].
+![[Image of NVIDIA B100]](https://qtxasset.com/quartz/qcloud4/media/image/Nvidia%20Blackwell%20and%20Hopper%20held%20by%20Jensen%20Huang.jpg?VersionId=yGn2e67MuvUBbglU4KeNI9qs3nEbUrlZ)
 
-[Jensen delivering GPUs to OpenAI]
+![[Jensen delivering GPUs to OpenAI]](https://static.tweaktown.com/news/16x9/97858_nvidia-ceo-jensen-huang-hand-delivers-the-first-dgx-h200-ai-system-to-open-ais-sam-altman.jpg)
 
 [5] **The compute arms race** - It wasn't always obvious that compute was going to become a huge constraint at a point in time when the AI narrative was also becoming highly consequential, and garnering large power over capital flows.
 
@@ -456,7 +460,7 @@ But with amounts of compute being discussed right now in data centers, the data 
 
 This is because the available energy you can draw from the grid at once place is actually limited to [X GW]. The grid capacity will have to adjust over time to increase this constraint.
 
-[Link to Zuck clip about this]
+[\[Link to Zuck clip about this\]](https://www.youtube.com/watch?v=i-o5YbNfmh0)
 
 <br />
 
@@ -514,7 +518,7 @@ Contrary to what may seem true, this paper alone is not what caused the biggest 
 
 The results from BERT alone cause a narrative shift - these things start to look way more powerful.
 
-[Google leaders thoughts on AI]
+[\[Google leaders thoughts on AI\]](https://x.com/TechEmails/status/1756765277478621620)
 
 Then, GPT-2, GPT-3 start to reveal scaling laws. We finally have a dataset complex enough but useful enough to reveal the nature of scaling laws empirically.
 
