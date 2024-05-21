@@ -8,11 +8,11 @@ On the rest of this page, I provide an overview of everything we can learn from 
 
 **The project is designed so everyone can get most of the value by reading the overview below.**
 
-Then, people curious to dive into the technical details can explore the rest of the repository.
+Then, people curious to dive into the technical details can explore the rest of the repository. The table at the bottom of this page provides an index for all the topics & papers covered.
 
 ## Table of Contents
 
-- [Part 1: The Lessons of History](#part-1-the-lessons-of-history)
+- [Overview: The Lessons of History](#overview-the-lessons-of-history)
   - [1. Introduction](#1-introduction)
   - [2. Constraints](#2-constraints)
     - [2.1. Data](#21-data)
@@ -27,12 +27,52 @@ Then, people curious to dive into the technical details can explore the rest of 
   - [4. Inspiration](#4-inspiration)
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
-- [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
-  - [1. Deep Neural Networks](/01-deep-neural-networks/)
-    - [1.1. DNN](/01-deep-neural-networks/01-dnn/)
-    - [1.2. CNN](/01-deep-neural-networks/02-cnn/)
-    - [1.3. AlexNet](/01-deep-neural-networks/03-alex-net/)
-    - [1.4. UNet](/01-deep-neural-networks/04-u-net/)
+- [Dive In: Technical Details](#part-2-the-arrow-of-progress)
+
+# Overview: The Lessons of History
+
+_Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will and Ariel Durant_
+
+## 1. Introduction
+
+## 2. Constraints
+
+### 2.1. Data
+
+### 2.2. Size
+
+### 2.3. Optimization & Regularization
+
+### 2.4. Architecture
+
+### 2.5. Compute
+
+### 2.6. Compute Efficiency
+
+### 2.7. Energy
+
+### 2.8. Constraints & Leverage
+
+## 3. Narratives
+
+## 4. Inspiration
+
+## 5. Intelligence
+
+## 6. Future
+
+# Dive In: Technical Details
+
+| Topic | Links                                  |
+| ----- | -------------------------------------- |
+| DNN   | [📁](/01-deep-neural-networks/01-dnn/) |
+| CNN   | [📁](/01-deep-neural-networks/02-cnn/) |
+
+- [1. Deep Neural Networks](/01-deep-neural-networks/)
+  - [1.1. DNN](/01-deep-neural-networks/01-dnn/)
+  - [1.2. CNN](/01-deep-neural-networks/02-cnn/)
+  - [1.3. AlexNet](/01-deep-neural-networks/03-alex-net/)
+  - [1.4. UNet](/01-deep-neural-networks/04-u-net/)
   - [2. Optimization & Regularization](/02-optimization-and-regularization/)
     - [2.1. Weight Decay](/02-optimization-and-regularization/01-weight-decay/)
     - [2.2. ReLU](/02-optimization-and-regularization/02-relu/)
@@ -69,37 +109,3 @@ Then, people curious to dive into the technical details can explore the rest of 
     - [5.4. Stable Diffusion, ControlNet, & SDXL](/05-image-generation/04-stable-diffusion/)
     - [5.5. CLIP](/05-image-generation/05-clip/)
     - [5.6. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
-
-# Part 1: The Lessons of History
-
-_Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will and Ariel Durant_
-
-## 1. Introduction
-
-## 2. Constraints
-
-### 2.1. Data
-
-### 2.2. Size
-
-### 2.3. Optimization & Regularization
-
-### 2.4. Architecture
-
-### 2.5. Compute
-
-### 2.6. Compute Efficiency
-
-### 2.7. Energy
-
-### 2.8. Constraints & Leverage
-
-## 3. Narratives
-
-## 4. Inspiration
-
-## 5. Intelligence
-
-## 6. Future
-
-# Part 2: The Arrow of Progress
