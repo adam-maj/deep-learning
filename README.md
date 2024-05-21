@@ -80,9 +80,9 @@ It's impossible to understand where we're going without understanding how we got
 
 So let's look at each one in depth.
 
-## 2.1. Data
+# 2.1. Data
 
-### True vs. Empirical Distribution
+## True vs. Empirical Distribution
 
 We want our system to effectively understand reality.
 
@@ -100,7 +100,7 @@ The samples provide information about an _approximation_ of the true distributio
 
 At best, we can expect to learn to model this empirical distribution from the dataset.
 
-### A Good Approximation
+## A Good Approximation
 
 The original goal was to effectively model the true distribution, not the empirical distribution.
 
@@ -108,7 +108,7 @@ So, the empirical distribution needs to be as close as possible to the true dist
 
 The empirical distribution becomes a better approximation of the true distribution as we add more data points.
 
-### Data Quantity & Quality
+## Data Quantity & Quality
 
 We can use (simple) information theory to understand how to make the empirical distribution a good approximation of the true distribution.
 
@@ -116,7 +116,7 @@ We need more information about the true distribution in the true distribution - 
 
 So to make our dataset a good approximation of the true distribution, we have two levers: increase quantity of data, and increase quality of data.
 
-### Progress
+## Progress
 
 While deep-learning was getting started, data was collected manually [CNN, LeNet]. This worked at a small scale, but couldn't go very far. Very limited quantity.
 
@@ -184,7 +184,7 @@ The best case would be to access data about the world directly. With recent huma
 
 [Figure, Optimus, Boston Dynamics]
 
-### Modeling Data
+## Modeling Data
 
 So the dataset set determines the empirical distribution, which sets the cap on how good of a model we can create. The best model we can create corresponds with how well the empirical distribution approximates the true distribution.
 
@@ -192,7 +192,7 @@ But creating the best model for a dataset is itself a challenging task. With cur
 
 What are the constraints governing how good of a model we can create? These are the remainder of the constraints we'll focus on.
 
-## 2.2. Size
+# 2.2. Size
 
 The model itself needs to have enough degrees of freedom to be able to model the empirical distribution.
 
@@ -202,7 +202,7 @@ When the complexity of the empirical distribution is still beyond what the netwo
 
 This means adding more parameters per layer and increasing the depth of the network.
 
-**Progress**
+## Progress
 
 [1] **Initial scaling of networks** - Networks naturally scaled over time (combined with other improvements) leading to better results [CNN, LeNet, AlexNet, etc.].
 
@@ -218,7 +218,7 @@ The scaling laws show no sign of letting up. This means we are far below the cap
 
 Currently, scaling up the size of the model is a clear direction of progress we want to pursur. But this is governed by other constraints (again, the remaining).
 
-### 2.3. Optimization & Regularization
+# 2.3. Optimization & Regularization
 
 In practice, you can't just keep scaling up model naively. When scaling up the model, we encounter two classes of problems.
 
@@ -226,7 +226,7 @@ First, when you scale up parameters, and especially when you add more depth, the
 
 Second, when you scale up parameters past the complexity of the distribution, the model can overfit. Regularization is used to ensure models learn "good representations" to truly model the empirical distribution and not learn noise.
 
-**Progress**
+## Progress
 
 [1] **Vanishing and exploding gradients** - While training deeper networks with many layers, gradients start to get magnified or dissapear to 0, due to the compounding effects of many layers of similar weights.
 
@@ -268,7 +268,7 @@ Many optimization algorithms started to approach this problem by adding the idea
 
 Adam optimizer combined all these ideas to maintain adaptive moments - keeping track of a running list of past gradients for each parameter, and icnreasing momentum where appropriate, drastically decreasing training time in some scenarios [Adam].
 
-**The forgotten constraint**
+## The forgotten constraint
 
 All these advancements are used in almost everything today [Transformer], and without them optimization & regularization would be a constraint.
 
@@ -278,7 +278,7 @@ This is especially augmented by the fact that we're far from reaching the cap on
 
 Despite this, we have to remember that these are still very real constraints, although they don't effect the models in their current state.
 
-### 2.4. Architecture
+# 2.4. Architecture
 
 Good optimization & regularization enables us to make larger and deeper models.
 
@@ -292,7 +292,7 @@ We are telling the model “learn like this.” This is adding _inductive bias_.
 
 Architecture is about more useful representations per group of parameters, which translates to better modeling of apparent distribution, with fewer parameters, meaning more room for parameters, meaning larger effective size again (more useful representations in the mode, more intelligence).
 
-**Progress**
+## Progress
 
 [1] **DNN** - Technically, a DNN with non-linearities can model any distribution, given sufficient scale [Link to justification].
 
@@ -346,7 +346,7 @@ GPT-4o is the most obvious example of complete multi-modality, which involves st
 
 [8] "Don't touch the architecture" [Clip of Karpathy talking about not changing architectures]
 
-### 2.5. Compute
+# 2.5. Compute
 
 With an efficient architecture and effective optimization & regularization, the remaining constraint on the size of the model is compute.
 
@@ -354,7 +354,7 @@ During training, specifically back-propagation, the gradient for each parameter 
 
 So we can train a certain number of parameters per device. And then we need to get more devices. And if there's a limit on how many devices we can use together, we've hit a constraint on compute.
 
-**Progress**
+## Progress
 
 [1] **GPUs for gaming** - Initial models are trained on CPU, far from being constrained by compute [DNN, CNN, LeNet?]. They are constrained by other things limiting model size, like data & optimization/regularization. Models take a few days to train.
 
@@ -402,13 +402,13 @@ These supply chains will soon adjust to demand, and the constraint on compute wi
 
 There's a heuristic that you get 10x boost from chip to FPGA, then another 10x from FPGA to ASIC. This is not exactly accurate in this case since GPU is the benchmark - but the question is, will ASICs really be able to accelerate training (better than NVIDIA, who's already doubling down on AI)?
 
-### 2.6. Compute Efficiency
+# 2.6. Compute Efficiency
 
 Making effective use of compute (training parameters most efficiently) is not a gaurantee. This is a software problem and takes active effort and optimization.
 
 Examples like [FlashAttention] show us that there are large compute breakthroughs that accelerate things waiting to happen.
 
-**Progress**
+## Progress
 
 [1] **CUDA** - The first challenge with compute was just being able to work with GPUs. GPUs require a completely different programming paradigm unfamiliar to most people, and was challenging to get right.
 
@@ -420,7 +420,7 @@ We see in [AlexNet] they write their own GPU code manually (and in other places)
 
 [3] **Efficient Implementations** - Even past the point where people write kernels, now that kernel libraries are all available, there are still compute efficiency optimizations lying around. [FlashAttention] notably increased the performance of the Transformer by a huge margin.
 
-### 2.7. Energy
+# 2.7. Energy
 
 Finally, even if we have infinite resources to purchase compute, and more importantly, the supply chain can support any demand, there is still a constraint on compute - energy.
 
@@ -438,7 +438,7 @@ This is because the available energy you can draw from the grid at once place is
 
 [Link to Zuck clip about this]
 
-### 2.8. Fixed Constraints & Leverage
+# 2.8. Fixed Constraints & Leverage
 
 So we can now consider all these constraints together.
 
@@ -456,7 +456,7 @@ Given these hard constraints, we can maximize how effectively we use them via th
 
 So you can think of these constraints as offering leverage on the compute/data. With the same compute/data, you can accomplish much more by improving architectures, efficiency, etc.
 
-## 3. Narratives
+# 3. Narratives
 
 Now that we've explored the constraints in detail, we can look back at the history of progress in deep learning through the lens of constraints.
 
@@ -504,11 +504,11 @@ This narrative in particular highlights the power of narratives in fundraising [
 
 [$7T for SAMA]
 
-## 4. Inspiration
+# 4. Inspiration
 
 Where do the ideas that have led to breakthroughs in deep learning come from? By looking at the history, we can see a few common sources of inspiration that appear frequently.
 
-### Neuroscience
+## Neuroscience
 
 **Similar Solutions**
 
@@ -530,19 +530,19 @@ In early papers, there seems to be an attempt to fit ideas to neuroscience as a 
 
 This seems to be an ex-post rationalization of the architecture in an attempt to make it correspond with biology, rather than it actually serving as a source for inspiration (of course, I could be wrong).
 
-### Linear Algebra & Calculus
+## Linear Algebra & Calculus
 
 Most notably, [back-propagation/DNN] and [LoRA] are directly inspired by the math behind neural networks.
 
 [LoRA] (low-rank adaptation) is directly a manipulation on how models are trained by taking advantage of a feature of linear-algebra (decomposing parameters into lower dimensionality matrices).
 
-### Physics & Information Theory
+## Physics & Information Theory
 
 Most notably, [VAEs], [Diffusion], [Score-Models], [Flow-Models] all take inspiration from physics - especially Langevin dynamics.
 
 These are systems involving noisy sampling.
 
-### Nature
+## Nature
 
 In general, all these sources of inspiration are engineering / sources where nature has solved the problem of modeling data in different ways, and we can take ideas from these places.
 
@@ -550,7 +550,7 @@ As mentioned before though, it's very easy to rationalize reasoning for things e
 
 In reality, the majority of change (though maybe inspired from many places) is heavily grounded in engineering [ie. LayerNorm/BatchNorm, LoRA, Residuals, LSTM from RNN, etc.] - patching errors in things we see, especially using math as the tool for engineering in the context of neural networks.
 
-## 5. Intelligence
+# 5. Intelligence
 
 What does this progression tell us about intelligence? I'll try to be very empirical here, because dipping into philosophizing with this topic is very easy if not careful.
 
@@ -570,7 +570,7 @@ Embeddings mean something in the brain too, and show us something about represen
 
 And, if intelligence really is just about data + compute + energy, it seems inevitable that digital intelligence will surpass us at some point (to many people this seems inevitable, many disagree, many don’t like it) - this is explored in the next section.
 
-## 6. Future
+# 6. Future
 
 We've now reframed the history of progress as a series of break-throughs on the constraints limiting intelligence.
 
