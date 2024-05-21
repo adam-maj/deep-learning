@@ -69,7 +69,7 @@ My intention is for everyone to be able to start with the broader reframing of d
 
 # Part 1: The Lessons of History
 
-_Inspired by _[The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X)_ by Will and Ariel Durant_
+_Format inspired by _[The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X)_ by Will and Ariel Durant_
 
 ## 1. Introduction
 
