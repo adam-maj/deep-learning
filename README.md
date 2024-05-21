@@ -30,6 +30,8 @@ Then, people curious to dive into the technical details can explore the rest of 
 - [Resources](#resources)
 - [Papers](#papers)
 
+<br />
+
 # Overview
 
 _Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will and Ariel Durant_
@@ -50,6 +52,8 @@ Through answering these questions, it also explores:
 - How have our narratives about digital intelligence changed over time?
 - What does deep learning teach us about our own intelligence?
 
+<br />
+
 # 1. Context
 
 > Note: If you're already very familiar, skip
@@ -68,6 +72,8 @@ Intelligence = builds model of reality
 
 Builds model of reality = uses data (samples) from reality (distribution) to approximate reality
 
+<br />
+
 # 2. Constraints
 
 Deep learning is about getting good data, and then using that data to model the world.
@@ -79,6 +85,8 @@ In practice, there are a few constraints that limit how fast we can accomplish t
 It's impossible to understand where we're going without understanding how we got here. And it's impossible to understand how we got here without deeply understanding each of these constraints, and how they relate to each other.
 
 So let's look at each one in depth.
+
+<br />
 
 # 2.1. Data
 
@@ -192,6 +200,8 @@ But creating the best model for a dataset is itself a challenging task. With cur
 
 What are the constraints governing how good of a model we can create? These are the remainder of the constraints we'll focus on.
 
+<br />
+
 # 2.2. Size
 
 The model itself needs to have enough degrees of freedom to be able to model the empirical distribution.
@@ -217,6 +227,8 @@ But at this point, size appears to be _a_ factor, not _the_ factor. Partly, this
 The scaling laws show no sign of letting up. This means we are far below the capacity to model the dataset.
 
 Currently, scaling up the size of the model is a clear direction of progress we want to pursur. But this is governed by other constraints (again, the remaining).
+
+<br />
 
 # 2.3. Optimization & Regularization
 
@@ -277,6 +289,8 @@ But because of how effective they've been, optimization & regularization are bas
 This is especially augmented by the fact that we're far from reaching the cap on internet scale dataset complexity, so regularization is hardly a concern.
 
 Despite this, we have to remember that these are still very real constraints, although they don't effect the models in their current state.
+
+<br />
 
 # 2.4. Architecture
 
@@ -346,6 +360,8 @@ GPT-4o is the most obvious example of complete multi-modality, which involves st
 
 [8] "Don't touch the architecture" [Clip of Karpathy talking about not changing architectures]
 
+<br />
+
 # 2.5. Compute
 
 With an efficient architecture and effective optimization & regularization, the remaining constraint on the size of the model is compute.
@@ -402,6 +418,8 @@ These supply chains will soon adjust to demand, and the constraint on compute wi
 
 There's a heuristic that you get 10x boost from chip to FPGA, then another 10x from FPGA to ASIC. This is not exactly accurate in this case since GPU is the benchmark - but the question is, will ASICs really be able to accelerate training (better than NVIDIA, who's already doubling down on AI)?
 
+<br />
+
 # 2.6. Compute Efficiency
 
 Making effective use of compute (training parameters most efficiently) is not a gaurantee. This is a software problem and takes active effort and optimization.
@@ -419,6 +437,8 @@ We see in [AlexNet] they write their own GPU code manually (and in other places)
 [2] **Kernel Libraries** - People stopped having to write their own kernels as frequently dropping the barrier to entry - solved both by NVIDIAs on kernels and libaries like [TensorFlow], [PyTorch], [JAX] that handle compute side for you.
 
 [3] **Efficient Implementations** - Even past the point where people write kernels, now that kernel libraries are all available, there are still compute efficiency optimizations lying around. [FlashAttention] notably increased the performance of the Transformer by a huge margin.
+
+<br />
 
 # 2.7. Energy
 
@@ -438,6 +458,8 @@ This is because the available energy you can draw from the grid at once place is
 
 [Link to Zuck clip about this]
 
+<br />
+
 # 2.8. Fixed Constraints & Leverage
 
 So we can now consider all these constraints together.
@@ -455,6 +477,8 @@ The hard constraints are "data," "compute," "energy." These are much slower to m
 Given these hard constraints, we can maximize how effectively we use them via the "leverage constraints" - "size," "architecture," "optimization / regularization," "compute efficiency." These are all easily adjustable (software) and have massive effects [FlashAttention, Residuals, Transformer, GPT-2, etc. etc.].
 
 So you can think of these constraints as offering leverage on the compute/data. With the same compute/data, you can accomplish much more by improving architectures, efficiency, etc.
+
+<br />
 
 # 3. Narratives
 
@@ -504,6 +528,8 @@ This narrative in particular highlights the power of narratives in fundraising [
 
 [$7T for SAMA]
 
+<br />
+
 # 4. Inspiration
 
 Where do the ideas that have led to breakthroughs in deep learning come from? By looking at the history, we can see a few common sources of inspiration that appear frequently.
@@ -550,6 +576,8 @@ As mentioned before though, it's very easy to rationalize reasoning for things e
 
 In reality, the majority of change (though maybe inspired from many places) is heavily grounded in engineering [ie. LayerNorm/BatchNorm, LoRA, Residuals, LSTM from RNN, etc.] - patching errors in things we see, especially using math as the tool for engineering in the context of neural networks.
 
+<br />
+
 # 5. Intelligence
 
 What does this progression tell us about intelligence? I'll try to be very empirical here, because dipping into philosophizing with this topic is very easy if not careful.
@@ -569,6 +597,8 @@ Maybe our brain converged on good ways to model data - the same thing AI is tryi
 Embeddings mean something in the brain too, and show us something about representations.
 
 And, if intelligence really is just about data + compute + energy, it seems inevitable that digital intelligence will surpass us at some point (to many people this seems inevitable, many disagree, many don’t like it) - this is explored in the next section.
+
+<br />
 
 # 6. Future
 
@@ -591,6 +621,8 @@ How far does this go? It depends how far the scaling laws go. In this context, w
 This may scale to the point where we achieve intelligence that can improve itself, especially as we unlock access to collect data about the world directly via humanoid robots.
 
 Or, we may cap out at some point and need to figure out new ways to push the data constraint. Either way, given the current trajectory, models by that point will be far more intelligent than they are now, and it's unclear how they'll impact society in the mean time.
+
+<br />
 
 # Resources
 
