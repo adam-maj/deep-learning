@@ -74,7 +74,7 @@ Builds model of reality = uses data (samples) from reality (distribution) to app
 
 <br />
 
-# 2. Constraints
+## 2. Constraints
 
 Deep learning is about getting good data, and then using that data to model the world.
 
@@ -88,7 +88,7 @@ So let's look at each one in depth.
 
 <br />
 
-# 2.1. Data
+## 2.1. Data
 
 ### True vs. Empirical Distribution
 
@@ -202,7 +202,7 @@ What are the constraints governing how good of a model we can create? These are 
 
 <br />
 
-# 2.2. Size
+## 2.2. Size
 
 The model itself needs to have enough degrees of freedom to be able to model the empirical distribution.
 
@@ -230,7 +230,7 @@ Currently, scaling up the size of the model is a clear direction of progress we 
 
 <br />
 
-# 2.3. Optimization & Regularization
+## 2.3. Optimization & Regularization
 
 In practice, you can't just keep scaling up model naively. When scaling up the model, we encounter two classes of problems.
 
@@ -292,7 +292,7 @@ Despite this, we have to remember that these are still very real constraints, al
 
 <br />
 
-# 2.4. Architecture
+## 2.4. Architecture
 
 Good optimization & regularization enables us to make larger and deeper models.
 
@@ -362,7 +362,7 @@ GPT-4o is the most obvious example of complete multi-modality, which involves st
 
 <br />
 
-# 2.5. Compute
+## 2.5. Compute
 
 With an efficient architecture and effective optimization & regularization, the remaining constraint on the size of the model is compute.
 
@@ -420,7 +420,7 @@ There's a heuristic that you get 10x boost from chip to FPGA, then another 10x f
 
 <br />
 
-# 2.6. Compute Efficiency
+## 2.6. Compute Efficiency
 
 Making effective use of compute (training parameters most efficiently) is not a gaurantee. This is a software problem and takes active effort and optimization.
 
@@ -440,7 +440,7 @@ We see in [AlexNet] they write their own GPU code manually (and in other places)
 
 <br />
 
-# 2.7. Energy
+## 2.7. Energy
 
 Finally, even if we have infinite resources to purchase compute, and more importantly, the supply chain can support any demand, there is still a constraint on compute - energy.
 
@@ -460,7 +460,7 @@ This is because the available energy you can draw from the grid at once place is
 
 <br />
 
-# 2.8. Fixed Constraints & Leverage
+## 2.8. Fixed Constraints & Leverage
 
 So we can now consider all these constraints together.
 
