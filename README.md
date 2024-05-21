@@ -4,12 +4,9 @@
 
 With constant innovation at the frontiers, few have had the time to dive deep and fully understand what’s going on. On top of that, public narratives obscure the reality of the forces at play.
 
-This project is an effort to surface and spread the true big picture of how things are progressing, informed by the technical details of individual innovations.
+_This project is an effort to surface and spread the true big picture of how things are progressing, informed by the technical details of individual innovations._
 
-**It focuses on two simple questions:**
-
-- How did we get here?
-- Where are we going?
+**It focuses on two simple questions:** (1) how did we get here? (2) where are we going?
 
 In order to answer them, we first dive into the history of deep learning, understanding the entire arrow of progress from first principles. Then, using what we learn from this, we can zoom-out to observe broader trends and understand the direction we are headed in.
 
