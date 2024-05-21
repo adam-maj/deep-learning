@@ -32,18 +32,21 @@ In order to answer them, we first dive into the history of deep learning, unders
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
 - [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
+  - [1. Deep Neural Networks](/tree/main/01-deep-neural-networks)
+    - [1.1. DNN](/tree/main/01-deep-neural-networks/01-dnn)
+    - [1.2. CNN](/tree/main/02-deep-neural-networks/02-cnn)
 
 ## Structure
 
-This project is organized into two distinct parts.
+This project is organized into two distinct parts (in reverse order for the sake of readability).
 
 <br />
 
 The first part (the remainder of this README), is a reframing of the entire history of deep learning through the lens of the fundamental constraints that have always governed the rate of progress.
 
-These constraints are not initially obvious, and they add a new depth to what we can learn from studying the history.
+These constraints are not initially obvious, but they add a new depth to what we can learn from studying the history.
 
-Through this lens, we can effectively explore these questions:
+Through this lens, we can explore these questions:
 
 - How is progress made in deep learning?
 - Where do the ideas that drive progress in deep learning come from?
@@ -67,9 +70,11 @@ Of course, many great papers have been left out, but the current list covers mos
 
 My intention is for everyone to be able to start with the broader reframing of deep learning in part 1 (below) and get value from it. Then, for the curious people who want to develop the technical intuitions, they can dive into part 2 to go deeper.
 
+This is also why the lessons come before the actual
+
 # Part 1: The Lessons of History
 
-_Format inspired by _[The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X)_ by Will and Ariel Durant_
+_Format inspired by [The Lessons of History](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will and Ariel Durant_
 
 ## 1. Introduction
 
