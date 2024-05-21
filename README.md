@@ -6,9 +6,7 @@ In the repository, I've included a copy of each critical paper, along with my fu
 
 On the rest of this page, I provide an overview of everything we can learn from this history, inspired by [_The Lessons of History_](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will & Ariel Durant.
 
-The project is designed so everyone can get most of the value by reading the overview below.
-
-Then, people curious to dive into the technical details can explore the rest of the repository.
+**The project is designed so everyone can get most of the value by reading the overview below.** Then, people curious to dive into the technical details can explore the rest of the repository.
 
 ## Table of Contents
 
