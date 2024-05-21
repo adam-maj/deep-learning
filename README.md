@@ -27,7 +27,7 @@ Then, people curious to dive into the technical details can explore the rest of 
   - [4. Inspiration](#4-inspiration)
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
-- [Dive In: Technical Details](#part-2-the-arrow-of-progress)
+- [Papers, Explanations, & Implementations](#part-2-the-arrow-of-progress)
 
 # Overview: The Lessons of History
 
