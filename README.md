@@ -32,7 +32,7 @@ In order to answer them, we first dive into the history of deep learning, unders
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
 - [Part 2: The Arrow of Progress](#part-2-the-arrow-of-progress)
-  - [1. Deep Neural Networks](/01-deep-neural-networks/) - (1) [DNN](/01-deep-neural-networks/01-dnn/), (2) [CNN](/01-deep-neural-networks/02-cnn/), (3) [AlexNet](/01-deep-neural-networks/03-alex-net/), (4) [UNet](/01-deep-neural-networks/04-u-net/)
+  - **1. Deep Neural Networks:** [1] [DNN](/01-deep-neural-networks/01-dnn/), [2] [CNN](/01-deep-neural-networks/02-cnn/), [3] [AlexNet](/01-deep-neural-networks/03-alex-net/), [4] [UNet](/01-deep-neural-networks/04-u-net/)
   - [2. Optimization & Regularization](/02-optimization-and-regularization/)
     - [2.1. Weight Decay](/02-optimization-and-regularization/01-weight-decay/)
     - [2.2. ReLU](/02-optimization-and-regularization/02-relu/)
