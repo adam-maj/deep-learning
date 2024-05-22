@@ -417,6 +417,10 @@ The classic example of this is that the embeddings allow "King" - "Man" + "Woman
 
 Embeddings show us the composability of concepts. Transformers use this to soak information into words.
 
+### Creativity & Engineering
+
+U-Net, embeddings, diffusion, etc. Even the transformer design.
+
 ### "Don't touch the architecture"
 
 Combining Models - [DALL E, DALL E 2, Stable Diffusion, etc.] - using U-Net, Transformer, CLIP, VAE, Feed-forward, Diffusion all in one.
@@ -769,10 +773,9 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - [3.2. LSTM](/03-sequence-modeling/02-lstm/)
 - [3.3. Learning to Forget](/03-sequence-modeling/03-learning-to-forget/)
 - [3.4. Word2Vec](/03-sequence-modeling/04-word2vec/)
-- [3.5. Encoder-Decoder](/03-sequence-modeling/05-encoder-decoder/)
-- [3.6. Seq2Seq](/03-sequence-modeling/06-seq2seq/)
-- [3.7. Attention](/03-sequence-modeling/07-attention/)
-- [3.8. Mixture of Experts](/03-sequence-modeling/08-mixture-of-experts/)
+- [3.5. Seq2Seq](/03-sequence-modeling/05-seq2seq/)
+- [3.6. Attention](/03-sequence-modeling/06-attention/)
+- [3.7. Mixture of Experts](/03-sequence-modeling/07-mixture-of-experts/)
 
 **4. Transformers**
 
@@ -785,16 +788,14 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - [4.7. LoRA](/04-transformers/07-lora/)
 - [4.8. InstructGPT](/04-transformers/08-instruct-gpt/)
 - [4.9. Vision Transformer](/04-transformers/09-vision-transformer/)
-- [4.10. Mixture of Experts Transformer](/04-transformers/10-moe-transformer/)
 
 **5. Image Generation**
 
 - [5.1. GANs](/05-image-generation/01-gan/)
 - [5.2. VAEs](/05-image-generation/02-vae/)
 - [5.3. Diffusion](/05-image-generation/03-diffusion/)
-- [5.4. Stable Diffusion, ControlNet, & SDXL](/05-image-generation/04-stable-diffusion/)
-- [5.5. CLIP](/05-image-generation/05-clip/)
-- [5.6. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
+- [5.4. CLIP](/05-image-generation/05-clip/)
+- [5.5. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
 
 # Papers
 
@@ -823,7 +824,6 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - **LSTM** - Long-Short Term Memory (1997), S. Hochreiter and J. Schmidhuber [[PDF]](https://www.bioinf.jku.at/publications/older/2604.pdf)
 - **Learning to Forget** - Learning to Forget: Continual Prediction with LSTM (2000), F. A. Gers et al. [[PDF]](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=e10f98b86797ebf6c8caea6f54cacbc5a50e8b34)
 - **Word2Vec** - Efficient Estimation of Word Representations in Vector Space (2013), T. Mikolov et al. [[PDF]](https://arxiv.org/pdf/1301.3781)
-- **Encoder-Decoder** - Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation (2014), K. Cho et al. [[PDF]](https://arxiv.org/pdf/1406.1078)
 - **Seq2Seq** - Sequence to Sequence Learning with Neural Networks (2014), I. Sutskever et al. [[PDF]](https://arxiv.org/pdf/1409.3215)
 - **Attention** - Neural Machine Translation by Jointly Learning to Align and Translate (2014), D. Bahdanau et al. [[PDF]](https://arxiv.org/pdf/1409.0473)
 - **Mixture of Experts** - Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer (2017), N. Shazeer et al. [[PDF]](https://arxiv.org/pdf/1701.06538)
@@ -839,13 +839,10 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - **LoRA -** LoRA: Low-Rank Adaptation of Large Language Models (2021), E. J. Hu et al. [[PDF]](https://arxiv.org/pdf/2106.09685)
 - **InstructGPT** - Training language models to follow instructions with human feedback (2022), L. Ouyang et al. [[PDF]](https://arxiv.org/pdf/2203.02155)
 - **Vision Transformer** - An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale (2020), A. Dosovitskiy et al. [[PDF]](https://arxiv.org/pdf/2010.11929)
-- **Mixture of Experts Transformer** - Mixture-of-Experts Meets Instruction Tuning:A Winning Combination for Large Language Models (2023), S. Shen et al. [[PDF]](https://arxiv.org/pdf/2305.14705)
 
 **Generative Models**
 
 - **GAN** - Generative Adversarial Networks (2014), I. J. Goodfellow et al. [[PDF]](https://arxiv.org/pdf/1406.2661)
-- **Style GAN** - A Style-Based Generator Architecture for Generative Adversarial Networks (2018), T. Karras et al. [[PDF]](https://arxiv.org/pdf/1812.04948)
-- **Style GAN 2** - Analyzing and Improving the Image Quality of StyleGAN (2019), T. Karras et al. [[PDF]](https://arxiv.org/pdf/1912.04958)
 - **VAE** - Auto-Encoding Variational Bayes (2013), D. Kingma and M. Welling [[PDF]](https://arxiv.org/pdf/1312.6114)
 - **VQ VAE** - Neural Discrete Representation Learning (2017), A. Oord et al. [[PDF]](https://arxiv.org/pdf/1711.00937)
 - **VQ VAE 2** - Generating Diverse High-Fidelity Images with VQ-VAE-2 (2019), A. Razavi et al. [[PDF]](https://arxiv.org/pdf/1906.00446)
@@ -853,9 +850,6 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - **Denoising Diffusion** - Denoising Diffusion Probabilistic Models (2020), J. Ho. et al. [[PDF]](https://arxiv.org/pdf/2006.11239)
 - **Denoising Diffusion 2** - Improved Denoising Diffusion Probabilistic Models (2021), A. Nichol and P. Dhariwal [[PDF]](https://arxiv.org/pdf/2102.09672)
 - **Diffusion Beats GANs** - Diffusion Models Beat GANs on Image Synthesis, P. Dhariwal and A. Nichol [[PDF]](https://arxiv.org/pdf/2105.05233)
-- **Stable Diffusion** - High-Resolution Image Synthesis with Latent Diffusion Models (2021), R. Rombach et al. [[PDF]](https://arxiv.org/pdf/2112.10752)
-- **ControlNet** - Adding Conditional Control to Text-to-Image Diffusion Models (2023), L. Zhang et al. [[PDF]](https://arxiv.org/pdf/2302.05543)
-- **SDXL** - SDXL: Improving Latent Diffusion Models for High-Resolution Image Synthesis (2023), D. Podell et al. [[PDF]](https://arxiv.org/pdf/2307.01952)
 - **CLIP** - Learning Transferable Visual Models From Natural Language Supervision (2021), A. Radford et al. [[PDF]](https://arxiv.org/pdf/2103.00020)
 - **DALL E** - Zero-Shot Text-to-Image Generation (2021), A. Ramesh et al. [[PDF]](https://arxiv.org/pdf/2102.12092)
 - **DALL E 2** - Hierarchical Text-Conditional Image Generation with CLIP Latents (2022), A. Ramesh et al. [[PDF]](https://arxiv.org/pdf/2204.06125)
