@@ -805,7 +805,7 @@ I've provided my minimal implementations for many of the core topics in this rep
 
 Generally, you can find good implementations of most papers online, which means the challenge isn't figuring out reimplementation. I've included these to collect them in one place for convenience, and also to highlight simple implementations that demonstrate each concept and I've gotten trained.
 
-I used A100's on Google Colab to train most of the larger models.
+I used A100's to train most of the larger models.
 
 - [DNN](/01-deep-neural-networks/01-dnn/02-dnn.ipynb)
 - [CNN](/01-deep-neural-networks/02-cnn/03-cnn.ipynb)
