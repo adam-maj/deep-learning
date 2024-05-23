@@ -22,10 +22,10 @@ Then, people curious to dive into the technical details can explore the rest of 
     - [1.6. Compute Efficiency](#16-compute-efficiency)
     - [1.7. Energy](#17-energy)
     - [1.8. Constraints & Leverage](#18-constraints--leverage)
-  - [3. Narratives](#3-narratives)
-  - [4. Inspiration](#4-inspiration)
-  - [5. Intelligence](#5-intelligence)
-  - [6. Future](#6-future)
+  - [2. Narratives](#2-narratives)
+  - [3. Inspiration](#3-inspiration)
+  - [4. Intelligence](#4-intelligence)
+  - [5. Future](#5-future)
 - [Resources](#resources)
   - [Topics](#topics)
   - [Implementations](#implementations)
@@ -579,7 +579,7 @@ So you can think of these constraints as offering leverage on the compute/data. 
 
 <br />
 
-# 3. Narratives
+# 2. Narratives
 
 Now that we've explored the constraints in detail, we can look back at the history of progress in deep learning through the lens of constraints.
 
@@ -641,7 +641,7 @@ This narrative in particular highlights the power of narratives in fundraising [
 
 <br />
 
-# 4. Inspiration
+# 3. Inspiration
 
 Where do the ideas that have led to breakthroughs in deep learning come from? By looking at the history, we can see a few common sources of inspiration that appear frequently.
 
@@ -697,7 +697,7 @@ In reality, the majority of change (though maybe inspired from many places) is h
 
 <br />
 
-# 5. Intelligence
+# 4. Intelligence
 
 What does this progression tell us about intelligence? I'll try to be very empirical here, because dipping into philosophizing with this topic is very easy if not careful.
 
@@ -719,7 +719,7 @@ And, if intelligence really is just about data + compute + energy, it seems inev
 
 <br />
 
-# 6. Future
+# 5. Future
 
 We've now reframed the history of progress as a series of break-throughs on the constraints limiting intelligence.
 
@@ -799,6 +799,8 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - [5.4. CLIP](/05-image-generation/05-clip/)
 - [5.5. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
 
+<br />
+
 ## Implementations
 
 I've provided my minimal implementations for many of the core topics in this repository in the `.ipynb` files for each topic.
@@ -815,6 +817,8 @@ I used A100's to train most of the larger models.
 - [GAN](/05-image-generation/01-gan/02-gan.ipynb)
 - [VAE](/05-image-generation/02-vae/04-vae.ipynb)
 - [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb)
+
+<br />
 
 ## Papers
 
