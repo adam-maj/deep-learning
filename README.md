@@ -2,15 +2,13 @@
 
 A deep-dive on the entire history of deep learning, highlighting the series of innovations that got us from simple feed-forward networks to GPT-4o.
 
-For each key milestone, I've included the critical papers in this repository, along with my notes, my explanation of important intuitions & math, and a toy implementation in pytorch where relevant.
+For each key milestone, I've included the critical papers in this repository, along with my notes, my explanation of important intuitions & math, and a toy implementation in pytorch when relevant.
 
 The rest of this page is my breakdown of everything we can learn from this history, and what it tells us about the future of deep learning, inspired by [_The Lessons of History_](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will & Ariel Durant.
 
 > [!IMPORTANT]
 >
-> **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.**
->
-> Then, people curious to dive into the technical details can explore the rest of the repository via the links in the [resources](#resources) section.
+> **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.** Then, people curious to dive into the technical details can explore the rest of the repository via the links in the [resources](#resources) section.
 
 ## Table of Contents
 
