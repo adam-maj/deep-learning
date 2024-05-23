@@ -1,18 +1,20 @@
 # deep-learning [WIP]
 
-An exploration of the entire history of deep learning from DNNs to GPT-4o.
+A deep-dive on the entire history of deep learning, highlighting the series of innovations that got us from simple feed-forward networks to GPT-4o.
 
-In the repository, I've included a copy of each critical paper (40+) that got us to where we are today, along with my full explanations of key intuitions/math and a minimal implementation in pytorch for each topic.
+For each key milestone, I've included the critical papers in this repository, along with my notes, my explanation of important intuitions & math, and a toy implementation in pytorch where relevant.
 
-On the rest of this page, I provide an overview of everything we can learn from this history, inspired by [_The Lessons of History_](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will & Ariel Durant.
+The rest of this page is my breakdown of everything we can learn from this history, and what it tells us about the future of deep learning, inspired by [_The Lessons of History_](https://www.amazon.com/Lessons-History-Will-Durant/dp/143914995X) by Will & Ariel Durant.
 
-**The project is designed so everyone can get most of the value by reading the overview below.**
-
-Then, people curious to dive into the technical details can explore the rest of the repository via the links in the [resources](#resources) section.
+> [!IMPORTANT]
+>
+> **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.**
+>
+> Then, people curious to dive into the technical details can explore the rest of the repository via the links in the [resources](#resources) section.
 
 ## Table of Contents
 
-- [Overview](#overview-the-lessons-of-history)
+- [Overview](#overview)
   - [1. Constraints](#2-constraints)
     - [1.1. Data](#11-data)
     - [1.2. Parameters](#12-parameters)
