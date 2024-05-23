@@ -27,7 +27,6 @@ Then, people curious to dive into the technical details can explore the rest of 
   - [5. Intelligence](#5-intelligence)
   - [6. Future](#6-future)
 - [Resources](#resources)
-- [Papers](#papers)
   - [Topics](#topics)
   - [Implementations](#implementations)
   - [Papers](#papers)
