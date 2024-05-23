@@ -8,7 +8,9 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 > [!IMPORTANT]
 >
-> **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.** Then, people curious to dive into the technical details can explore the rest of the repository via the links in the [resources](#resources) section.
+> **This project is designed so everyone can get most of the value by just reading my overview on the rest of this page.**
+>
+> Then, people curious to learn about the technical details of each innovation can explore the rest of the repository via the links in the [resources](#resources) section.
 
 ## Table of Contents
 
