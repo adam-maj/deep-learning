@@ -219,6 +219,8 @@ The best case would be to access data about the world directly. With recent huma
 
 > [Graphic] - The robotics arms race: figure, optimus, boston dynamics
 
+<br />
+
 ### Modeling Data
 
 So the dataset set determines the empirical distribution, which sets the cap on how good of a model we can create. The best model we can create corresponds with how well the empirical distribution approximates the true distribution.
@@ -397,6 +399,8 @@ Attention enables every part of an input to learn about every other part of it. 
 
 The title "Attention Is All You Need" makes the most sense in contrast to previous papers [Encoder-Decoder, Seq2Seq, Attention] that achieved success with RNNs. This paper shows that the _only_ inductive bias you need is attention. This suggests something important about it regarding intelligence.
 
+<br />
+
 ### Breakthrough #4: Taming randomness
 
 **Generative Models** - By far the most conceptually complex of all the models.
@@ -412,6 +416,8 @@ VAEs create a bottleneck that forces the model to use useful representations. Th
 Diffusion, instead, starts with noise, and learns to add back information to it slowly.
 
 Without these designs, models could never synthesize data.
+
+<br />
 
 ### Breakthrough #5: Embeddings
 
@@ -491,6 +497,8 @@ The arms race really begins - NVIDIA, TSMC, ASML, etc. semi-conductor supply cha
 
 > [Graphic] - Stock prices of all the semi-conductor supply chain companies rising
 
+<br />
+
 ### Adjusting supply chains
 
 **Adjusting supply chains:** The current constraint on compute is not about people not having funding to buy compute. It's about the compute supply chains not creating enough supply.
@@ -498,6 +506,8 @@ The arms race really begins - NVIDIA, TSMC, ASML, etc. semi-conductor supply cha
 Because compute supply chains have a long production cycle (a few months), they rely on predictions. These supply chains did not predict the boom in demand for compute that came from the AI cycle, so they got constrained.
 
 These supply chains will soon adjust to demand, and the constraint on compute will no longer be due to constrained supply chains - instead it will become a resource problem.
+
+<br />
 
 ### AI ASICs
 
