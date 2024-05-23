@@ -28,6 +28,9 @@ Then, people curious to dive into the technical details can explore the rest of 
   - [6. Future](#6-future)
 - [Resources](#resources)
 - [Papers](#papers)
+  - [Topics](#topics)
+  - [Implementations](#implementations)
+  - [Papers](#papers)
 
 <br />
 
@@ -743,11 +746,13 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 
 # Resources
 
+## Topics
+
 > [!IMPORTANT]
 >
-> Each technical breakthroughs highlighted in this repository is covered in a folder linked below.
+> Each topic highlighted in this repository is covered in a folder linked below.
 >
-> In each folder, you'll find a copy of the relevant papers (`.pdf` files), along with my own breakdown of intuitions, math, impact, and my implementation when relevant (all in the `.ipynb` file).
+> In each folder, you'll find a copy of the critical papers related to the topic (`.pdf` files), along with my own breakdown of intuitions, math, and my implementation when relevant (all in the `.ipynb` file).
 
 **1. Deep Neural Networks**
 
@@ -772,7 +777,7 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - [3.1. RNN](/03-sequence-modeling/01-rnn/)
 - [3.2. LSTM](/03-sequence-modeling/02-lstm/)
 - [3.3. Learning to Forget](/03-sequence-modeling/03-learning-to-forget/)
-- [3.4. Word2Vec](/03-sequence-modeling/04-word2vec/)
+- [3.4. Word2Vec & Phrase2Vec](/03-sequence-modeling/04-word2vec/)
 - [3.5. Seq2Seq](/03-sequence-modeling/05-seq2seq/)
 - [3.6. Attention](/03-sequence-modeling/06-attention/)
 - [3.7. Mixture of Experts](/03-sequence-modeling/07-mixture-of-experts/)
@@ -781,13 +786,11 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 
 - [4.1. Transformer](/04-transformers/01-transformer/)
 - [4.2. BERT](/04-transformers/02-bert/)
-- [4.3. RoBERTa](/04-transformers/03-roberta/)
-- [4.4. T5](/04-transformers/04-t5/)
-- [4.5. GPT-2](/04-transformers/05-gpt-2/)
-- [4.6. GPT-3](/04-transformers/06-gpt-3/)
-- [4.7. LoRA](/04-transformers/07-lora/)
-- [4.8. InstructGPT](/04-transformers/08-instruct-gpt/)
-- [4.9. Vision Transformer](/04-transformers/09-vision-transformer/)
+- [4.3. T5](/04-transformers/03-t5)
+- [4.4. GPT-2 & GPT-3](/04-transformers/04-gpt)
+- [4.5. LoRA](/04-transformers/05-lora)
+- [4.8. RLHF & InstructGPT](/04-transformers/06-rlhf)
+- [4.9. Vision Transformer](/04-transformers/07-vision-transformer)
 
 **5. Image Generation**
 
@@ -797,7 +800,24 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - [5.4. CLIP](/05-image-generation/05-clip/)
 - [5.5. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
 
-# Papers
+## Implementations
+
+I've provided my minimal implementations for many of the core topics in this repository in the `.ipynb` files for each topic.
+
+Generally, you can find good implementations of most papers online, which means the challenge isn't figuring out reimplementation. I've included these to collect them in one place for convenience, and also to highlight simple implementations that demonstrate each concept and I've gotten trained.
+
+I used A100's on Google Colab to train most of the larger models.
+
+- [DNN](/01-deep-neural-networks/01-dnn/02-dnn.ipynb)
+- [CNN](/01-deep-neural-networks/02-cnn/03-cnn.ipynb)
+- [Transformer](/04-transformers/01-transformer/02-transformer.ipynb)
+- [LoRA](/04-transformers/05-lora/02-lora.ipynb)
+- [Vision Transformer](/04-transformers/07-vision-transformer/02-vision-transformer.ipynb)
+- [GAN](/05-image-generation/01-gan/02-gan.ipynb)
+- [VAE](/05-image-generation/02-vae/04-vae.ipynb)
+- [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb)
+
+## Papers
 
 **Deep Neural Networks**
 
@@ -824,6 +844,8 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - **LSTM** - Long-Short Term Memory (1997), S. Hochreiter and J. Schmidhuber [[PDF]](https://www.bioinf.jku.at/publications/older/2604.pdf)
 - **Learning to Forget** - Learning to Forget: Continual Prediction with LSTM (2000), F. A. Gers et al. [[PDF]](https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=e10f98b86797ebf6c8caea6f54cacbc5a50e8b34)
 - **Word2Vec** - Efficient Estimation of Word Representations in Vector Space (2013), T. Mikolov et al. [[PDF]](https://arxiv.org/pdf/1301.3781)
+- **Phrase2Vec** - Distributed Representations of Words and Phrases and their Compositionality (2013), T. Mikolov et al. [[PDF]](https://arxiv.org/pdf/1310.4546)
+- **Encoder-Decoder** - Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation (2014), K. Cho et al. [[PDF]](https://arxiv.org/pdf/1406.1078)
 - **Seq2Seq** - Sequence to Sequence Learning with Neural Networks (2014), I. Sutskever et al. [[PDF]](https://arxiv.org/pdf/1409.3215)
 - **Attention** - Neural Machine Translation by Jointly Learning to Align and Translate (2014), D. Bahdanau et al. [[PDF]](https://arxiv.org/pdf/1409.0473)
 - **Mixture of Experts** - Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer (2017), N. Shazeer et al. [[PDF]](https://arxiv.org/pdf/1701.06538)
@@ -837,7 +859,10 @@ Or, we may cap out at some point and need to figure out new ways to push the dat
 - **GPT-2** - Language Models are Unsupervised Multitask Learners (2018), A. Radford et al. [[PDF]](https://d4mucfpksywv.cloudfront.net/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 - **GPT-3** - Language Models are Few-Shot Learners (2020) T. B. Brown et al. [[PDF]](https://arxiv.org/pdf/2005.14165)
 - **LoRA -** LoRA: Low-Rank Adaptation of Large Language Models (2021), E. J. Hu et al. [[PDF]](https://arxiv.org/pdf/2106.09685)
+- **RLHF** - Fine-Tuning Language Models From Human Preferences (2019), D. Ziegler et al. [[PDF]](https://arxiv.org/pdf/1909.08593)
+- **PPO** - Proximal Policy Optimization Algorithms (2017), J. Schulman et al. [[PDF]](https://arxiv.org/pdf/1707.06347)
 - **InstructGPT** - Training language models to follow instructions with human feedback (2022), L. Ouyang et al. [[PDF]](https://arxiv.org/pdf/2203.02155)
+- **Helpful & Harmless** - Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback (2022), Y. Bai et al. [[PDF]](https://arxiv.org/pdf/2204.05862)
 - **Vision Transformer** - An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale (2020), A. Dosovitskiy et al. [[PDF]](https://arxiv.org/pdf/2010.11929)
 
 **Generative Models**
