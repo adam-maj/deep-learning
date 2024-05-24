@@ -51,7 +51,7 @@ The most interesting part of my deep-dive came from noticing a clear trend acros
 > 6. compute efficiency
 > 7. energy
 >
-> **The entire history of deep learning can be explained in terms of progressively raising the ceiling on these constraints.**
+> **The entire history of deep learning can be understood as the series of advancements that have gradually lifted these constraints.**
 
 It's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding these constraints that have governed the rate of progress.
 
