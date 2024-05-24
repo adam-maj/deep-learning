@@ -87,7 +87,7 @@ Builds model of reality = uses data (samples) from reality (distribution) to app
 
 ###
 
-We can define intelligence<sup>[1](#f1)</sup> as the ability to accurately model reality<sup>[2](#f2)</sup>.
+We can define intelligence<sup>[[1]](#f1)</sup> as the ability to accurately model reality<sup>[[2]](#f2)</sup>.
 
 Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
 
@@ -99,9 +99,13 @@ If we can continue making better models with more useful data, we achieve increa
 
 <hr />
 
-<a name="f1">1</a>: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
+<div style="font-size: 8px; font-color: #666">
+  <a name="f1">1</a>: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
+</div>
 
-<a name="f2">2</a>: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) also suggests that this definition of intelligence is also valid in the context of the brain.
+<div style="font-size: 8px; font-color: #666">
+  <a name="f2">2</a>: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) also suggests that this definition of intelligence is also valid in the context of the brain.
+</div>
 
 <br />
 
