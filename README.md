@@ -100,9 +100,7 @@ If we can continue making better models with more useful data, we achieve increa
 <hr />
 
 <sub>
-<sup>
 <a name="f1">[1]</a>: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
-</sup>
 </sub>
 
 <p style="font-size: 8px; font-color: #666;">
