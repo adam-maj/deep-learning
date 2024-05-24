@@ -37,21 +37,20 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 # Overview
 
-Digital intelligence is improving quickly, and few have had time to dive deep and fully understand what's going on.
+The most interesting part of my deep-dive came from noticing a clear trend across all the key advancements, which has completely reframed how I understand deep learning:
 
-This overview is an effort to highlight the true big picture of how things are progressing, informed by the technical details of individual innovations.
+> The entire history of deep learning can be explained in terms of 7 constraints limiting the capacity of digital intelligence: (1) data (2) parameters (3) optimization & regularization (4) architecture (5) compute (6) compute efficiency (7) energy.
 
-It focuses on two simple questions:
+And it's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding the constraints that governed the rate of progress in the past.
 
-- How did we get here?
-- Where are we going?
-
-Through answering these questions, it also explores:
+By understanding them from first principles, we can also begin to explore other related questions:
 
 - How is progress made in deep learning?
 - Where do the ideas that drive progress in deep learning come from?
 - How have our narratives about digital intelligence changed over time?
 - What does deep learning teach us about our own intelligence?
+
+So, let's start by diving into the constraints.
 
 <br />
 
