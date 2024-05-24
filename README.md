@@ -704,7 +704,7 @@ Clearly, this was used effectively with the [rumored $7T OpenAI fundraising atte
 
 <br />
 
-[^19] In Theil terms, you could frame this as OpenAI's "secret" or something they believe that others don't.
+[^19]: In Theil terms, you could frame this as OpenAI's "secret" or something they believe that others don't.
 
 # 3. Inspiration
 
