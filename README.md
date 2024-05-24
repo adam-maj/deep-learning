@@ -106,7 +106,7 @@ The dataset contains some information about the true distribution, but it doesn'
 
 However, our original goal was to model the true distribution. To account for this, we need the empirical distribution to be **a good approximation** of the true distribution. The quality of this approximation determines the cap of how good a model trained on the dataset can get.
 
-This is the first constraint:
+This is the first constraint on the intelligence of a neural network.
 
 > [!NOTE]
 >
