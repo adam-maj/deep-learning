@@ -69,9 +69,7 @@ So, let's start by understanding these constraints from first principles.
 
 # 1. Constraints
 
-We can define intelligence[^1] as the ability to accurately model reality[^2].
-
-Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
+We can define intelligence[^1] as the ability to accurately model reality[^2]. Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
 
 The goal of deep learning is to produce accurate models of reality for these useful tasks by:
 
