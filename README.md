@@ -250,7 +250,7 @@ However, early on, size appeared to be one of many factors constraining the impr
 
 [^11]: Although, AlexNet was the result of a large number of innovations that combined to make it so effective - the increase in network depth was complemented with a use of effective optimization & regularization methods and the use of GPUs for training which enabled this increase in size.
 
-### Breakthrough #2: Scaling laws
+### Breakthrough #2: Scaling Laws
 
 The [GPT](/04-transformers/04-gpt/) series made it clear that for internet datasets, scaling parameters appears to be sufficient to significantly increase model quality.
 
