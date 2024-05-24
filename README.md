@@ -61,12 +61,13 @@ By understanding them, we can also explore a few related questions:
 - Where do the ideas that drive progress in deep learning come from?
 - How have our narratives about digital intelligence changed over time?
 - What does deep learning teach us about our own intelligence?
+-
 
 So, let's start by understanding these constraints from first principles.
 
 <br />
 
-### Context
+# 1. Constraints
 
 > Note: If you're already very familiar, skip
 
@@ -84,9 +85,11 @@ Intelligence = builds model of reality
 
 Builds model of reality = uses data (samples) from reality (distribution) to approximate reality
 
-<br />
+###
 
-# 1. Constraints
+We can define intelligence[^1] as the ability to accurately model reality[^2].
+
+Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
 
 Deep learning is about getting good data, and then using that data to model the world.
 
@@ -97,6 +100,11 @@ In practice, there are a few constraints that limit how fast we can accomplish t
 It's impossible to understand where we're going without understanding how we got here. And it's impossible to understand how we got here without deeply understanding each of these constraints, and how they relate to each other.
 
 So let's look at each one in depth.
+
+<hr />
+
+[^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
+[^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) also suggests that this definition of intelligence is also valid in the context of the brain.
 
 <br />
 
