@@ -87,7 +87,7 @@ Builds model of reality = uses data (samples) from reality (distribution) to app
 
 ###
 
-We can define intelligence<sup>[[1]](#f1)</sup> as the ability to accurately model reality<sup>[[2]](#f2)</sup>.
+We can define intelligence<sup style="text-decoration: none">[[1]](#f1)</sup> as the ability to accurately model reality<sup>[[2]](#f2)</sup>.
 
 Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
 
