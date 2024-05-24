@@ -134,7 +134,7 @@ We can also increase the information in the dataset by adding more samples that 
 
 This is not because more data is always good[^7], but because we want more information about the true distribution in the dataset so the model can learn a sufficient approximation of it.
 
-With this understanding of how to improve the quality of datasets, we can look at the history of deep learning to see how
+With this understanding of the data constraint and how to improve the quality of datasets, we can look at how progress in this dimension has impacted the history of deep learning.
 
 <br />
 
