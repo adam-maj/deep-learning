@@ -632,16 +632,6 @@ Having broken past significant constraints in all of these dimensions over the p
 
 This is again indicative of the scaling laws - our models have not shown signs of coming close to fully modeling the information in current internet-scale datasets, so we continue to scale up models by increasing _compute_ and _parameters_
 
-Although scaling laws are currently at play and the current path forward is to acquire larger amounts of compute to train larger models, the efficacy of this approach may hit a bottleneck, at which point we will have to turn to the constraints again to keep progressing.
-
-It's possible that we may hit a bottleneck in how good models can get based on the quality of the empirical distribution of the internet, in which case we'll have to seek other sources of data.
-
-> [!IMPORTANT]
->
-> It's critical to remember that the first principles of progress in deep learning is that pushing on the 7 constraints will lead to increasingly intelligence systems.
->
-> Thought the scaling laws indicate that the current limiting constraints are compute and parameters, these may shift over time to data and energy, in which case the approaches to deep learning will shift.
-
 <br />
 
 # 2. Narratives
@@ -708,105 +698,110 @@ Clearly, this was used effectively with the [rumored $7T OpenAI fundraising atte
 
 # 3. Inspiration
 
-Where do the ideas that have led to breakthroughs in deep learning come from? By looking at the history, we can see a few common sources of inspiration that appear frequently.
+Where do the ideas that have led to breakthroughs in deep learning come from?
+
+When we look at the history of progress, we can see several common sources of inspiration that appear frequently.
 
 <br />
 
 ### Neuroscience
 
-**Similar Solutions**
+The most apparent source of direct inspiration for many advancements in deep learning is neuroscience.
 
-The most common source of apparent inspiration is neuroscience.
+The [CNN](/01-deep-neural-networks/02-cnn/01-cnn.pdf) is almost directly inspired by the visual system in the brain, and it led to significant advancements in deep learning.
 
-The [CNN] is the most obvious architecture directly inspired by neuroscience, as it maps directly to the functinos of the visual system.
+Similarly, the effectiveness of [ReLU](/02-optimization-and-regularization/02-relu/) is explained in terms of the energy efficiency of sparse representations for concepts in the brain.
 
-Other systems like [LSTM, Attention] appear to draw from neuroscience ideas (memory, attention), although looking at their development, in many ways they may be derived empirically, and then fit onto neuroscience after.
+Other systems, like the [LSTM](/03-sequence-modeling/02-lstm/02-lstm.ipynb) and [Attention](/03-sequence-modeling/06-attention/02-attention.ipynb) mechanisms appear to draw from neuroscientific concepts (memory and attention) on a surface level, although in reality, their implementations are more motivated by the math of neural networks and engineering to specific problems rather than they are directly modeled after the brain.
 
-For example, LSTM design is perfectly made to address the vanishing/exploding gradients problem in RNNs, rather than specifically with the goal of modeling memory.
+For example, the LSTM design is perfectly engineering to address the vanishing & exploding gradients problem in RNNs, and it happens that a long-term memory based system is an effective way to fix this problem.
 
-This pattern suggests that rather than taking direct inspiration from neuroscience, deep learning has converged on similar approaches to how nature has built the brain partly through first principles.
+This pattern suggests that rather than taking direct inspiration from neuroscience, **deep learning may have converged on similar approaches to how nature has built intelligence in the brain, partly through first principles.**
 
-**Overfitting**
+This is a nice ex-post rationalization, but may overly construct a clean narrative that doesn't actually reflect the situation.
 
-In early papers, there seems to be an attempt to fit ideas to neuroscience as a justification for their relevance [?, Dropout], which we don't see anymore at all. This reflects on early ideas about deep learning (which have now changed to be less anthropomorphic).
+Additionally, early papers seem to intentionally feel pressure to fite ideas into neuroscientific and biological justifications, even where there may not have been any.
 
-[Dropout] struck me as the most blatant example of this potential overfitting, as they explain "one possible motivation" for dropout as a mapping to animal sexual behavior, despite their prior explanation in the paper of dropout following from a rather logical line of thinking around regularization.
+[Dropout] struck me as the most blatant example of this, as they explain "one possible motivation" for dropout coming from animal sexual behavior, despite their prior explanation in the paper of dropout following from a rather logical line of thinking around regularization.
 
-This seems to be an ex-post rationalization of the architecture in an attempt to make it correspond with biology, rather than it actually serving as a source for inspiration (of course, I could be wrong).
+This seems to be an ex-post rationalization of the architecture in an attempt to make it correspond with biology, rather than it actually serving as a source for inspiration (of course, I could be wrong about this).
 
 <br />
 
 ### Linear Algebra & Calculus
 
-Most notably, [back-propagation/DNN] and [LoRA] are directly inspired by the math behind neural networks.
+Most notably, [backpropagation](/01-deep-neural-networks/01-dnn/02-dnn.ipynb) and [LoRA](/04-transformers/05-lora) are directly inspired by the math behind neural networks.
 
-[LoRA] (low-rank adaptation) is directly a manipulation on how models are trained by taking advantage of a feature of linear-algebra (decomposing parameters into lower dimensionality matrices).
+LoRA (low-rank adaptation) is directly a manipulation on how models are trained by taking advantage of a feature of linear-algebra (decomposing weight matrices into lower dimensionality matrices with fewer trainable parameters).
+
+Similarly, advancements like [Residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) were directly motivated by the nature of gradient flows within neural networks.
 
 <br />
 
 ### Physics & Information Theory
 
-Most notably, [VAEs], [Diffusion], [Score-Models], [Flow-Models] all take inspiration from physics - especially Langevin dynamics.
+Notably, [VAEs](/05-image-generation/02-vae/04-vae.ipynb) and [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models take inspiration from thermodynamics - specifically Langevin dynamics, as well as probability and information theory.
 
-These are systems involving noisy sampling.
+These systems involve noisy sampling, and these models turn to approaches used in similarly noisy systems in the real world for inspiration
 
 <br />
 
-### Nature
+### Engineering
 
-In general, all these sources of inspiration are engineering / sources where nature has solved the problem of modeling data in different ways, and we can take ideas from these places.
-
-As mentioned before though, it's very easy to rationalize reasoning for things ex-post that fit into nice narratives.
-
-In reality, the majority of change (though maybe inspired from many places) is heavily grounded in engineering [ie. LayerNorm/BatchNorm, LoRA, Residuals, LSTM from RNN, etc.] - patching errors in things we see, especially using math as the tool for engineering in the context of neural networks.
+In practice, most of the innovations in deep learning, though they can be understood from the source of inspiration after creation (especially those with neuroscientific correlates), actually are more often motivated by engineering problems in neural network design, and bear only surface-level resemblance to the apparent fields of inspiration.
 
 <br />
 
 # 4. Intelligence
 
-What does this progression tell us about intelligence? I'll try to be very empirical here, because dipping into philosophizing with this topic is very easy if not careful.
+What can this progression of progress in deep learning tell us about our own intelligence?
 
-One way to view intelligence is a measure of our ability to model complex distributions (about reality), then run active inference using these models to accomplish goals in the world [Free Energy Principle].
+I'll try to be purely empirical here, since it's easy to dip into unbased philosophizing with this topic given it's subjective nature.
 
-This frames [The Cook and the Chef] particularly well - constant update based on the world, constantly improve your own frameworks.
+As we've disucssed, one way way to view intelligence (motivated by the [Free Energy Principle](https://www.nature.com/articles/nrn2787)) is as a measure of our ability to model complex distributions that describe reality, and then run active inference on these models to accomplish things in the world[^20].
 
-It appears data representing reality (dataset vs. senses) + compute (transistors vs. neurons) + energy (grid vs. food) + scale (params in DNN vs. neurons in brain), we get intelligence
+With this definition, the creation of digital intelligence that appears to behave intelligently is surprising.
 
-As we’ve defined it, intelligence is certainly emergent from complex systems [Integrated Information Theory] - clearly, there's nothing inherently human about it.
+It seems that the combination of data about reality (dataset vs. our sense), compute (transistors vs. neurons), and energy (electricity vs. food) along with scale (parameters vs. connections), and of course, an effective learning algorithm, yields systems that appear to be intelligent.
 
-What can architectures teach us about intelligence - maybe more effective representations / parameters is something fundamental. It appears, out of the giant graveyard of stuff tried, that some formats of convolution/compression [visual system], memory [LSTM/forget], attention [attention system] have been tried.
+Additionally, it seems that the respective efficacy of different architectures may also have something interesting to add about intelligence - the inductive biases offered by various architectural approaches seems to indicate something inherent about the way the data they're trying to model works.
 
-Maybe our brain converged on good ways to model data - the same thing AI is trying to do, and so happens to converge on similar answers over time.
+For example, the effectiveness of the attention mechanism raises the question of why this inductive bias alone appears to be so effective at modeling data.
 
-Embeddings mean something in the brain too, and show us something about representations.
-
-And, if intelligence really is just about data + compute + energy, it seems inevitable that digital intelligence will surpass us at some point (to many people this seems inevitable, many disagree, many don’t like it) - this is explored in the next section.
+If intelligence is really just a function of data, compute, energy, and training, then it seems inevitable now that digital intelligence will soon surpass us.
 
 <br />
+
+[^20]: This view of intelligence also paints the framework of thinking in the WaitButWhy post [The Cook and the Chef: Musk's Secret Suace](https://waitbutwhy.com/2015/11/the-cook-and-the-chef-musks-secret-sauce.html) particularly well
 
 # 5. Future
 
-We've now reframed the history of progress as a series of break-throughs on the constraints limiting intelligence.
+We've now reframed the history of progress as the series of advancements that have continually raised the ceiling on the constraints governing digital intelligence.
 
 Everything in the past that has contributed to progress has been determined by the constraints discussed above.
 
-And nothing changes in the future - these same constraints will always determine where we're headed, how close we get to AGI, etc.
+Importantly, nothing about this changes in the future - **these same 7 constraints will always determine where we're headed, and how close we are to AGI.[^21]**
 
-We've now solved the _theoretical_ problem of AGI for a long time. We know that we need compute, data, and energy and if we keep scaling these, intelligence will increase. This was not obvious until the past 1-2 decades of history (only to some people). It has really only become obvious in the past 3 years - this was a contrarian bet for OpenAI.
+We've solved the _theoretical problem_ of AGI in the sense that we know exactly what would get us to AGI[^22].
 
-The question is now can we solve the _engineering_ problem of AGI. Can we continue pushing on all the constraints to keep increasing intelligence?
+This was not obvious until the past decade, where we've really seen the power of how far deep learning can go.
 
-It appears optimization/regularization doesn't need to increase too much, and the transformer may be the dominant architecture for a long-time before architecture becomes a plausible constraint again (if ever) [Karpathy saying to keep architecture the same].
+The question is now can whether we will solve the _engineering_ problem of AGI. Will we be able to keep pushing on all the constraints to keep increasing intelligence?
 
-We will continue pushing the frontiers on compute efficiency, compute supply chains will adjust, and energy will also adjust slowly (over medium term time horizons). This means we will continue to produce larger and larger parameter models, and intelligence will certainly increase.
+Although scaling laws are currently at play and the current path forward is to acquire larger amounts of compute to train larger models, the efficacy of this approach may hit a bottleneck, at which point we will have to turn to the constraints again to keep progressing.
 
-How far does this go? It depends how far the scaling laws go. In this context, we see that the scaling laws are not a universal truth. They're a local truth - scale is all we need for now because the data we're training on is far more complex than what current networks are modeling.
+It's possible that we may hit a bottleneck in how good models can get based on the quality of the empirical distribution of the internet, in which case we'll have to seek other sources of data.
 
-This may scale to the point where we achieve intelligence that can improve itself, especially as we unlock access to collect data about the world directly via humanoid robots.
-
-Or, we may cap out at some point and need to figure out new ways to push the data constraint. Either way, given the current trajectory, models by that point will be far more intelligent than they are now, and it's unclear how they'll impact society in the mean time.
+> [!IMPORTANT]
+>
+> It's critical to remember that the core principle of progress in deep learning is that pushing on the 7 constraints will lead to increasingly intelligence systems.
+>
+> Though the scaling laws indicate that the current limiting constraints are compute and parameters, these may shift over time to data and energy, in which case the approaches to deep learning will shift.
 
 <br />
+
+[^21]: This is not saying that scaling laws will get us to AGI, but that constantly pushing the constraints will get us to AGI. We may run into bottlenecks that render the scaling laws obselete at some point.
+[^22]: Assuming you believe that the current systems exhibit intelligent behavior, which some people still disagree with.
 
 # Resources
 
