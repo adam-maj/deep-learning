@@ -569,6 +569,10 @@ While the power of compute increases, making effective use of this compute power
 
 Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135) which drastically accelerated the speed of Transformers through an optimization in how attention access memory are a reminder that compute optimizations are another lever to increase the efficiency of training and scale up models.
 
+> [!NOTE]
+>
+> **Constraint #6: The software implementations for training constrain the efficiency of compute utilization.**
+
 <br />
 
 ### Breakthrough #1: CUDA
@@ -608,11 +612,15 @@ Specifically, energy grids are limited to allowing a certain amount of energy be
 
 As many companies plan to build large data-centers for AI training, we'll see how the energy constraint plays out - notably, [Microsfot and OpenAI are rumored to be launching a $100B data-center project](https://www.reuters.com/technology/microsoft-openai-planning-100-billion-data-center-project-information-reports-2024-03-29/).
 
+> [!NOTE]
+>
+> **Constraint #7: The energy available to draw from the grid in a single location constraints the amount of compute that can be used for a training run.**
+
 <br />
 
 ## 1.8. Fixed Constraints & Leverage
 
-So we can now consider all these constraints together.
+Having covered each constraint individually, we can now put them all into perspective in relation to the broader arrow of progress in deep learning.
 
 The first constraint is the data (specifically, the quantity and quality of data we have), which determines the empirical distribution. The empirical distribution sets the cap on how well we can model the true distribution based on how well it approximates the true distribution.
 
