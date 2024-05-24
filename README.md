@@ -82,6 +82,10 @@ In this view, creating intelligence with deep learning involves just two steps:
 1. Collect some useful information about reality to learn from
 2. Create a model that can effectively learn this information
 
+So, the only way to increase the intelligence of our models is by improving how effectively we accomplish these two steps.
+
+With this in mind, we can look at the constraints that determine how we can improve digital intelligence by either means. Let's start by understanding the constraint on data.
+
 [^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. People may disagree with the specifics of this definition. I've chosen this one for the sake of simplicity to clearly frame what we're trying to achieve with deep learning from an economic perspective - I'm less concerned with it's philosophical implications here.
 [^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is simple).
 [^3]: This idea may seem unintuitive at first. But it's actually saying something very simple: (1) reality has a set of rules that govern what happens (2) we can effectively predict the effect of actions by creating more accurate models of these rules (3) since these models have some uncertainty about the likelihood of different events, they actually deal in terms of probabilities. Again, the [Free Energy Principle](https://www.nature.com/articles/nrn2787) supports this view of modeling reality.
