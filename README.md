@@ -97,11 +97,9 @@ Deep learning is about getting good data, and then using that data to model the 
 
 If we can continue making better models with more useful data, we achieve increasing intelligence.
 
-<hr style="height: 1px; line-width: 1px" />
+##
 
-<sub>
-<a name="f1">[1]</a>: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
-</sub>
+[1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
 
 [2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) also suggests that this definition of intelligence is also valid in the context of the brain.
 
