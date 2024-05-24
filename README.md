@@ -254,14 +254,14 @@ However, early on, size appeared to be one of many factors constraining the impr
 
 The [GPT](/04-transformers/04-gpt/) series made it clear that for internet datasets, scaling parameters appears to be sufficient to significantly increase model quality.
 
+The scaling laws show no sign of letting up, which has motivated the current continued attempts at training larger and larger models.
+
 <p align="center">
   <img src="/images/readme/scaling-laws.png" alt="Scaling Laws" width="50%" />
 </p>
 <p align="center">
   <i>Scaling laws for model performance as a function of parameters</i>
 </p>
-
-The scaling laws show no sign of letting up, which has motivated the current continued attempts at training larger and larger models.
 
 **Importantly, the reason for this trend is not that increasing the number of parameters in a model always increases it's intelligence.** Instead, it's due to the fact that current models still don't have enough representational capacity to capture all the information in internet-scale datasets.
 
