@@ -77,8 +77,8 @@ The goal of deep learning is to produce accurate models of reality by:
 2. Creating neural networks capable of modeling complex probability distributions.
 3. Training these networks to learn to model the probability distributions that underlie reality.
 
-[^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
-[^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is intuitive).
+[^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. People may disagree with the specifics of this definition. I've chosen this one for the sake of simplicity to clearly frame what we're trying to achieve with deep learning from an economic perspective - I'm less concerned with it's philosophical implications here.
+[^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is simple).
 [^3]: This idea may seem unintuitive at first. But it's actually saying something very simple: (1) reality has a set of rules that govern what happens (2) we can effectively predict the effect of actions by creating more accurate models of these rules (3) since these models have some uncertainty about the likelihood of different events, they actually deal in terms of probabilities. Again, the [Free Energy Principle](https://www.nature.com/articles/nrn2787) supports this view of modeling reality.
 
 <br />
