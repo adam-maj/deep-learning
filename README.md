@@ -361,99 +361,106 @@ This is especially augmented by the fact that we're far from reaching the peak o
 
 ![constraint-4-architecture](./images/readme/constraint-4-architecture.png)
 
-Good optimization & regularization enables us to make larger and deeper models.
+We covered how increasing the number of parameters in a neural network increases its _representational capacity_. This can be understood as the networks ability to store _useful representations_ that effectively model the empirical distribution.
 
-Are all models of the same size created equal in their capacity to model distributions effectively? Certaintly not.
+By default, deep neural networks are forced to learn the most optimal ways to store representations for different problems.
 
-We want our models to learn “useful representations” that efficiently model the apparent distribution. ie. they learn true information and ignore all the “noise” that comes from random sampling.
+However, when we already know an effective method for the model to store useful representations relevant to a particular problem, it can be helpful to build the ability to store representations in this useful form directly into the model.
 
-If we know a good way the model can capture this “useful information,” and ignore the “noise” using less parameters, we can help it learn more efficiently.
+**Building specific structures into the neural network design to make it easier for the model to store useful representations is known as adding inductive bias.**
 
-We are telling the model “learn like this.” This is adding _inductive bias_.
+Desiging good neural network architectures into our models is about increasing the density of _useful representations_ in the model, meaning more efficient usage of parameters.
 
-Architecture is about more useful representations per group of parameters, which translates to better modeling of apparent distribution, with fewer parameters, meaning more room for parameters, meaning larger effective size again (more useful representations in the mode, more intelligence).
+In this way, improved architectures can achieve similar effects to scaling up parameters.
 
-Technically, a DNN with non-linearities can model any distribution, given sufficient scale [Link to justification].
+In practice, architectural advancements have made previously intractable problems (like image synthesis) possible for neural networks.
 
-But in practicality, we know there are distributions with so much noise and complexity (like images) that we need some inductive bias beyond basic DNNs to be able to form any useful representations.
+> [!NOTE]
+>
+> **Constraint #4: The quality of the network architecture constraints the representational capacity of a model.**
 
-<br />
+Technically, a deep neural network with non-linearities is capable of modeling any distribution, given a sufficient number of parameters [^15].
 
-### Breakthrough #1: Learning features unlocks images
-
-**CNN** - The first inductive bias or unique representation really introduced by an architecture [CNN, LeNet, AlexNet], and it's still used today in state of the art generative models [U-Net].
-
-These are about _compression_. They give the model a way to explicitly learn to ignore a lot of noise by only paying attention to specific _features_.
-
-This maps directly to the manual feature engineering that ML engineers did before deep-learning, but with a more deep-learning twist, since it allows the model to learn the best features itself.
+But in practicality, there are distributions with so much complexity that simple deep neural networks can't effectively model them[^16]. For these distributions, we turn to architectural advancements to make progress.
 
 <br />
 
-### Breakthrough #2: Memory unlocks sequence modeling
+[^15]: This idea is explored in the original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf).
+[^16]: For example, image classification, where individual pixel values are noisy and subject to a variety of transformations.
 
-**RNNs -> LSTMs** [RNN, LSTM, Learning to Forget, Encoder-Decoder, Seq2Seq] - First introduces the ability to understand relationships across time & space via memories (because of the introduction of gates).
+### Breakthrough #1: Learning Features
 
-We enable the model to think about what parts of the data are important to other parts.
+The [Convolutional Neural Network](/01-deep-neural-networks/02-cnn/03-cnn.ipynb) was the first effective architecture that introduced a significant inductive bias into neural networks. The idea behind the CNN is directly inspired by the hierarchical processing of inputs from the brain's vision system.
 
-The LSTM made the RNN actually viable, and sequence-modeling actually viable. This is the start of the trajectory that led us to where we are now.
+CNNs use _feature maps_ that detect high-level features across images to implement the translational invariance that's critical to image recognition tasks.
 
-However, the LSTM was constrained on time.
+This provided a deep learning analogue to the manual feature engineering efforts often used before deep learning was proven.
 
-<br />
-
-### Breakthrough #3: Attention is all you need
-
-**Attention & Transformers** - [Attention, Transformer] Understand relationships across space without being blocked by time. This enabled parallelization, which increase compute efficiency and model size.
-
-Attention enables every part of an input to learn about every other part of it. Everything is able to enhance the meaning of everything else within context.
-
-The title "Attention Is All You Need" makes the most sense in contrast to previous papers [Encoder-Decoder, Seq2Seq, Attention] that achieved success with RNNs. This paper shows that the _only_ inductive bias you need is attention. This suggests something important about it regarding intelligence.
+CNNs were critical the initial adoption of deep learning - neural networks like [LeNet](/01-deep-neural-networks/02-cnn/02-le-net.pdf) and [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) used the architecture to beat the state-of-the-art in image classification competitions. Additionally CNNs are still relevant in modern models with the [U-Net](/01-deep-neural-networks/04-u-net/02-u-net.ipynb) architecture being used in modern [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models for image generation.
 
 <br />
 
-### Breakthrough #4: Taming randomness
+### Breakthrough #2: Memory
 
-**Generative Models** - By far the most conceptually complex of all the models.
+The [Recurrent Neural Network](/03-sequence-modeling/01-rnn/02-rnn.ipynb) introduced the ability to store memories about the past to inform future decisions.
 
-We’ve talked about how we understand samples from complex distributions (with information and noise).
+While theoretically interesting, it remained largely ineffective for sequence-modeling tasks until the introduction of the [Long Short-Term Memory](/03-sequence-modeling/02-lstm/02-lstm.ipynb) architecture which enabled neural networks to learn complex relationships across time and space by learning to store, retrieve, and [forget](/03-sequence-modeling/03-learning-to-forget/02-learning-to-forget.ipynb) memories over long time horizons.
 
-How do we synthesize complex data? It appears we would have to understand not just the information (what we’ve been doing so far), but also the details? The details are extremely complex.
+**The LSTM inductive bias made them effective at sequence-modeling tasks, kicking off the arc of progress that eventually led to the creation of the Transformer.**
 
-The sum of complex random variables is noise. So we synthesize images by learning to create both features + noise (which adds details).
+Despite their efficacy, the LSTM was constrained by the fact that it processed input sequences sequentially, making it slow to train.
 
-VAEs create a bottleneck that forces the model to use useful representations. Then add back noise on top of these representations. So we start by creating information, then add noise to it to create our synthesized data.
+<br />
 
-Diffusion, instead, starts with noise, and learns to add back information to it slowly.
+### Breakthrough #3: Attention
 
-Without these designs, models could never synthesize data.
+The [Attention](/03-sequence-modeling/06-attention/02-attention.ipynb) mechanism was initially introduced as an addition to LSTMs to enhance their ability to understand the relationship between concepts.
+
+The now famous [_Attention Is All You Need_](/04-transformers/01-transformer/01-transformer.pdf) paper removed all the LSTM components and demonstrated that the inductive bias of attention alone is effective for sequence-modeling tasks, introducing the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb) architecture which has permanently changed deep learning.
+
+**The transformer is particularly effective not just because of the power of the attention mechanism, but because of the high parallelization it achieved by removing recurrence.**
+
+<br />
+
+### Breakthrough #4: Harnessing Randomness
+
+The CNN introduced the ability to understand samples from the complex distribution of images.
+
+However, the problem of synthesizing images appeared to be much harder - CNNs could learn to filter out the details in images and focus on high-level features, whereas image geneartion models would need to learn to create both high-level features and complex details.
+
+Image generation models like [Variational Auto-Encoders](/05-image-generation/02-vae/04-vae.ipynb) and [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models learn to generate both high-level features and complex details by introducing random sampling and noise directly into their architectures.
+
+VAEs create a bottleneck that forces the models to learn useful representations in a low dimensional space. Then, they add back noise on top of these representations through random sampling. **So VAEs start by learning representations, and then add noise.**
+
+**Diffusion models, instead, starts with noise, and learn to add information into to the noise slowly.**
+
+Without these designs, modern image generation models like [Stable Diffusion](https://arxiv.org/abs/2112.10752) and [DALL E](/05-image-generation/05-dall-e/) wouldn't exist.
 
 <br />
 
 ### Breakthrough #5: Embeddings
 
-**Embeddings** - [Word2Vec, VAEs, CLIP] Force models to learn an interesting representation space with semantic and syntactic meaning.
+The [Word2Vec](/03-sequence-modeling/04-word2vec/03-word2vec.ipynb) model popularized the concept of text embeddings that preserve semantic and syntactic meaning by forcing models to create vector representations for concepts with interesting properties.
 
-The classic example of this is that the embeddings allow "King" - "Man" + "Woman" = "Queen"
+A commonly used example of the power of such embeddings is that the following equation holds true in the embedding space: Emedding("King") - Embedding("Man") + Embedding("Woman") = Embedding("Queen").
 
-Embeddings show us the composability of concepts. Transformers use this to soak information into words.
+Embeddings show us how the relationships between concepts can be represented in a highly condensed format.
 
-<br />
-
-### Creativity & Engineering
-
-U-Net, embeddings, diffusion, etc. Even the transformer design.
+Later models like [CLIP](/05-image-generation/04-clip/02-clip.ipynb) based on the [Transformer](/04-transformers/07-vision-transformer/02-vision-transformer.ipynb) architecture have led to complex embedding spaces mapping understandings of concepts across modalities to a single representation space, enabling multi-modal models like [DALL E 2](/05-image-generation/05-dall-e/02-dall-e-2.pdf).
 
 <br />
 
-### "Don't touch the architecture"
+### "Don't Touch the Architecture"
 
-Combining Models - [DALL E, DALL E 2, Stable Diffusion, etc.] - using U-Net, Transformer, CLIP, VAE, Feed-forward, Diffusion all in one.
+For the past several years after the introduction of the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb), efforts have mainly been focused around scaling up the parameters and data fed into transformers without heavily adjusting the inductive biases.
 
-Many state of the art models combine pieces from many of the different architectures in different sections to work together to do larger tasks like condition images with text, etc.
+This suggests a stagnation in architectural improvement motivated by the efficacy of the Transformer, which may suggest something about the inherent efficacy of the inductive bias of [Attention](/03-sequence-modeling/06-attention/) in intelligence.
 
-GPT-4o is the most obvious example of complete multi-modality, which involves stitching together lots of different types of models.
+**This explicit desire not to change architectures anymore is [discussed by Andrej Karpathy in this clip](https://www.youtube.com/watch?v=9uw3F6rndnA).**
 
-[8] "Don't touch the architecture" [Clip of Karpathy talking about not changing architectures]
+Instead of changing base architectures, many state-of-the-art models have been combining different existing architectures together - for example, the [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) model design uses the [U-Net](/01-deep-neural-networks/04-u-net/02-u-net.ipynb) underneath, and [DALL-E-2](/05-image-generation/05-dall-e/02-dall-e-2.pdf) uses both [CLIP](/05-image-generation/04-clip/02-clip.ipynb) (which is built with the [Vision Transformer](/04-transformers/07-vision-transformer/02-vision-transformer.ipynb)) and a [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) model.
+
+The combination of different working architectures has also resulted in the increasing multi-modality of models, indicative in the recent [announcement of GPT-4o](https://openai.com/index/hello-gpt-4o/) which trains a single base model on a variety of modalities (likely combining a variety of architectures underneath, although the implementation details are unreleased.).
 
 <br />
 
