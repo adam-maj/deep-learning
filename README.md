@@ -565,33 +565,30 @@ The question is, will other companies be able to compete in this space, or will 
 
 ![constraint-6-compute-efficiency](./images/readme/constraint-6-compute-efficiency.png)
 
-Making effective use of compute (training parameters most efficiently) is not a gaurantee. This is a software problem and takes active effort and optimization.
+While the power of compute increases, making effective use of this compute power is not a guarantee. Making training efficient on compute is a software problem that takes active effort and optimization.
 
-Examples like [FlashAttention] show us that there are large compute breakthroughs that accelerate things waiting to happen.
+Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135) which drastically accelerated the speed of Transformers through an optimization in how attention access memory are a reminder that compute optimizations are another lever to increase the efficiency of training and scale up models.
 
 <br />
 
 ### Breakthrough #1: CUDA
 
-**CUDA** - The first challenge with compute was just being able to work with GPUs. GPUs require a completely different programming paradigm unfamiliar to most people, and was challenging to get right.
+The initial challenge to overcome was just the difficult of working with GPUs, which have a completely different programming paradigm than the CPUs that early deep learning models were trained on.
 
-NVIDIA built CUDA for this, a programming pattern native to C which devs were more used to.
+The introduction of [CUDA](https://en.wikipedia.org/wiki/CUDA) as a GPU programming paradigm familiar to C programmers made writing GPU code far more approachable.
 
-We see in [AlexNet] they write their own GPU code manually (and in other places).
+This language enabled [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) to manually implement their own kernels to speed up the convolution operation on GPUs, unlocking a new level of parallelization for training CNNs.
+<br />
+
+### Breakthrough #2: Kernel Libraries
+
+People rarely have to write low-level kernels anymore since popular libraries like [PyTorch](https://pytorch.org/) and [JAX](https://github.com/google/jax) have already written the kernel code for the most popular kernels, making it easy for modern deep learning engineers to use GPUs without needing to dip into low-level code.
 
 <br />
 
-### Breakthrough #2: Kernel libraries
+### Continuous Improvement
 
-**Kernel Libraries** - People stopped having to write their own kernels as frequently dropping the barrier to entry - solved both by NVIDIAs on kernels and libaries like [TensorFlow], [PyTorch], [JAX] that handle compute side for you.
-
-<br />
-
-### Improvement never ends
-
-**Efficient Implementations** - Even past the point where people write kernels, now that kernel libraries are all available, there are still compute efficiency optimizations lying around. [FlashAttention] notably increased the performance of the Transformer by a huge margin.
-
-> [Graphic] - Sam Altman talking about compute efficiency being good too
+Despite the fact that GPU kernels are now largely written, there are likely still plenty of opportunities for improving the compute efficiency of model implementations - notably, the introduction of [FlashAttenion](https://arxiv.org/abs/2205.14135) demonstrated how big of a difference these changes could make in terms of training efficiency.
 
 <br />
 
@@ -599,19 +596,17 @@ We see in [AlexNet] they write their own GPU code manually (and in other places)
 
 ![constraint-7-energy](./images/readme/constraint-7-energy.png)
 
-Finally, even if we have infinite resources to purchase compute, and more importantly, the supply chain can support any demand, there is still a constraint on compute - energy.
+**Finally, even if the compute supply chains are capable of supporting all demand, and we have infinite resources to purchase compute, there is still a constraint on compute: energy**
 
-In practice, compute has to be clustered together since it all needs to communicate with each other. Communicating over network is impractical - it has to be much faster - over local InfiniBand.
+In practice, large training runs need to be run on physically clustered compute in large data centers since the devices need to communicate with each other.
 
-So compute must all be clustered together in data centers, and the data center will need to have sufficient electricity to keep the compute running.
+As the amount of devices in large training runs grows, datacenters will need to be able to support the energy needs of these devices.
 
-But with amounts of compute being discussed right now in data centers, the data centers may not actually be able to supply this energy.
+This may actually become a meaningful constraint, as [Zuck discussed in this clip on the Dwarkesh podcast](https://www.youtube.com/watch?v=i-o5YbNfmh0).
 
-> [Graphic] - Microsoft & OpenAI data center
+Specifically, energy grids are limited to allowing a certain amount of energy being drawn from them in a location, meaning there's a cap to how large data-centers can become before they run into problems that require energy permitting and dipping into much slower government regulated processes.
 
-This is because the available energy you can draw from the grid at once place is actually limited to [X GW]. The grid capacity will have to adjust over time to increase this constraint.
-
-> [Graphic] - [Zuck clip about energy](https://www.youtube.com/watch?v=i-o5YbNfmh0)
+As many companies plan to build large data-centers for AI training, we'll see how the energy constraint plays out - notably, [Microsfot and OpenAI are rumored to be launching a $100B data-center project](https://www.reuters.com/technology/microsoft-openai-planning-100-billion-data-center-project-information-reports-2024-03-29/).
 
 <br />
 
