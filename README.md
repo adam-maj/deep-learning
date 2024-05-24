@@ -41,7 +41,7 @@ The most interesting part of my deep-dive came from noticing a clear trend acros
 
 > [!IMPORTANT]
 >
-> There are 7 simple constraints that limit the capacity of digital intelligence:
+> **There are 7 simple constraints that limit the capacity of digital intelligence:**
 >
 > 1. data
 > 2. parameters
@@ -51,18 +51,18 @@ The most interesting part of my deep-dive came from noticing a clear trend acros
 > 6. compute efficiency
 > 7. energy
 >
-> The entire history of deep learning can be explained in terms of progressively raising the ceiling of these constraints.
+> **The entire history of deep learning can be explained in terms of progressively raising the ceiling of these constraints.**
 
-And it's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding the constraints that governed the rate of progress in the past.
+It's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding these constraints that have governed the rate of progress.
 
-By understanding them from first principles, we can also begin to explore other related questions:
+By understanding them, we can also explore a few related interesting questions:
 
 - How is progress made in deep learning?
 - Where do the ideas that drive progress in deep learning come from?
 - How have our narratives about digital intelligence changed over time?
 - What does deep learning teach us about our own intelligence?
 
-So, let's start by diving into the constraints.
+So, let's start by understanding these constraints from first principles.
 
 <br />
 
