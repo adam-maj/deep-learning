@@ -518,8 +518,6 @@ Through the trail of papers, you can see the quality of compute slowly get bette
 
 Finally, in 2020, NVIDIA released their A100 model built specifically for AI applications. This marked the beginning of NVIDIA determining that AI was a strategic bet worth taking, which has now yielding the H100, and soon B100 GPUs that will power much of AI training.
 
-**AI-first GPUs** - Finally, AI becomes a bet worth taking, NVIDIA releases A100, H100, and now B100 focused on MIG, AI tensor cores, mixed-precision, more FLOPS (smaller floating point numbers).
-
 <p align="center">
   <img src="/images/readme/nvidia-openai.jpeg" alt="NVIDIA x OpenAI" width="50%" />
 </p>
