@@ -654,57 +654,57 @@ These narrative shifts alone had a large impact on progress in the industry, as 
 
 [^18]: For those curious, [Kevin Kwok's essay on Narrative Distillation](https://kwokchain.com/2021/09/29/narrative-distillation-1/) an excellent exploration of the power of narratives in capital and resource allocation.
 
-### Narrative #1: Deep learning works
+### Narrative #1: Deep Learning Works
 
-[1] **AlexNet: deep learning is pointless -> deep learning is viable** - For a long time, machine learning community viewed deep learning as naive. The idea of feature engineering and logic-based ML appealed much more to the narratives we liked about intelligence (logic).
+The first major narrative shift in deep learning occured after the release of [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) in 2012.
 
-> [Graphic] - AlphaGo, early opinions on deep learning
+Prior to this paper, deep learning was thought to be a naive approach to machine learning by many academics, as it consistently lost to feature engineering based ML approaches in image classification and other challenges.
 
-Papers like [DNN, CNN, LeNet] shifted the narrative of the viability of deep learning. Then, especially [AlexNet] showed people that it should be taken seriously, and really shifted the narrative.
+The success of AlexNet brought down the top-5 error rate on the ImageNet challenge from 25.8% to 16.4%, blowing the previous state-of-the-art out of the water.
 
-These also demonstrated the first arhictectural breakthrough, and as we saw above, AlexNet appears in innovations in always every single section. They pushed constraints in every direction.
+This led to the further developments of critical works like [GoogLeNet](https://arxiv.org/abs/1409.4842) and [ResNet](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb), but more importantly, it shifted attention back into deep learning and created new interest in the field of study.
 
-<br />
+The narrative shift that occured as a result of this work was from one of skepticism of deep learning to belief that it was a viable, and even superior approach to machine learning.
 
-### Narrative #2: Sequence modeling works
-
-**LSTMs make sequence modeling interesting, and unlock new data** - RNNs were the subject of much effort [RNN] but due to the vanishing/exploding gradients by nature of how RNNs work, they were thought to be completley impractical.
-
-LSTMs made recurrence and sequence modeling viable again [LSTM, Learning to Forget] (results), also creating a large line of work in sequence modeling which eventually led us in the direction of GPTs [Encoder/Decoder, Seq2Seq, Attention].
-
-> [Graphic] - Ilya quote on LSTMs being scalable
-
-Importantly, this shift to sequence modeling as a viable problem now unlocks the first internet scale dataset as a viable data source - all web pages/text on the internet. But, it was initially unclear how this could be used effectively, and the recurrence of the LSTM architecture makes it less efficient training on this data.
+This narrative shift was essential to get us to the point that we're at today, and it seems that Ilya Sutskever (who also co-authored AlexNet) and others had the insight of how scaling laws would playout long before it reached consensus, as [discussed in this interview with Geoffrey Hinton](https://www.youtube.com/watch?v=n4IQOBka8bc).
 
 <br />
 
-### Narrative #3: Unlocking more data
+### Narrative #2: Internet Scale Data
 
-[3] **Attention is all you need, can process data** - [Attention, Attention is All You Need] Massive architectural breakthrough that has great results, and most importantly, removes the bottleneck of LSTMs to increase parallelization, meaning we can scale up more and use compute more efficiently.
+The [_Attention Is All You Need_](/04-transformers/01-transformer/02-transformer.ipynb) paper created a massively parallelizable architecture that enabled training on internet scale datasets.
 
-Contrary to what may seem true, this paper alone is not what caused the biggest narrative shifts. It was still unclear how internet scale data could be used.
+The introduction of the Transformer alone was not what created the largest narrative shifts though.
+
+Arguably, it was the introduction of [BERT](/04-transformers/02-bert/03-bert.ipynb) that really showed how transformers could take advantage of massive datasets scraped from the internet via pre-training and fine-tuning, which kicked off the modern trends in AI focusing on achieving general intelligence.
+
+Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks withou training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence in language models that was not specific to a task.
+
+The shock caused by BERT is evident in the [Google executive statement](https://x.com/TechEmails/status/1756765277478621620) claiming that BERT will replace all the 20 years of progress on the search product.
+
+<br />
+
+### Narrative #3: Scaling Laws
+
+The arrow of progress defined by the improvements from [GPT-2](/04-transformers/04-gpt/01-gpt-2.pdf) to [GPT-3](/04-transformers/04-gpt/02-gpt-3.pdf) onwards created the scaling laws narrative that dominates the current public sentiment.
+
+Importantly, OpenAI took a bet on the scaling laws early on, well before they were widely recognized as being valid[^19]. A few years ago, most people thought the scaling laws were naive.
+
+Now, they look clear in hindisght because of the series of bets OpenAI took to validate these laws, with GPT-2 and GPT-3 further validating their hypothesis.
+
+**Extrapolating the current scaling laws progression out accurately is challenging** - as [Zuck points out in this clip](https://www.youtube.com/watch?v=i-o5YbNfmh0), trends rarely continue predictably while progress happens for free, usually bottlenecks get hit and then it takes significant time to get past them.
+
+In this context, the question is how far the empirical distribution of the internet dataset will take us in terms of building general intelligence - in-other words, when will we start to hit the carrying capacity on the scaling laws.
+
+**This narrative is also a particularly good indicator of how essential narratives are for fundraising.**
+
+The AGI narrative may be the most powerful narrative in history (especially while we were at the peak of the hype cycle) since it can frame things as "everything else economically valuable will be solved by this problem.")
+
+Clearly, this was used effectively with the [rumored $7T OpenAI fundraising attempt](https://www.wsj.com/tech/ai/sam-altman-seeks-trillions-of-dollars-to-reshape-business-of-chips-and-ai-89ab3db0) (which was of course just a rumor, but indication of the absurdity of the narrative that people could consider that as a possibility).
 
 <br />
 
-### Narrative #4: Scaling laws dominate
-
-[4] **The shift to transfer learning unlocks internet scale data, scaling laws begin** - This may be the biggest recent shift. The pre-training and fine-tuning paradigm introduced by [BERT, RoBERTa, GPT-2, GPT-3, InstructGPT] unlock internet-scale data for the first time ever.
-
-The results from BERT alone cause a narrative shift - these things start to look way more powerful.
-
-> [Graphic] - Google executive thoughts on BERT
-
-Then, GPT-2, GPT-3 start to reveal scaling laws. We finally have a dataset complex enough but useful enough to reveal the nature of scaling laws empirically.
-
-OpenAI noticed this early and takes a bet on it. We see this bet playing out over the papers.
-
-"What's one thing you believe that no one else does" - OpenAI's secret was scaling laws. A few years ago, people used to look down on it. OpenAI turned out to be right.
-
-This narrative in particular highlights the power of narratives in fundraising [Narrative Distillation]. This cycle single-handedly revives SF, billions dumped into AI.
-
-> [Graphic] - Graph of funding in AI, Sam Altman $7T
-
-<br />
+[^19] In Theil terms, you could frame this as OpenAI's "secret" or something they believe that others don't.
 
 # 3. Inspiration
 
