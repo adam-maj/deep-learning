@@ -55,7 +55,7 @@ The most interesting part of my deep-dive came from noticing a clear trend acros
 
 It's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding these constraints, which have always governed the rate of progress.
 
-By understanding them, we can also explore a few related interesting questions:
+By understanding them, we can also explore a few related questions:
 
 - How is progress made in deep learning?
 - Where do the ideas that drive progress in deep learning come from?
