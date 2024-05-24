@@ -39,7 +39,18 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 The most interesting part of my deep-dive came from noticing a clear trend across all the key advancements, which has completely reframed how I understand deep learning:
 
-> The entire history of deep learning can be explained in terms of 7 constraints limiting the capacity of digital intelligence: (1) data (2) parameters (3) optimization & regularization (4) architecture (5) compute (6) compute efficiency (7) energy.
+> ![IMPORTANT]
+> There are 7 simple constraints that limit the capacity of digital intelligence:
+>
+> 1. data
+> 2. parameters
+> 3. optimization & regularization
+> 4. architecture
+> 5. compute
+> 6. compute efficiency
+> 7. energy
+>
+> The entire history of deep learning can be explained in terms of progressively raising the ceiling of these constraints.
 
 And it's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding the constraints that governed the rate of progress in the past.
 
