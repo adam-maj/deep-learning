@@ -69,36 +69,16 @@ So, let's start by understanding these constraints from first principles.
 
 # 1. Constraints
 
-> Note: If you're already very familiar, skip
+We can define intelligence[^1] as the ability to accurately model reality[^2] Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
 
-[link 3b1b deep learning videos]
+The goal of deep learning is to produce accurate models of reality by:
 
-Pre-requisite assumptions: you know what deep learning is broadly, how a neural network works, etc.
-
-May cover some topics you're already familiar with, for the sake of explicitness, and because specifics become important in framing.
-
-The goal of deep learning is to create digital intelligence.
-
-We want machines to be able to do complex, economically valuable stuff.
-
-Intelligence = builds model of reality
-
-Builds model of reality = uses data (samples) from reality (distribution) to approximate reality
-
-###
-
-We can define intelligence [^1] as the ability to accurately model reality [^2].
-
-Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
-
-The goal of deep learning is to produce accurate models of reality by creating neural networks capable of modeling complex probability distributions, and then training these networks to model the distributions that explain reality.
-
-Deep learning is about getting good data, and then using that data to model the world.
-
-If we can continue making better models with more useful data, we achieve increasing intelligence.
+1. Creating neural networks capable of modeling complex probability distributions.
+2. Training these networks to model the probability distributions that underlie reality[^3].
 
 [^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. I've chosen this one for the sake of simplicity to make a clear framing of what we're trying to achieve with deep learning from an economic perspective.
 [^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) also suggests that this definition of intelligence is also valid in the context of the brain.
+[^3]: We
 
 <br />
 
