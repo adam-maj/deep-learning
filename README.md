@@ -96,13 +96,13 @@ With this in mind, we can look at the constraints that govern this process. Let'
 
 ![constraint-1-data](./images/readme/constraint-1-data.png)
 
-The goal of deep learning is to model the probability distributions that describe reality. Let's call the distribution that we're trying to model for a specific task the _true distribution_.
+We've established that the goal of deep learning is to model the probability distributions that describe reality.
 
-In order to learn about this true distribution, we collect many samples from it. These samples make up a _dataset_.
+Let's call the distribution that we're trying to model for a specific task the _true distribution_. In order to learn about the true distribution, we collect many samples from it. These samples make up a _dataset_.
 
 The dataset contains some information about the true distribution, but it doesn't contain _all_ information about the true distribution[^4]. Because of this, the dataset represents an approximation of the true distribution, which we'll call the _empirical distribution_.
 
-At best, we can expect our neural network to learn to model this empirical distribution[^5].
+**At best, we can expect our neural network to learn to model this empirical distribution[^5].**
 
 Our original goal was to model the true distribution. To accomplish this, we need the empirical distribution represented by the dataset to be as close as possible to the true distribution.
 
