@@ -61,7 +61,7 @@ By understanding them, we can also explore a few related questions:
 - Where do the ideas that drive progress in deep learning come from?
 - How have our narratives about digital intelligence changed over time?
 - What does deep learning teach us about our own intelligence?
--
+- Where is the future of deep learning headed?
 
 So, let's start by understanding these constraints from first principles.
 
