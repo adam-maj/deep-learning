@@ -108,7 +108,7 @@ However, our original goal was to model the true distribution. To account for th
 
 This is the first constraint:
 
-> [!INFO]
+> [!NOTE]
 >
 > **A model can only be as good as the dataset it was trained on.**
 >
