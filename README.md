@@ -119,7 +119,7 @@ This is the first constraint on the intelligence of a neural network.
 [^4]: Assuming the true distribution we're trying to model is sufficiently complex to the point where including all information about it in the dataset would be intractable. This is almost always the case in deep learning.
 [^5]: Assuming the model perfectly represents all information that exists within the dataset, which rarely happens.
 
-### A good approximation
+### A Good Approximation
 
 To make the empirical distribution a better approximation of the true distribution, we need to include more information about the true distribution in the dataset.
 
@@ -141,101 +141,68 @@ With this understanding of the data constraint and how to improve the quality of
 [^6]: This is analogous to how adding more terms to a Taylor series yields a function closer to the original. Approximations improve with more information about the true function.
 [^7]: In fact, you can think of examples where more data makes no difference. For example adding the same image to a dataset (or two images similar to each other) doesn't improve the quality of the model created. It's because these new data points don't add much new information about the true distribution.
 
-### Breakthrough #1: public datasets
+### Breakthrough #1: Large Labeled Datasets
 
-While deep-learning was getting started, data was collected manually [CNN, LeNet]. This worked at a small scale, but couldn't go very far. Very limited quantity.
+Early machine learning relied on datasets collected by individual research teams. Despite the development of effective approaches to deep learning, datasets weren't large enough to prove their advantages.
 
-The first breakthrough was the creation of large datasets [MNIST, ImageNet]. These enables much larger datasets (relative increase in data quantity), while still maintaining quality.
+The introduction of datasets like [MNIST](https://en.wikipedia.org/wiki/MNIST_database) and [ImageNet](https://en.wikipedia.org/wiki/ImageNet) drastically increased the availability of high quality datasets large enough to effectively train deep learning models.
 
-Instead of each team making their own data, the effort is spread across everyone working on deep learning, and everyone can benefit from these datasets.
+Early [CNNs](/01-deep-neural-networks/02-cnn/03-cnn.ipynb) like [LeNet](/01-deep-neural-networks/02-cnn/02-le-net.pdf) and [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) used these datasets to show that deep neural networks could compete with the traditional machine learning approaches used at the time.
 
-This enabled AlexNet to exist, which completely changed deep learning [AlexNet].
+It's easy to take for granted the impact of these datasets now, as they have long been obselete - but they clearly had a huge impact on the field. Notably, AlexNet, which [completely changed the field of deep learning](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf), could not have existed without the creation of the ImageNet dataset.
 
-But these datasets are unscalable - manual labeling can only get you so far. High data quality, but capped quantity.
+**The introduction of large labeled datasets can be seen as the first breakthrough in pushing the data constraint toward larger datasets.**
 
-<br />
-
-### Breakthrough #2: network effects create data
-
-The internet exists, creates massive amounts of data through network effects.
-
-These network effects are scalable, and the _only_ reasonable solution to the problem of using large labeled datasets.
-
-They broke past the constraint of limited quantity. But they were unusable - the quality takes a significant drop.
-
-What distribution are these data points sampled from? General human knowledge? Hard to say. And so while there are more data points, those data points are sampled from a more complex distribution - one that's very challenging to model, and unclear how it's useful.
-
-This is unlike labeled datasets like ImageNet, where they were clearly for a task (image classification).
-
-So internet scale datasets appeared to be unusable for a long time.
+Though useful, these datasets were inherently unscalable due to the manual labeling process they rely on. In order to push the data constraint to the next level with even larger datasets, a new approach to data was needed.
 
 <br />
 
-### Breakthrough #3: unlocking the internet
+### Breakthrough #2: Unlocking the Internet
 
-**Transfer learning via pre-training and fine-tuning** enabled us to use internet scale data.
+The internet is the most obvious source of massive amounts of data that could plausibly be used for deep learning. However, it was initially unclear how to use this data to train a deep learning model.
 
-For the first time ever, BERT showed that we could actually make internet-scale datasets useful.
+Unlike labeled datasets, internet data is not created for a specific tasks, so it didn't appear to contain high quality data that could contribute to training a specific model. For this reason, internet data appeared to be unusable in deep learning for a long time [^8].
 
-BERT introduced the paradigm of pre-training on the internet (large unlabeled dataset), then fine-tuning on smaller labeled datasets to accomplish a specific task.
+[BERT](/04-transformers/02-bert/03-bert.ipynb) completely changed this. BERT popularized the **transfer learning** paradigm now used by all large language models (including [GPTs](/04-transformers/04-gpt/03-gpt.ipynb)) - the model was _pre-trained_ on a large portion of the internet (high quantity, unpredictable quality), and then _fine-tuned_ on smaller datasets (high quantity, low quantity).
 
-> [Graphic] - [Google executive response to BERT](https://x.com/TechEmails/status/1756765277478621620)
+**For the first time ever, BERT showed that we could actually make internet-scale datasets useful.**
 
-This works by acquiring general conceptual knowledge from pre-training on the internet (get the value of high quantity of general data), then repurposing that knowledge for a specific task with a labeled dataset (higher quality data).
+The results also shocked the broader tech community - for example, [causing a Google executive to express](https://x.com/TechEmails/status/1756765277478621620) that an AI system would inevitably replace Google search in the near future.
 
-This combination enabled us to take advantage of the massive size of unlabeled internet scale datasets, blowing past previous constraints on data by increasing data quantity by many orders of magnitude.
-
-This paradigm continued after with [BERT, RoBERTa, GPT-2, GPT-3]
-
-[LoRA] revealed specifically how this works. The small dataset augments previously ignored dimensions of information - things that the GPT had already learned, but hadn't prioritized. This highlights the symbiotic effect of pre-training and fine-tuning.
-
-Pre-training gives fine-tuning much more leverage with a small amount of data - the fine-tuning dataset does _not_ need to contain a good approximation of the distribution itself. The pre-training phase does.
-
-The fine-tuning phase can have much smaller amount of data, effectively showing the model where to focus in it's large distribution. Ex: "you could respond in many different ways, but focus on responding as if you were an assisstant."
+For those curious, the [LoRA](/04-transformers/05-lora/02-lora.ipynb) paper further developed on why the transfer learning paradigm developed by BERT and used by all modern LLMs may be so effective.
 
 <br />
 
-### Breakthrough #4: training assistants
+[^8]: There was not powerful enough compute or good enough architectures to process the scale of internet datasets effectively for a long time.
 
-InstructGPT was another important breakthrough here. BERT, GPTs, etc. were conceptually interesting, and already making waves
+### Breakthrough #3: Training Assistants
 
-But still didn't appear that useful. InstructGPT is a demonstration of the importance/leverage on data quality, especially having pre-training on a large amount of data.
+[BERT](/04-transformers/02-bert/03-bert.ipynb) and the [GPTs](/04-transformers/04-gpt/03-gpt.ipynb) were technically impressive but didn't immediately reach the mainstream until the release of ChatGPT.
 
-OpenAI manually created datasets of good responses for an assistant model with human labelers. Many orders of magnitude less data than the original interent dataset.
+[InstructGPT](/04-transformers/06-rlhf/05-rlhf.ipynb) was the breakthrough that enabled this. It used [RLHF](/04-transformers/06-rlhf/) techniques to fine-tune the base GPT-3 model using a human generated dataset of question-answer pairs deemed good responses for a helpful assistant.
 
-But it made the difference between GPT-3 launch and ChatGPT.
+By learning to behave effectively as an assistant, InstructGPT created the practical communication style that enabled ChatGPT to succeed.
 
-> [Graphic] - ChatGPT instantly blows up despite GPT-3 existing
-
-<br />
-
-### Can we do better?
-
-Humanoid robots bump the constraint\*\* - The combination of pre-training on internet-scale and fine-tuning on small datasets seems ideal.
-
-Is there anywhere to go from here to push the constraints further, aside from the ever increasing amount of data on the internet?
-
-> [Graphic] - Increasing amount of data generated globally
-
-To keep increasing intelligence, we want our systems to model reality - the distribution we want to model is the laws of reality.
-
-Is the internet the best dataset we can come up with? It could be better in many ways.
-
-Data quality of the internet is a lossy compression of the true distribution we want to model - the internet is data and knowledge about reality filtered through and diluted by the collective intelligence of humanity.
-
-The best case would be to access data about the world directly. With recent humanoid robot arms race, if we see millions of these walking around, they may now have access to start collecting massive amounts of data directly.
-
-> [Graphic] - The robotics arms race: figure, optimus, boston dynamics
+**The success of InstructGPT is an indication of how high-leverage data quality can be when fine-tuning language-models.** Though many fine-tuned models existed before the instruct series, InstructGPT was far preferred almost everything else at the time to the high quality data it was trained on.
 
 <br />
 
-### Modeling Data
+### Beyond Internet Data
 
-So the dataset set determines the empirical distribution, which sets the cap on how good of a model we can create. The best model we can create corresponds with how well the empirical distribution approximates the true distribution.
+How much more can we improve the quality of the datasets deep learning models are trained on to improve the capacity for models to become intelligent?
 
-But creating the best model for a dataset is itself a challenging task. With current internet scale datasets, we seem to be far away from making a model that has fully learned the empirical distribution [Link scaling laws chart? Or save for later]
+The amount of data generated on the internet is increasing exponentially, which should continue to provide a source of increasingly large datasets to train on[^9].
 
-What are the constraints governing how good of a model we can create? These are the remainder of the constraints we'll focus on.
+However, there's another question about the quality of the data on internet-scale datasets. We want our systems to model reality - whereas the internet can be understood as a (highly) lossy compression of the true laws of reality[^10].
+
+Because of this, the abundance of humanoid robots may present a new means of data collection for deep learning models that gives direct access to information about reality - which makes [OpenAI & Microsoft's investment and collaboration with Figure](https://www.reuters.com/technology/robotics-startup-figure-raises-675-mln-microsoft-nvidia-other-big-techs-2024-02-29/) is particularly interesting.
+
+Regardless, current scaling laws have shown that current models are far from reaching the capacity of the information available in internet-scale datasets, meaning we may be far away from the point where data becomes the constraint again.
+
+<br />
+
+[^9]: This may not actually be sufficient to keep increasing the quality of models, as a recent [analysis of zero-shot learning](https://arxiv.org/abs/2404.04125) shows that large language models ability to perform tasks increases logartihmically with the amount of relevant data in the dataset.
+[^10]: The internet is a lossy compression of the entirety of human knowledge, with lot's of noise (complex and contrasting intentions behind different posts). Additionally, human knowledge itself is a very lossy (and partially inaccurate) compression of the laws of reality.
 
 <br />
 
