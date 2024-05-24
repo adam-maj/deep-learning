@@ -69,26 +69,26 @@ So, let's start by understanding these constraints from first principles.
 
 # 1. Constraints
 
-We can define intelligence[^1] as the ability to accurately model reality[^2]. Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
+We can define intelligence[^1] as the ability to accurately model reality[^2]. Practically, we're interested in models of reality that are useful for performing economically valuable tasks.
 
 The goal of deep learning is to produce accurate models of reality for these useful tasks by:
 
-1. Treating reality as a set of complex probability distributions[^3]
+1. Treating the true models that describe reality as complex probability distributions[^3]
 2. Creating neural networks capable of modeling complex probability distributions
 3. Training these networks to learn to model the probability distributions that underlie reality
 
 In this view, creating intelligence with deep learning involves just two steps:
 
-1. Collect some useful information about reality to learn from
-2. Create a model that can effectively learn this information
+1. Collect useful information about reality (collect data)
+2. Create a neural network that can effectively learn from this information (model data)
 
-So, the only way to increase the intelligence of our models is by improving how effectively we accomplish these two steps.
+The only way to increase the intelligence of our model is to improve how well we accomplish each of these steps.
 
-With this in mind, we can look at the constraints that determine how we can improve digital intelligence by either means. Let's start by understanding the constraint on data.
+With this in mind, we can look at the constraints that govern this process. Let's start by understanding the constraint on data.
 
-[^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. People may disagree with the specifics of this definition. I've chosen this one for the sake of simplicity to clearly frame what we're trying to achieve with deep learning from an economic perspective - I'm less concerned with it's philosophical implications here.
-[^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is simple).
-[^3]: This idea may seem unintuitive at first. But it's actually saying something very simple: (1) reality has a set of rules that govern what happens (2) we can effectively predict the effect of actions by creating more accurate models of these rules (3) since these models have some uncertainty about the likelihood of different events, they actually deal in terms of probabilities. Again, the [Free Energy Principle](https://www.nature.com/articles/nrn2787) supports this view of modeling reality.
+[^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts, and none of which capture the full picture of what this word means. People may disagree with the specifics of this definition. I've chosen this one for the sake of simplicity to clearly frame what we're trying to achieve with deep learning from an economic perspective - I'm less concerned with it's philosophical implications here.
+[^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is simple). Notably, intelligence systems create models of the world and then use those models to perform _active inference_ to modify their environments.
+[^3]: This idea may seem unintuitive at first. But it's actually saying something very simple: (1) reality has a set of rules that govern what happens (2) we can model these rules by assigning probabilities to what's likely to happen, given what has already happened (3) thus, these models are probability distributions. Again, the [Free Energy Principle](https://www.nature.com/articles/nrn2787) supports this view of modeling reality.
 
 <br />
 
@@ -96,25 +96,28 @@ With this in mind, we can look at the constraints that determine how we can impr
 
 ![constraint-1-data](./images/readme/constraint-1-data.png)
 
-### True vs. Empirical Distribution
+The goal of deep learning is to model the probability distributions that describe reality. Let's call the distribution that we're trying to model for a specific task the _true distribution_.
 
-We want our system to effectively understand reality.
+In order to learn about this true distribution, we collect many samples from it. These samples make up a _dataset_.
 
-More accurately, we want our system to effectively model a data-generating distribution (we'll call this the true distribution).
+The dataset contains some information about the true distribution, but it doesn't contain _all_ information about the true distribution[^4]. Because of this, the dataset represents an approximation of the true distribution, which we'll call the _empirical distribution_.
 
-To do this, the system needs some information about the distribution.
+At best, we can expect our neural network to learn to model this empirical distribution[^5].
 
-Ideally, it would get _perfect_ information about the distribution. In practice, this is impossible.
+Our original goal was to model the true distribution. To accomplish this, we need the empirical distribution represented by the dataset to be as close as possible to the true distribution.
 
-So, we settle for a finite amount of information about the true distribution. This information is captured in a collection of individual samples from the true distribution - the dataset.
-
-The samples themselves don't perfectly represent the true distribution. But they do contain some information about it.
-
-The samples provide information about an _approximation_ of the true distribution - which we can call the empirical distribution.
-
-At best, we can expect to learn to model this empirical distribution from the dataset.
+In other words, we want the empiricaly distribution to be **a good approximation** of the true distribution.
 
 <br />
+
+[^4]: Assuming the true distribution we're trying to model is sufficiently complex to the point where including all information about it in the dataset would be intractable. This is almost always the case in deep learning.
+[^5]: Assuming the model perfectly represents all information that exists within the dataset, which rarely happens.
+
+### True vs. Empirical Distribution
+
+- we want empirical distribution to be a good approximation of the true distribution
+- all means of improving data constraint is increasing the degree to which we choose a good true distribution to model for a task, and the empirical distribution maps to the true distribution
+- this means quality (information represents true distribution) and quantity (more datapoints = better approximation)
 
 ### A Good Approximation
 
