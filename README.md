@@ -51,7 +51,7 @@ The most interesting part of my deep-dive came from noticing a clear trend acros
 > 6. compute efficiency
 > 7. energy
 >
-> **The entire history of deep learning can be seen as a series of advancements that have gradually removed these constraints**, enabling the creation of increasingly intelligent systems.
+> **The entire history of deep learning can be seen as a series of advancements that have gradually raised the ceiling on these constraints**, enabling the creation of increasingly intelligent systems.
 
 It's impossible to understand where we're going without first understanding how we got here - and it's impossible to understand how we got here without understanding these constraints that have always governed the rate of progress.
 
