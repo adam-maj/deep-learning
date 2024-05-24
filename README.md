@@ -14,7 +14,7 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 > [!NOTE]
 >
-> Thanks to [Pavan Jayasinha](https://x.com/pavanjayasinha) and [Anand Majmudar](https://x.com/Almondgodd) for giving me tons of feedback on this project.
+> Thanks to [Pavan Jayasinha](https://x.com/pavanjayasinha) and [Anand Majmudar](https://x.com/Almondgodd) for giving me tons of feedback on this project 😄.
 
 ## Table of Contents
 
