@@ -273,79 +273,87 @@ As mentioned previosly, increasing the number of parameters in a neural network 
 
 ![constraint-3-optimization-and-regularization](./images/readme/constraint-3-optimization-and-regularization.png)
 
-In practice, you can't just keep scaling up model naively. When scaling up the model, we encounter two classes of problems.
+In reality, you can't keep scaling up the number of parameters in a model and expect quality to keep increasing.Scaling up a model (via increasing the depth or the number of parameters per layer) introduces two new classes of problems.
 
-First, when you scale up parameters, and especially when you add more depth, the model may start converging very slowly or stop converging completely. Optimization is used to ensure models can still converge as they grow, especially in depth.
+First, increasing the depth of a network can make the network take far longer to converge to an optimal solution, or in the worst cases, can prevent the network from converging.
 
-Second, when you scale up parameters past the complexity of the distribution, the model can overfit. Regularization is used to ensure models learn "good representations" to truly model the empirical distribution and not learn noise.
+**The process of ensuring models can converge effectively, even as they grow in depth, is known as optimization.**
 
-<br />
+Additionaly, when you scale up the number of parameters in a model so it's representational capacity exceeds to complexity of the empirical distribution, the model can start to learn to model trivial _noise_ in the distribution. This effect is known as _overfitting_.
 
-### Breakthrough #1: Taming gradients
+**The process of regularization is used to ensure models learn useful _generalizations_ of the dataset and don't overfit to noise.**
 
-**Vanishing and exploding gradients** - While training deeper networks with many layers, gradients start to get magnified or dissapear to 0, due to the compounding effects of many layers of similar weights.
+In practice, the actual depth of a network is constrained by the efficacy of the optimization & regularization strategies used.
 
-When gradients vanish and explode like this, large groups of neurons (or even entire layers) can get starved of improvement (coming from backpropagation), making it practically infeasible o texpand beyond a certain point.
-
-Residuals solved this problem. [Residuals]
-
-[Add a graphic of residuals, and add graphics throughout]
-
-By creating a pathway for gradients to flow backwards, they massively increase the capacity of networks to grow in depth [ResNet].
-
-Residuals are still used in most large networks today, and are a key component of transformers. The depth of these models would not work without them. [Transformer]
+> [!NOTE]
+>
+> **Constraint #3: The efficacy of optimization & regularization approaches constrains the number of parameters in the network.**
 
 <br />
 
-### Breakthrough #2: Networks of networks
+### Breakthrough #1: Taming Gradients
 
-Expanding models past the complexity of the distribution (which is difficult to predict in practice) can lead to overfitting, which hurts validation loss.
+While training deeper neural networks with [backpropagation](/01-deep-neural-networks/01-dnn/02-dnn.ipynb), gradients start to get magnified or disappear, due to the compounding effects of multiplication by sequences of large or small weights[^12].
 
-Conceptually, an ideal way to fix this would be to train a network of many different networks and average their effects together. By doing this, different networks are forced to learn the same important representations, and by taking their average, the noise among them cancels out, and the representations remain [Dropout].
+**This is known as the vanishing and exploding gradients problem.**
 
-In practice, this is computationally impossible - it requires orders of magnitudes more compute.
+It's easy to forget how prohibitive this problem was - it completely prevented the effective training of networks beyond a few layers in depth, putting a significant constraint on the size of networks.
 
-Dropout accomplished this approach with the same amount of compute. [Dropout]
+The introduction of [residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) via the [ResNet](/02-optimization-and-regularization/03-residuals/01-residuals.pdf) architecture completely solved this problem by creating _residual pathways_ for gradients to flow effectively through networks of arbitrary depth.
 
-The idea behind dropout is to split to select a random subset of the network during training my turning a percentage of the neurons off. This creates a subnetwork. Then, training is effectively training an exponential number of these subnetworks, which are all forced to learn useful representations on there own.
-
-Specifically, groups of neurons can't work together, so they have to learn useful representations on their own.
-
-This prevents generalization [Dropout], and again is used everywhere after [Transformer]. This solves regularization. Notably, it increases training time.
+This unlock removed a significant constraint on network depth, enabling much larger networks to be trained (which removed a cap on parameters that existed for a long time before this).
 
 <br />
 
-### Breakthrough #3: Taming activations
+[^12]: Understanding this section relies on a basic understanding of the fundamentals of the backpropagation algorith. [3blue1brown's neural network series](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) is an intuitive and interesting introduction for anyone who wants to learn.
 
-**Internal covariate shift** - When training even deeper networks, later layers suffer from improving while the outputs of previous layers change, meaning their earlier stages of training are rendered useless.
+### Breakthrough #2: Network of Networks
 
-This again limited how deep networks could get.
+[Dropout](/02-optimization-and-regularization/04-dropout/) introduced a critical regularization strategy that has been used in most networks after it's creation, notably contributing to the success of [AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) which initially popularized it.
 
-Normalization solved this by making sure the input to each neuron stayed within the same input range regardless of previous layers by normalizing activations after each layer. This enables deeper networks again. [BatchNorm, LayerNorm]
+Conceptually, the ideal way to prevent a model from overfitting to a particular problem would be to train a variety of neural networks on the same problem and then take the average of their predictions. This process would cancel out the noise fitted by each network, leaving only the true representations.
+
+However, this naive approach was prohibitively expensive.
+
+Dropout enabled a computationally effective equivalent approach involving by randomly blocking out the effects of a subset of neurons in each training run[^13], effectively training an exponential number of sub-networks within a neural network and averaging their predictions together.
+
+<br />
+
+[^13]: This effect forces individual neurons to learn general representations useful in collaboration with a variety of other neurons, rather than co-adapting with neighboring neurons, which allows large groups of neurons to fit to noise.
+
+### Breakthrough #3: Taming Activations
+
+Another problem when training deep networks is that later layers suffer from improving while the activations of earlier layers change, potentially rendering their early stages of training useless.
+
+**This problem is known as internal covariate shift**, and also prohibitted the training of deeper networks.
+
+The introduction of [Batch Normalization](/02-optimization-and-regularization/05-batch-norm/) and [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/) solved this by forcing neuron activations into predictable distributions, preventing the covariate shift problem.
+
+This breakthrough, combined with residuals, provided the basis for building much deeper networks. Layer Normalization in particular enabled the training of deeper reccurent models like [RNNs](/03-sequence-modeling/01-rnn/02-rnn.ipynb) and [LSTMs](/03-sequence-modeling/02-lstm/02-lstm.ipynb)'s that led to the innovations eventually resulting in the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb).
 
 <br />
 
 ### Breakthrough #4: Momentum
 
-**Adaptive moments** - The initial optimization algorithm for back-propagation, SGD, takes a finite step at each improvement interval. Initially this was fine.
+The initial optimization algorithm, _stochastic gradient-descent_, involves taking a pre-determined step to update the parameters at each time-step.
 
-As you start modeling more complex problems, this can get very inefficient. If you have to move in one direction for a long time, continually taking a small step is a waste. If you know you need to go far, you should be taking bigger steps.
+In practice, this can be highly inefficient and hurt convergence[^14].
 
-Many optimization algorithms started to approach this problem by adding the idea of momentum [AdaGrad, RMSProp].
+The [Adam](/02-optimization-and-regularization/08-adam/02-adam.ipynb) optimizer introduced an efficient algorith to keep track of **adaptive moments** tracking the history of gradients throughout the optimization process. This allowed the optimizer to adjust step-sizes based on past information, often leading to much faster convergence.
 
-Adam optimizer combined all these ideas to maintain adaptive moments - keeping track of a running list of past gradients for each parameter, and icnreasing momentum where appropriate, drastically decreasing training time in some scenarios [Adam].
+[^14]: Specifically in parameter spaces with large variance in the gradients, a certain step-size may cause over-adjustments in certain parts of the landscape, and result in painfully slow changes in other cases.
 
 <br />
 
-### The forgotten constraint
+### The Forgotten Constraint
 
-All these advancements are used in almost everything today [Transformer], and without them optimization & regularization would be a constraint.
+The advancements mentioned above (and related developments) are all used in most models to date. For example, the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb) architecture uses [Dropout](/02-optimization-and-regularization/04-dropout/), [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/02-layer-norm.ipynb), and[Residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) throughout it's architecture, and was trained using the [Adam](/02-optimization-and-regularization/08-adam/) optimizer.
 
-But because of how effective they've been, optimization & regularization are basically "solved" now - you rarely have to think about them when scaling up models now.
+Because of how effective they've been completely removing prior problems, optimization & regularization appear to be largely solved now.
 
-This is especially augmented by the fact that we're far from reaching the cap on internet scale dataset complexity, so regularization is hardly a concern.
+This is especially augmented by the fact that we're far from reaching the peak of the scaling laws on current internet-scale datasets, so overfitting is not a concern.
 
-Despite this, we have to remember that these are still very real constraints, although they don't effect the models in their current state.
+**Despite this, it's important to remember that optimization & regularization are still real constraints on the size of neural networks**, although they no longer effect models in their current state.
 
 <br />
 
