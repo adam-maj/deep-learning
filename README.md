@@ -39,7 +39,8 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 The most interesting part of my deep-dive came from noticing a clear trend across all the key advancements, which has completely reframed how I understand deep learning:
 
-> ![IMPORTANT]
+> [!IMPORTANT]
+>
 > There are 7 simple constraints that limit the capacity of digital intelligence:
 >
 > 1. data
