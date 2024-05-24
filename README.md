@@ -119,7 +119,7 @@ This is the first constraint on the intelligence of a neural network.
 [^4]: Assuming the true distribution we're trying to model is sufficiently complex to the point where including all information about it in the dataset would be intractable. This is almost always the case in deep learning.
 [^5]: Assuming the model perfectly represents all information that exists within the dataset, which rarely happens.
 
-## A Good Approximation
+### A good approximation
 
 To make the empirical distribution a better approximation of the true distribution, we need to include more information about the true distribution in the dataset.
 
