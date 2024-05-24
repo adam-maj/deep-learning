@@ -618,7 +618,7 @@ As many companies plan to build large data-centers for AI training, we'll see ho
 
 <br />
 
-## 1.8. Fixed Constraints & Leverage
+## 1.8. Constraints & Leverage
 
 Having covered each constraint individually, we can now put them all into perspective in relation to the broader arrow of progress in deep learning.
 
@@ -646,13 +646,13 @@ It's possible that we may hit a bottleneck in how good models can get based on t
 
 # 2. Narratives
 
-Now that we've explored the constraints in detail, we can look back at the history of progress in deep learning through the lens of constraints.
+We can look back at this history of progress in deep learning through the lens of constraints, and see a few key milestones that stand out above the rest which completely shifted the paradigm of constraints and narratives around deep learning.
 
-With this perspective, a few key milestones stand out above the rest that completely shifted the paradigm of constraints, and each came with significant shifts in narratives about deep learning.
-
-These narrative shifts alone had a big impact on progress in the industry [Narrative Distillation, Mimetics].
+These narrative shifts alone had a large impact on progress in the industry, as narratives are particular effective tools for allocating capital and talent toward problems[^18].
 
 <br />
+
+[^18]: For those curious, [Kevin Kwok's essay on Narrative Distillation](https://kwokchain.com/2021/09/29/narrative-distillation-1/) an excellent exploration of the power of narratives in capital and resource allocation.
 
 ### Narrative #1: Deep learning works
 
