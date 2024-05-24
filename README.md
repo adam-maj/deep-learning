@@ -69,13 +69,18 @@ So, let's start by understanding these constraints from first principles.
 
 # 1. Constraints
 
-We can define intelligence[^1] as the ability to accurately model reality[^2] Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
+We can define intelligence[^1] as the ability to accurately model reality[^2]. Practically, we're interested in models of reality that are capable of performing economically valuable tasks.
 
 The goal of deep learning is to produce accurate models of reality by:
 
 1. Treating reality as a set of complex probability distributions[^3].
 2. Creating neural networks capable of modeling complex probability distributions.
 3. Training these networks to learn to model the probability distributions that underlie reality.
+
+In this view, creating intelligence with deep learning consists of two simple steps:
+
+1. Collect some useful information about reality to learn from
+2. Create a model that can effectively learn this information
 
 [^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts. People may disagree with the specifics of this definition. I've chosen this one for the sake of simplicity to clearly frame what we're trying to achieve with deep learning from an economic perspective - I'm less concerned with it's philosophical implications here.
 [^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is simple).
