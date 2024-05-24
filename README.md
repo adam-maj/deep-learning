@@ -110,7 +110,7 @@ This is the first constraint on the intelligence of a neural network.
 
 > [!NOTE]
 >
-> **A model can only be as good as the dataset it was trained on.**
+> **Constraint #1:** A model can only be as good as the dataset it was trained on.
 >
 > Specifically, the cap on how well a model can approximate the true distribution is determined by how much information about the true distribution is contained within the dataset.
 
