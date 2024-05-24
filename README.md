@@ -37,8 +37,6 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 # Overview
 
-During my deep-dive, I noticed trends
-
 Digital intelligence is improving quickly, and few have had time to dive deep and fully understand what's going on.
 
 This overview is an effort to highlight the true big picture of how things are progressing, informed by the technical details of individual innovations.
