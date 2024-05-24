@@ -77,7 +77,7 @@ The goal of deep learning is to produce accurate models of reality for these use
 2. Creating neural networks capable of modeling complex probability distributions
 3. Training these networks to learn to model the probability distributions that underlie reality
 
-In this view, creating intelligence with deep learning consists of two simple steps:
+In this view, creating intelligence with deep learning involves just two steps:
 
 1. Collect some useful information about reality to learn from
 2. Create a model that can effectively learn this information
