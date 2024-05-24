@@ -226,11 +226,9 @@ However, when the amount of information in the dataset is far beyond what the ne
 
 With modern internet-scale datasets, the complexity is massive, so the approach of adding more parameters shows no signs of slowing down in terms of its efficacy at improving the intelligence of models.
 
-This is the second constraint:
-
 > [!NOTE]
 >
-> Constraint #2: The representational capacity of a model is bounded by the number of parameters it contains.
+> **Constraint #2: The representational capacity of a model is bounded by the number of parameters it contains.**
 
 In practice, we'll see that increasing the number of parameters in a neural network is actually a function of the other constraints.
 
@@ -256,8 +254,12 @@ However, early on, size appeared to be one of many factors constraining the impr
 
 The [GPT](/04-transformers/04-gpt/) series made it clear that for internet datasets, scaling parameters appears to be sufficient to significantly increase model quality.
 
-<img src="/images/readme/scaling-laws.png" alt="Scaling Laws" width="60%" />
-<p style="text-align: center"><i>Figure: Scaling laws for model performance as a function of model size.</i></p>
+<div style="text-align: center;">
+  <img src="/images/readme/scaling-laws.png" alt="Scaling Laws" width="60%" />
+  <p style="text-align: center;">
+    <i>Scaling laws for model performance as a function of parameters</i>
+  </p>
+</div>
 
 The scaling laws show no sign of letting up, which has motivated the current continued attempts at training larger and larger models.
 
