@@ -106,7 +106,13 @@ The dataset contains some information about the true distribution, but it doesn'
 
 However, our original goal was to model the true distribution. To account for this, we need the empirical distribution to be **a good approximation** of the true distribution. The quality of this approximation determines the cap of how good a model trained on the dataset can get.
 
-This is the first constraint: **a model can only be as good as the dataset enables**.
+This is the first constraint:
+
+> ![INFO]
+>
+> **A model can only be as good as the dataset it was trained on.**
+>
+> Specifically, the cap on how well a model can approximate the true distribution is determined by how much information about the true distribution is contained within the dataset.
 
 <br />
 
