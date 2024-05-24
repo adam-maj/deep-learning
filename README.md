@@ -287,7 +287,7 @@ In practice, the actual depth of a network is constrained by the efficacy of the
 
 > [!NOTE]
 >
-> **Constraint #3: The efficacy of optimization & regularization approaches constrains the number of parameters in the network.**
+> **Constraint #3: The efficacy of optimization & regularization approaches constrains the number of parameters a network can handle while still being able to converge and generalize.**
 
 <br />
 
