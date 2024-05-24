@@ -1,4 +1,4 @@
-# deep-learning [WIP]
+# deep-learning
 
 A deep-dive on the entire history of deep learning, highlighting the series of innovations that got us from simple feed-forward networks to GPT-4o.
 
