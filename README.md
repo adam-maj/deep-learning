@@ -12,6 +12,10 @@ The rest of this page is my breakdown of everything we can learn from this histo
 >
 > Then, people curious to learn about the technical details of each innovation can explore the rest of the repository via the links in the [resources](#resources) section.
 
+> [!NOTE]
+>
+> Thanks to [Pavan Jayasinha](https://x.com/pavanjayasinha) and [Anand Majmudar](https://x.com/Almondgodd) for giving me tons of feedback on this project.
+
 ## Table of Contents
 
 - [Overview](#overview)
