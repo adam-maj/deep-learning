@@ -35,7 +35,7 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 <br />
 
-# Overview
+# The Arrow of Progress
 
 The most interesting part of my deep-dive came from noticing a clear trend across all the key advancements, which has completely reframed how I understand deep learning:
 
