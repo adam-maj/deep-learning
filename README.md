@@ -522,7 +522,7 @@ Through the trail of papers, you can see the quality of compute slowly get bette
 
 ### Breakthrough #3: AI Gets Prioritized
 
-Finally, in 2020, NVIDIA released their A100 model built specifically for AI applications. This marked the beginning of NVIDIA determining that AI was a strategic bet worth taking, which has now yielding the H100, and soon B100 GPUs that will power much of AI training.
+Finally, in 2020, NVIDIA released their A100 model built specifically for AI applications, as they determined that AI was a strategic bet worth taking. This decision has now yielding the H100, and soon B100 GPUs that will power much of AI training.
 
 <p align="center">
   <img src="/images/readme/nvidia-openai.jpeg" alt="NVIDIA x OpenAI" width="50%" />
