@@ -73,9 +73,9 @@ We can define intelligence[^1] as the ability to accurately model reality[^2]. P
 
 The goal of deep learning is to produce accurate models of reality by:
 
-1. Treating reality as a set of complex probability distributions[^3].
-2. Creating neural networks capable of modeling complex probability distributions.
-3. Training these networks to learn to model the probability distributions that underlie reality.
+1. Treating reality as a set of complex probability distributions[^3]
+2. Creating neural networks capable of modeling complex probability distributions
+3. Training these networks to learn to model the probability distributions that underlie reality
 
 In this view, creating intelligence with deep learning consists of two simple steps:
 
