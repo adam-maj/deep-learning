@@ -86,11 +86,11 @@ The only way to increase the intelligence of our model is to improve how well we
 
 With this in mind, we can look at the constraints that govern this process. Let's start by understanding the constraint on data.
 
+<br />
+
 [^1]: Everyone has different definitions of intelligence, all of which are useful in different contexts, and none of which capture the full picture of what this word means. People may disagree with the specifics of this definition. I've chosen this one for the sake of simplicity to clearly frame what we're trying to achieve with deep learning from an economic perspective - I'm less concerned with it's philosophical implications here.
 [^2]: Karl Friston's [Free Energy Principle](https://www.nature.com/articles/nrn2787) suggests that this definition of intelligence is also valid in the context of the brain (beware, the paper is explained with unnecessary mathematical complexity, but the core concept it describes is simple). Notably, intelligence systems create models of the world and then use those models to perform _active inference_ to modify their environments.
 [^3]: This idea may seem unintuitive at first. But it's actually saying something very simple: (1) reality has a set of rules that govern what happens (2) we can model these rules by assigning probabilities to what's likely to happen, given what has already happened (3) thus, these models are probability distributions. Again, the [Free Energy Principle](https://www.nature.com/articles/nrn2787) supports this view of modeling reality.
-
-<br />
 
 ## 1.1. Data
 
@@ -104,40 +104,36 @@ The dataset contains some information about the true distribution, but it doesn'
 
 **At best, we can expect our neural network to learn to model this empirical distribution[^5].**
 
-Our original goal was to model the true distribution. To accomplish this, we need the empirical distribution represented by the dataset to be as close as possible to the true distribution.
+However, our original goal was to model the true distribution. To account for this, we need the empirical distribution to be **a good approximation** of the true distribution. The quality of this approximation determines the cap of how good a model trained on the dataset can get.
 
-In other words, we want the empiricaly distribution to be **a good approximation** of the true distribution.
+This is the first constraint: **a model can only be as good as the dataset enables**.
 
 <br />
 
 [^4]: Assuming the true distribution we're trying to model is sufficiently complex to the point where including all information about it in the dataset would be intractable. This is almost always the case in deep learning.
 [^5]: Assuming the model perfectly represents all information that exists within the dataset, which rarely happens.
 
-### True vs. Empirical Distribution
+## A Good Approximation
 
-- we want empirical distribution to be a good approximation of the true distribution
-- all means of improving data constraint is increasing the degree to which we choose a good true distribution to model for a task, and the empirical distribution maps to the true distribution
-- this means quality (information represents true distribution) and quantity (more datapoints = better approximation)
+To make the empirical distribution a better approximation of the true distribution, we need to include more information about the true distribution in the dataset.
 
-### A Good Approximation
+We can increase the total information in the dataset by the information in each individual sample (intuitively, this means using samples that are more informative for the relevant task).
 
-The original goal was to effectively model the true distribution, not the empirical distribution.
+We can also increase the information in the dataset by adding more samples that offer new information about the true distribution[^6].
 
-So, the empirical distribution needs to be as close as possible to the true distribution. It needs to be "a good approximation."
+**To simplify, there are two ways to improve the quality of the dataset:**
 
-The empirical distribution becomes a better approximation of the true distribution as we add more data points.
+1. data quality
+2. data quantity
 
-<br />
+This is not because more data is always good[^7], but because we want more information about the true distribution in the dataset so the model can learn a sufficient approximation of it.
 
-### Data Quantity & Quality
-
-We can use (simple) information theory to understand how to make the empirical distribution a good approximation of the true distribution.
-
-We need more information about the true distribution in the true distribution - this means more samples (data quantity) where each sample contains a lot of information about the true distribution we want to model (data quality).
-
-So to make our dataset a good approximation of the true distribution, we have two levers: increase quantity of data, and increase quality of data.
+With this understanding of how to improve the quality of datasets, we can look at the history of deep learning to see how
 
 <br />
+
+[^6]: This is analogous to how adding more terms to a Taylor series yields a function closer to the original. Approximations improve with more information about the true function.
+[^7]: In fact, you can think of examples where more data makes no difference. For example adding the same image to a dataset (or two images similar to each other) doesn't improve the quality of the model created. It's because these new data points don't add much new information about the true distribution.
 
 ### Breakthrough #1: Public labeled datasets
 
