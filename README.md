@@ -257,7 +257,7 @@ The [GPT](/04-transformers/04-gpt/) series made it clear that for internet datas
 <p align="center">
   <img src="/images/readme/scaling-laws.png" alt="Scaling Laws" width="50%" />
 </p>
-<p style="text-align: center;">
+<p align="center">
   <i>Scaling laws for model performance as a function of parameters</i>
 </p>
 
