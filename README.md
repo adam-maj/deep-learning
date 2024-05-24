@@ -610,11 +610,11 @@ This may actually become a meaningful constraint, as [Zuck discussed in this cli
 
 Specifically, energy grids are limited to allowing a certain amount of energy being drawn from them in a location, meaning there's a cap to how large data-centers can become before they run into problems that require energy permitting and dipping into much slower government regulated processes.
 
-As many companies plan to build large data-centers for AI training, we'll see how the energy constraint plays out - notably, [Microsfot and OpenAI are rumored to be launching a $100B data-center project](https://www.reuters.com/technology/microsoft-openai-planning-100-billion-data-center-project-information-reports-2024-03-29/).
-
 > [!NOTE]
 >
 > **Constraint #7: The energy available to draw from the grid in a single location constraints the amount of compute that can be used for a training run.**
+
+As many companies plan to build large data-centers for AI training, we'll see how the energy constraint plays out - notably, [Microsfot and OpenAI are rumored to be launching a $100B data-center project](https://www.reuters.com/technology/microsoft-openai-planning-100-billion-data-center-project-information-reports-2024-03-29/).
 
 <br />
 
@@ -622,19 +622,25 @@ As many companies plan to build large data-centers for AI training, we'll see ho
 
 Having covered each constraint individually, we can now put them all into perspective in relation to the broader arrow of progress in deep learning.
 
-The first constraint is the data (specifically, the quantity and quality of data we have), which determines the empirical distribution. The empirical distribution sets the cap on how well we can model the true distribution based on how well it approximates the true distribution.
+**A helpful way to think about the 7 constraints is in terms of _hard constraints_ and _leverage_.**
 
-The remaining constraints determine how well we can train a model to fit to this empirical distribution. The most immediate is the size of the model, which is actually capped by the amount of compute we have, assuming good architecture, optimization/regularization, and compute efficiency.
+The hard constraints are **data**, **compute**, and **energy** - these are much slower to move and are rate-limited by far slower processed - data currently being limited by the scaling growth of the internet, compute being limited by individual company resources and supply chains, and energy constraints eventually being rate-limited by regulation.
 
-And compute can be constrained by energy.
+Meanwhile, **parameters**, **optimization & regularization**, **architecture**, and **compute efficiency** can be thought of as forms of **leverage** on the hard constraints - they are all easy to vary and can be optimized to maximize a models intelligence given a fixed set of data, compute, and energy.
 
-We can conceptually divide these constraints into "hard constraints" and "leverage constraints."
+Having broken past significant constraints in all of these dimensions over the past few decades, **deep learning is now in a position where maximizing the effect of the leverage constraints is important for individual training runs, but pushing up the hard constraints are what really determines the increasing base intelligence of models now.**
 
-The hard constraints are "data," "compute," "energy." These are much slower to move and are the result of much larger effects - the quality of data determined by the scale of the internet, the amount of compute rate limited by slow moving supply chains and a boom in demand, and energy constraints determined by the slow moving process of increasing available energy from the grid (infrastructural challenge).
+This is again indicative of the scaling laws - our models have not shown signs of coming close to fully modeling the information in current internet-scale datasets, so we continue to scale up models by increasing _compute_ and _parameters_
 
-Given these hard constraints, we can maximize how effectively we use them via the "leverage constraints" - "size," "architecture," "optimization / regularization," "compute efficiency." These are all easily adjustable (software) and have massive effects [FlashAttention, Residuals, Transformer, GPT-2, etc. etc.].
+Although scaling laws are currently at play and the current path forward is to acquire larger amounts of compute to train larger models, the efficacy of this approach may hit a bottleneck, at which point we will have to turn to the constraints again to keep progressing.
 
-So you can think of these constraints as offering leverage on the compute/data. With the same compute/data, you can accomplish much more by improving architectures, efficiency, etc.
+It's possible that we may hit a bottleneck in how good models can get based on the quality of the empirical distribution of the internet, in which case we'll have to seek other sources of data.
+
+> [!IMPORTANT]
+>
+> It's critical to remember that the first principles of progress in deep learning is that pushing on the 7 constraints will lead to increasingly intelligence systems.
+>
+> Thought the scaling laws indicate that the current limiting constraints are compute and parameters, these may shift over time to data and energy, in which case the approaches to deep learning will shift.
 
 <br />
 
