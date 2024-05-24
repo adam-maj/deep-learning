@@ -161,7 +161,7 @@ Though useful, these datasets were inherently unscalable due to the manual label
 
 The internet is the most obvious source of massive amounts of data that could plausibly be used for deep learning. However, it was initially unclear how to use this data to train a deep learning model.
 
-Unlike labeled datasets, internet data is not created for a specific tasks, so it didn't appear to contain high quality data that could contribute to training a specific model. For this reason, internet data appeared to be unusable in deep learning for a long time [^8].
+Unlike labeled datasets, internet data is not created for a specific tasks, so it didn't appear to contain high quality data that could contribute to training a specific model. For this reason, internet data appeared to be unusable in deep learning for a long time[^8].
 
 [BERT](/04-transformers/02-bert/03-bert.ipynb) completely changed this. BERT popularized the **transfer learning** paradigm now used by all large language models (including [GPTs](/04-transformers/04-gpt/03-gpt.ipynb)) - the model was _pre-trained_ on a large portion of the internet (high quantity, unpredictable quality), and then _fine-tuned_ on smaller datasets (high quantity, low quantity).
 
@@ -195,7 +195,7 @@ The amount of data generated on the internet is increasing exponentially, which 
 
 However, there's another question about the quality of the data on internet-scale datasets. We want our systems to model reality - whereas the internet can be understood as a (highly) lossy compression of the true laws of reality[^10].
 
-Because of this, the abundance of humanoid robots may present a new means of data collection for deep learning models that gives direct access to information about reality - which makes [OpenAI & Microsoft's investment and collaboration with Figure](https://www.reuters.com/technology/robotics-startup-figure-raises-675-mln-microsoft-nvidia-other-big-techs-2024-02-29/) is particularly interesting.
+Because of this, the abundance of humanoid robots may present a new means of data collection for deep learning models that gives direct access to information about reality - which makes [OpenAI & Microsoft's investment and collaboration with Figure](https://www.reuters.com/technology/robotics-startup-figure-raises-675-mln-microsoft-nvidia-other-big-techs-2024-02-29/) particularly interesting.
 
 Regardless, current scaling laws have shown that current models are far from reaching the capacity of the information available in internet-scale datasets, meaning we may be far away from the point where data becomes the constraint again.
 
@@ -204,41 +204,66 @@ Regardless, current scaling laws have shown that current models are far from rea
 [^9]: This may not actually be sufficient to keep increasing the quality of models, as a recent [analysis of zero-shot learning](https://arxiv.org/abs/2404.04125) shows that large language models ability to perform tasks increases logartihmically with the amount of relevant data in the dataset.
 [^10]: The internet is a lossy compression of the entirety of human knowledge, with lot's of noise (complex and contrasting intentions behind different posts). Additionally, human knowledge itself is a very lossy (and partially inaccurate) compression of the laws of reality.
 
+### Modeling Data
+
+Now that we've understood the data constraint, we can explore what constrains how effectively the neural network can model the data.
+
+This determines how close to modeling the empirical distribution the model will get, which corresponds with its intelligence.
+
+The first constraint that determines the capacity for the model to learn the empirical distribution is the number of parameters in the neural network.
+
 <br />
 
 ## 1.2. Parameters
 
 ![constraint-2-parameters](./images/readme/constraint-2-parameters.png)
 
-The model itself needs to have enough degrees of freedom to be able to model the empirical distribution.
+The model needs to have enough _representational capacity_ to be able to learn the empirical distribution of the dataset.
 
-With modern datasets, the complexity is massive, so more parameters shows no signs of slowing down as a way to increase intelligence.
+This means the neural network needs to have parameters to provide enough degrees of freedom to accurately model the distribution. In practice, it's challenging to predict the minimal number of parameters needed to fully model a dataset.
 
-When the complexity of the empirical distribution is still beyond what the network is capable of modeling, the easiest way to improve the network is to scale up the size.
+However, when the amount of information in the dataset is far beyond what the network is capable of modeling, the easiest way to improve the network is to scale up the number of parameters - which can mean increasing the depth of the network and adding more parameters per layer.
 
-This means adding more parameters per layer and increasing the depth of the network.
+With modern internet-scale datasets, the complexity is massive, so the approach of adding more parameters shows no signs of slowing down in terms of its efficacy at improving the intelligence of models.
+
+This is the second constraint:
+
+> [!NOTE]
+>
+> Constraint #2: The representational capacity of a model is bounded by the number of parameters it contains.
+
+In practice, we'll see that increasing the number of parameters in a neural network is actually a function of the other constraints.
+
+Let's look at the times in the past where this constraint has been particularly relevant.
 
 <br />
 
-### Breakthrough #1: Early signs of scaling
+### Breakthrough #1: Increasing Depth
 
-Networks naturally scaled over time (combined with other improvements) leading to better results [CNN, LeNet, AlexNet, etc.].
+The earliest neural networks consisted of just a single input and output layer, heavily limiting their representational capacity.
 
-Clearly, size was correlated with better understanding up to a point (until size gets > than distribution complexity).
+The original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf) discussed the addition of a hidden layer, adding more parameters to the network which significantly increased it's ability to represent more complex problems (like shift-registers, the XOR gate, etc. - all very simple examples, but impressive at the time).
 
-But at this point, size appears to be _a_ factor, not _the_ factor. Partly, this is because a lot more size was not _needed_ for the types of problems they were solving yet.
+[AlexNet] is one of the clearest examples of increasing parameters leading to better models[^11] - the AlexNet architecture used 5 convolutional layers, far more than the previous largest CNN at the time, which enabled it to crush the previous best score in the ImageNet competition.
+
+However, early on, size appeared to be one of many factors constraining the improvement of models, rather than the most important constraint.
 
 <br />
+
+[^11]: Although, AlexNet was the result of a large number of innovations that combined to make it so effective - the increase in network depth was complemented with a use of effective optimization & regularization methods and the use of GPUs for training which enabled this increase in size.
 
 ### Breakthrough #2: Scaling laws
 
-GPTs made it clear that for the internet scale dataset, scale is all you need for a while. [GPT-2, GPT-3, GPT-4]
+The [GPT](/04-transformers/04-gpt/) series made it clear that for internet datasets, scaling parameters appears to be sufficient to significantly increase model quality.
 
-[Scaling laws picture]
+<img src="/images/readme/scaling-laws.png" alt="Scaling Laws" width="60%" />
+<p style="text-align: center"><i>Figure: Scaling laws for model performance as a function of model size.</i></p>
 
-The scaling laws show no sign of letting up. This means we are far below the capacity to model the dataset.
+The scaling laws show no sign of letting up, which has motivated the current continued attempts at training larger and larger models.
 
-Currently, scaling up the size of the model is a clear direction of progress we want to pursur. But this is governed by other constraints (again, the remaining).
+**Importantly, the reason for this trend is not that increasing the number of parameters in a model always increases it's intelligence.** Instead, it's due to the fact that current models still don't have enough representational capacity to capture all the information in internet-scale datasets.
+
+As mentioned previosly, increasing the number of parameters in a neural network is actually governed by the other constraints.
 
 <br />
 
