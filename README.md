@@ -379,7 +379,7 @@ In practice, architectural advancements have made previously intractable problem
 >
 > **Constraint #4: The quality of the network architecture constraints the representational capacity of a model.**
 
-Technically, a deep neural network with non-linearities is capable of modeling any distribution, given a sufficient number of parameters [^15].
+Technically, a deep neural network with non-linearities is capable of modeling any distribution, given a sufficient number of parameters[^15].
 
 But in practicality, there are distributions with so much complexity that simple deep neural networks can't effectively model them[^16]. For these distributions, we turn to architectural advancements to make progress.
 
@@ -468,73 +468,98 @@ The combination of different working architectures has also resulted in the incr
 
 ![constraint-5-compute](./images/readme/constraint-5-compute.png)
 
-With an efficient architecture and effective optimization & regularization, the remaining constraint on the size of the model is compute.
+Assuming an efficient architecture and effective optimization & regularization, the last constraint on the total number of parameters and representational capacity in a model is **compute**.
 
-During training, specifically back-propagation, the gradient for each parameter needs to be computed, and then each parameter updated. This takes compute, which takes time. So with more parameters, there are more computations during back-propagation, which is the limitting step.
+During training, the gradient for each parameter needs to be computed and updated at each time-step, which costs computational resources. **So, with more parameters, there are far more computations during back-propagation which becomes the limiting step.**
+
+Because of this, a single device can train a finite number of parameters at once, and beyond this, training has to expand to multiple devices at once to parallelize.
+
+**And if there's a limit on the number of devices we can use for training, we hit a constraint on compute.**
 
 So we can train a certain number of parameters per device. And then we need to get more devices. And if there's a limit on how many devices we can use together, we've hit a constraint on compute.
 
-<br />
+> [!NOTE]
+>
+> **Constraint #5: The total available compute determines the maximum number of parameters trainable parameters in a model in a certain amount of time.**
 
-### Breakthrough #1: Letting compute communicate
-
-**GPU communication** - Using 1 GPU was useful at first, but with larger models, you need to be able to use multiple GPUs at once.
-
-You can't do this by just splitting up the work. The GPUs need to communicate with each other - as little as possible, but still at some points, to synchronize weights/pass data to each other, since this is all one model.
-
-Due to gaming, NVIDIA released GPUs that could communicate with each other, which was used by [AlexNet] to train larger model more effectively.
+In practice, the constraint may be caused by a lack of resources (to buy devices), supply (due to constrained supply chains), or energy (discussed later)[^17].
 
 <br />
 
-### Breakthrough #2: Riding tailwinds
+[^17]: There are also many engineering challenges with training on increasingly large clusters of devices like GPUs that need to be able to communicate with each other.
 
-**Gaming tailwinds improve compute** - For most of its time, deep learning was not large enough to justify large companies building dedicated compute for it, especially given how expensive/difficult to execute compute companies are.
+### Breakthrough #1: Communicating Compute
 
-Deep learning was lucky that the tailwinds of gaming drove increasing compute quality which deep learning benefitted from on the side. [AlexNet, Transformer, etc.]
+[AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) was one of the first major deep learning applications that took advantage of the parallelization capacity of GPUs to train neural networks.
+
+They were also the first people to train a deep learning model across multiple GPUs at once to speed up training.
+
+**They were able to accomplish this because of the recent addition of the ability for NVIDIA GPUs to write to each others memory**, which enabled much faster direct communication between GPUs rather than communicating through the host machine.
+
+This innovation (introduced due to gaming, not deep learning), has become critical in training large models, where communication between large clusters of GPUs has become essential.
+
+This paper pushed the compute constraint in several ways - first, just by using GPUs for training the first place, and additionally by using multiple GPUs to shard training, and using inter-GPU communication.
 
 <br />
 
-### Breakthrough #3: AI becomes a priority
+### Breakthrough #2: Riding Tailwinds
+
+Until the past decade, the GPUs that have enabled deep learning to progress so far were driven forward not by the incentives of deep learning (which offered scarce revenue opportunity early-on for large companies like NVIDIA), but by the tailwinds of the gaming market.
+
+In this way, deep learning benefited from a bit of luck - the compute tailwinds created by the gaming industry enabled deep learning to take off in a way that likely would not have happened in the absence of gaming.
+
+**The gaming industry raised the constraint on compute for deep learning models by creating a sufficient financial incentive to produce GPUs of increasing quality.**
+
+Through the trail of papers, you can see the quality of compute slowly get better over time, even before dedicated AI compute was created.
+
+<br />
+
+### Breakthrough #3: AI Gets Prioritized
+
+Finally, in 2020, NVIDIA released their A100 model built specifically for AI applications. This marked the beginning of NVIDIA determining that AI was a strategic bet worth taking, which has now yielding the H100, and soon B100 GPUs that will power much of AI training.
 
 **AI-first GPUs** - Finally, AI becomes a bet worth taking, NVIDIA releases A100, H100, and now B100 focused on MIG, AI tensor cores, mixed-precision, more FLOPS (smaller floating point numbers).
 
-> [Graphic] - B100
-
-> [Graphic] - Jensen Huang handing OpenAI a GPU
-
-<br />
-
-### Breakthrough #4: BERT & the compute arms race
-
-**The compute arms race** - It wasn't always obvious that compute was going to become a huge constraint at a point in time when the AI narrative was also becoming highly consequential, and garnering large power over capital flows.
-
-This trend was first crafted and visible by OpenAI with [BERT, GPT-2, GPT-3], [SoRA example is another nice example].
-
-They saw this before other people. Sam Altman says "compute is the bottleneck" [Link and correct quote]
-
-Zuck unrelated buys a lot of GPUs because he sees they could be useful, and now they're in a great position because of that. [Link to clip] [Antifragile (redundancy/optionality)]
-
-The arms race really begins - NVIDIA, TSMC, ASML, etc. semi-conductor supply chain prices sky-rocket.
-
-> [Graphic] - Stock prices of all the semi-conductor supply chain companies rising
+<p align="center">
+  <img src="/images/readme/nvidia-openai.jpeg" alt="NVIDIA x OpenAI" width="50%" />
+</p>
+<p align="center">
+  <i>Jensen Huang delivering an H200 to early OpenAI</i>
+</p>
 
 <br />
 
-### Adjusting supply chains
+### Breakthrough #4: The Compute Arms Race
 
-**Adjusting supply chains:** The current constraint on compute is not about people not having funding to buy compute. It's about the compute supply chains not creating enough supply.
+It wasn't initially obvious that acquiring compute would become a huge constraint.
 
-Because compute supply chains have a long production cycle (a few months), they rely on predictions. These supply chains did not predict the boom in demand for compute that came from the AI cycle, so they got constrained.
+The power laws trend that first became visible with [BERT](/04-transformers/02-bert/01-bert.pdf), [RoBERTa](/04-transformers/02-bert/02-roberta.pdf), [GPT-2](/04-transformers/04-gpt/01-gpt-2.pdf), and [GPT-3](/04-transformers/04-gpt/02-gpt-3.pdf) made it clear that scaling up parameters, and thus compute, was a necessary factor of increasing model intelligence.
 
-These supply chains will soon adjust to demand, and the constraint on compute will no longer be due to constrained supply chains - instead it will become a resource problem.
+As this trend became more clear and the AI narrative became more powerful, everyone began to acquire the necessary compute, leading to a demand volume that wasn't previously predicted by the supply-chain. This has caused a constraint in acquiring compute.
+
+**In addition, the raw cost of acquiring a large amount of compute has become prohibitively expensive for most players.**
+
+These constraints on compute led [Sam Altman to say that "compute is going to be the currency of the future."](https://www.youtube.com/watch?v=r2UmOBrrRK8)
+
+[Zuck spent several billion to buy 350,000 NVIDIA GPUs](https://www.pcmag.com/news/zuckerbergs-meta-is-spending-billions-to-buy-350000-nvidia-h100-gpus), which now appears to be an act of incredible foresight considering the current struggle to get compute.
+
+This increased demand for compute has also been reflected in the surging market caps of all the essential companies in NVIDIA's compute supply chain including TSMC & ASML.
+
+<br />
+
+### Adjusting Supply Chains
+
+The current constraint on compute is partially a result of compute supply chains not having predicted the unexpected jump in demand caused by the AI boom.
+
+As supply chains inevitably adjust to meet these demands, the constraint will likely shift from who has already obtained the most compute to who has the resources to purchase the most compute, which also positions OpenAI well considering their partnership with the well-resources Microsoft.
 
 <br />
 
 ### AI ASICs
 
-[7] **AI-accelerator ASICs:** Another wave that may impact compute - in the recent cycles, many companies have raised large amounts of money to built ASICs for AI inference, and now AI training [links? Tenstorrent? etc.]
+In recent fundraising cycles, many startups have raised money to build ASICs for AI inference and training, promising to further speed up the efficiency of training large models.
 
-There's a heuristic that you get 10x boost from chip to FPGA, then another 10x from FPGA to ASIC. This is not exactly accurate in this case since GPU is the benchmark - but the question is, will ASICs really be able to accelerate training (better than NVIDIA, who's already doubling down on AI)?
+The question is, will other companies be able to compete in this space, or will NVIDIA maintain it's domination of the AI training market (most likely).
 
 <br />
 
