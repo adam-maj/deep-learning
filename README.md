@@ -37,6 +37,8 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 # Overview
 
+During my deep-dive, I noticed trends
+
 Digital intelligence is improving quickly, and few have had time to dive deep and fully understand what's going on.
 
 This overview is an effort to highlight the true big picture of how things are progressing, informed by the technical details of individual innovations.
@@ -427,9 +429,13 @@ The classic example of this is that the embeddings allow "King" - "Man" + "Woman
 
 Embeddings show us the composability of concepts. Transformers use this to soak information into words.
 
+<br />
+
 ### Creativity & Engineering
 
 U-Net, embeddings, diffusion, etc. Even the transformer design.
+
+<br />
 
 ### "Don't touch the architecture"
 
