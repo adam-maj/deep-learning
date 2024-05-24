@@ -141,7 +141,7 @@ With this understanding of the data constraint and how to improve the quality of
 [^6]: This is analogous to how adding more terms to a Taylor series yields a function closer to the original. Approximations improve with more information about the true function.
 [^7]: In fact, you can think of examples where more data makes no difference. For example adding the same image to a dataset (or two images similar to each other) doesn't improve the quality of the model created. It's because these new data points don't add much new information about the true distribution.
 
-### Breakthrough #1: Public labeled datasets
+### Breakthrough #1: public datasets
 
 While deep-learning was getting started, data was collected manually [CNN, LeNet]. This worked at a small scale, but couldn't go very far. Very limited quantity.
 
@@ -155,7 +155,7 @@ But these datasets are unscalable - manual labeling can only get you so far. Hig
 
 <br />
 
-### Breakthrough #2: Network effects create data
+### Breakthrough #2: network effects create data
 
 The internet exists, creates massive amounts of data through network effects.
 
@@ -171,7 +171,7 @@ So internet scale datasets appeared to be unusable for a long time.
 
 <br />
 
-### Breakthrough #3: Unlocking the internet
+### Breakthrough #3: unlocking the internet
 
 **Transfer learning via pre-training and fine-tuning** enabled us to use internet scale data.
 
@@ -195,7 +195,7 @@ The fine-tuning phase can have much smaller amount of data, effectively showing 
 
 <br />
 
-### Breakthrough #4: Training assistants
+### Breakthrough #4: training assistants
 
 InstructGPT was another important breakthrough here. BERT, GPTs, etc. were conceptually interesting, and already making waves
 
