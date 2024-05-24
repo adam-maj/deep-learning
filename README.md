@@ -187,7 +187,9 @@ For those curious, the [LoRA](/04-transformers/05-lora/02-lora.ipynb) paper furt
 
 By learning to behave effectively as an assistant, InstructGPT created the practical communication style that enabled ChatGPT to succeed.
 
-**The success of InstructGPT is an indication of how high-leverage data quality can be when fine-tuning language-models.** Though many fine-tuned models existed before the instruct series, InstructGPT was far preferred almost everything else at the time to the high quality data it was trained on.
+**The success of InstructGPT is an indication of how high-leverage data quality can be when fine-tuning language-models.**
+
+Though many fine-tuned models existed before the instruct series, InstructGPT was far preferred to almost everything else at the time due to the high quality data it was trained on.
 
 <br />
 
@@ -246,7 +248,7 @@ The earliest neural networks consisted of just a single input and output layer, 
 
 The original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf) discussed the addition of a hidden layer, adding more parameters to the network which significantly increased it's ability to represent more complex problems (like shift-registers, the XOR gate, etc. - all very simple examples, but impressive at the time).
 
-[AlexNet] is one of the clearest examples of increasing parameters leading to better models[^11] - the AlexNet architecture used 5 convolutional layers, far more than the previous largest CNN at the time, which enabled it to crush the previous best score in the ImageNet competition.
+[AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) is one of the clearest examples of increasing parameters leading to better models[^11] - the AlexNet architecture used 5 convolutional layers, far more than the previous largest CNN at the time, which enabled it to crush the previous best score in the ImageNet competition.
 
 However, early on, size appeared to be one of many factors constraining the improvement of models, rather than the most important constraint.
 
@@ -279,11 +281,11 @@ As mentioned previosly, increasing the number of parameters in a neural network 
 
 In reality, you can't keep scaling up the number of parameters in a model and expect quality to keep increasing.Scaling up a model (via increasing the depth or the number of parameters per layer) introduces two new classes of problems.
 
-First, increasing the depth of a network can make the network take far longer to converge to an optimal solution, or in the worst cases, can prevent the network from converging.
+First, increasing the depth of a network can make it take far longer to converge to an optimal solution, or in the worst cases, can prevent the network from converging.
 
 **The process of ensuring models can converge effectively, even as they grow in depth, is known as optimization.**
 
-Additionaly, when you scale up the number of parameters in a model so it's representational capacity exceeds to complexity of the empirical distribution, the model can start to learn to model trivial _noise_ in the distribution. This effect is known as _overfitting_.
+Additionally, when you scale up the number of parameters in a model so it's representational capacity exceeds the complexity of the empirical distribution, the model can start fitting trivial _noise_ in the distribution. This effect is known as _overfitting_.
 
 **The process of regularization is used to ensure models learn useful _generalizations_ of the dataset and don't overfit to noise.**
 
@@ -317,9 +319,9 @@ This unlock removed a significant constraint on network depth, enabling much lar
 
 Conceptually, the ideal way to prevent a model from overfitting to a particular problem would be to train a variety of neural networks on the same problem and then take the average of their predictions. This process would cancel out the noise fitted by each network, leaving only the true representations.
 
-However, this naive approach was prohibitively expensive.
+However, this naive approach was prohibitively expensive - training multiple large neural networks for a single problem costs more compute.
 
-Dropout enabled a computationally effective equivalent approach involving by randomly blocking out the effects of a subset of neurons in each training run[^13], effectively training an exponential number of sub-networks within a neural network and averaging their predictions together.
+Dropout enabled a computationally effective equivalent approach involving randomly blocking out the effects of a subset of neurons in each training run[^13], effectively training an exponential number of sub-networks within a neural network and averaging their predictions together.
 
 <br />
 
@@ -381,7 +383,7 @@ In practice, architectural advancements have made previously intractable problem
 
 > [!NOTE]
 >
-> **Constraint #4: The quality of the network architecture constraints the representational capacity of a model.**
+> **Constraint #4: The quality of the network architecture constrains the representational capacity of a model.**
 
 Technically, a deep neural network with non-linearities is capable of modeling any distribution, given a sufficient number of parameters[^15].
 
@@ -400,7 +402,7 @@ CNNs use _feature maps_ that detect high-level features across images to impleme
 
 This provided a deep learning analogue to the manual feature engineering efforts often used before deep learning was proven.
 
-CNNs were critical the initial adoption of deep learning - neural networks like [LeNet](/01-deep-neural-networks/02-cnn/02-le-net.pdf) and [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) used the architecture to beat the state-of-the-art in image classification competitions. Additionally CNNs are still relevant in modern models with the [U-Net](/01-deep-neural-networks/04-u-net/02-u-net.ipynb) architecture being used in modern [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models for image generation.
+CNNs were critical for the initial adoption of deep learning - neural networks like [LeNet](/01-deep-neural-networks/02-cnn/02-le-net.pdf) and [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) used the architecture to beat the state-of-the-art in image classification competitions. Additionally CNNs are still relevant in modern models with the [U-Net](/01-deep-neural-networks/04-u-net/02-u-net.ipynb) architecture being used in modern [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models for image generation.
 
 <br />
 
@@ -553,13 +555,15 @@ This increased demand for compute has also been reflected in the surging market 
 
 The current constraint on compute is partially a result of compute supply chains not having predicted the unexpected jump in demand caused by the AI boom.
 
-As supply chains inevitably adjust to meet these demands, the constraint will likely shift from who has already obtained the most compute to who has the resources to purchase the most compute, which also positions OpenAI well considering their partnership with the well-resources Microsoft.
+As supply chains inevitably adjust to meet these demands, the constraint will likely shift from who has already obtained the most compute to who has the resources to purchase the most compute, which also positions OpenAI well considering their partnership with the well-resourced Microsoft.
 
 <br />
 
 ### AI ASICs
 
-In recent fundraising cycles, many startups have raised money to build ASICs for AI inference and training, promising to further speed up the efficiency of training large models.
+In recent fundraising cycles, many startups have raised money to build dedic-ated AI chips for inference and training, promising to further speed up the efficiency of training large models.
+
+These specialized chips, broadly known as **Application Specific Integrated Circuits**, build assumption about how deep learning models work directly into hardware, offering the ability to drastically accelerate training.
 
 The question is, will other companies be able to compete in this space, or will NVIDIA maintain it's domination of the AI training market (most likely).
 
@@ -569,9 +573,9 @@ The question is, will other companies be able to compete in this space, or will 
 
 ![constraint-6-compute-efficiency](./images/readme/constraint-6-compute-efficiency.png)
 
-While the power of compute increases, making effective use of this compute power is not a guarantee. Making training efficient on compute is a software problem that takes active effort and optimization.
+While the power of compute increases, making effective use of this compute is not a guarantee. Using compute efficiently is a software problem that takes active effort and optimization.
 
-Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135) which drastically accelerated the speed of Transformers through an optimization in how attention access memory are a reminder that compute optimizations are another lever to increase the efficiency of training and scale up models.
+Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135), which drastically accelerated the speed of Transformers through an optimization in how attention access memory, are a reminder that compute optimizations are another lever to increase the efficiency of training and scale up models.
 
 > [!NOTE]
 >
@@ -581,7 +585,7 @@ Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135) which drasti
 
 ### Breakthrough #1: CUDA
 
-The initial challenge to overcome was just the difficult of working with GPUs, which have a completely different programming paradigm than the CPUs that early deep learning models were trained on.
+Initially, GPUs were challenging to work with as they depended on a completely new programming paradigm.
 
 The introduction of [CUDA](https://en.wikipedia.org/wiki/CUDA) as a GPU programming paradigm familiar to C programmers made writing GPU code far more approachable.
 
@@ -628,11 +632,11 @@ Having covered each constraint individually, we can now put them all into perspe
 
 **A helpful way to think about the 7 constraints is in terms of _hard constraints_ and _leverage_.**
 
-The hard constraints are **data**, **compute**, and **energy** - these are much slower to move and are rate-limited by far slower processed - data currently being limited by the scaling growth of the internet, compute being limited by individual company resources and supply chains, and energy constraints eventually being rate-limited by regulation.
+The hard constraints are **data**, **compute**, and **energy** - these are rate-limited by slow processes - data currently being limited by the scaling growth of the internet and other data collection methods, compute being limited by individual company resources and supply chains, and energy constraints eventually being rate-limited by regulation.
 
 Meanwhile, **parameters**, **optimization & regularization**, **architecture**, and **compute efficiency** can be thought of as forms of **leverage** on the hard constraints - they are all easy to vary and can be optimized to maximize a models intelligence given a fixed set of data, compute, and energy.
 
-Having broken past significant constraints in all of these dimensions over the past few decades, **deep learning is now in a position where maximizing the effect of the leverage constraints is important for individual training runs, but pushing up the hard constraints are what really determines the increasing base intelligence of models now.**
+**Maximizing leverage constraints are important for individual training runs, but improving the hard constraints is what really pushed forward the increasing base intelligence of models now.**
 
 This is again indicative of the scaling laws - our models have not shown signs of coming close to fully modeling the information in current internet-scale datasets, so we continue to scale up models by increasing _compute_ and _parameters_
 
@@ -640,9 +644,9 @@ This is again indicative of the scaling laws - our models have not shown signs o
 
 # 2. Narratives
 
-We can look back at this history of progress in deep learning through the lens of constraints, and see a few key milestones that stand out above the rest which completely shifted the paradigm of constraints and narratives around deep learning.
+We can look back at this history of progress in deep learning through the lens of constraints, and see a few key milestones that stand out above the rest which have completely shifted narratives around deep learning.
 
-These narrative shifts alone had a large impact on progress in the industry, as narratives are particular effective tools for allocating capital and talent toward problems[^18].
+Since narratives are a powerful tool for allocating capital and talent toward problems[^18], these narrative shifts alone have had a significant impact on deep learning progress.
 
 <br />
 
@@ -652,15 +656,15 @@ These narrative shifts alone had a large impact on progress in the industry, as 
 
 The first major narrative shift in deep learning occured after the release of [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) in 2012.
 
-Prior to this paper, deep learning was thought to be a naive approach to machine learning by many academics, as it consistently lost to feature engineering based ML approaches in image classification and other challenges.
+Prior to this paper, deep learning was considered inferior to traditional ML, as it consistently lost to manual feature engineering approaches in image classification and other challenges.
 
 The success of AlexNet brought down the top-5 error rate on the ImageNet challenge from 25.8% to 16.4%, blowing the previous state-of-the-art out of the water.
 
-This led to the further developments of critical works like [GoogLeNet](https://arxiv.org/abs/1409.4842) and [ResNet](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb), but more importantly, it shifted attention back into deep learning and created new interest in the field of study.
+This directly enabled further innovations like [GoogLeNet](https://arxiv.org/abs/1409.4842) and [ResNet](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb), but more importantly, it shifted attention back on deep learning and created new interest in the field.
 
-The narrative shift that occured as a result of this work was from one of skepticism of deep learning to belief that it was a viable, and even superior approach to machine learning.
+The narrative shift that occured as a result of this work was from one of skepticism about the utility of deep learning to belief that it was a viable, and even superior approach to traditional machine learning.
 
-This narrative shift was essential to get us to the point that we're at today, and it seems that Ilya Sutskever (who also co-authored AlexNet) and others had the insight of how scaling laws would playout long before it reached consensus, as [discussed in this interview with Geoffrey Hinton](https://www.youtube.com/watch?v=n4IQOBka8bc).
+This narrative shift was essential to get us to the point that we're at today, and it seems that Ilya Sutskever (who co-authored AlexNet) realized how scaling laws would playout long before it reached consensus, as [discussed in this interview with Geoffrey Hinton](https://www.youtube.com/watch?v=n4IQOBka8bc).
 
 <br />
 
@@ -672,7 +676,7 @@ The introduction of the Transformer alone was not what created the largest narra
 
 Arguably, it was the introduction of [BERT](/04-transformers/02-bert/03-bert.ipynb) that really showed how transformers could take advantage of massive datasets scraped from the internet via pre-training and fine-tuning, which kicked off the modern trends in AI focusing on achieving general intelligence.
 
-Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks withou training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence in language models that was not specific to a task.
+Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks withou training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence.
 
 The shock caused by BERT is evident in the [Google executive statement](https://x.com/TechEmails/status/1756765277478621620) claiming that BERT will replace all the 20 years of progress on the search product.
 
@@ -686,15 +690,17 @@ Importantly, OpenAI took a bet on the scaling laws early on, well before they we
 
 Now, they look clear in hindisght because of the series of bets OpenAI took to validate these laws, with GPT-2 and GPT-3 further validating their hypothesis.
 
-**Extrapolating the current scaling laws progression out accurately is challenging** - as [Zuck points out in this clip](https://www.youtube.com/watch?v=i-o5YbNfmh0), trends rarely continue predictably while progress happens for free, usually bottlenecks get hit and then it takes significant time to get past them.
+**Extrapolating out the progression of scaling laws correctly is challenging** - as [Zuck points out in this clip](https://www.youtube.com/watch?v=i-o5YbNfmh0), trends like these rarely continue until we reach the goal - we usually run into bottlenecks and then have to readjust strategy.
 
-In this context, the question is how far the empirical distribution of the internet dataset will take us in terms of building general intelligence - in-other words, when will we start to hit the carrying capacity on the scaling laws.
+In this context, the question is how far the empirical distribution of the internet dataset will take. Framed differently - how close is the empirical distribution of the internet to the true distribution of the model of reality?
 
-**This narrative is also a particularly good indicator of how essential narratives are for fundraising.**
+This will determine when we hit a carrying capacity on how much better our models can get by scaling parameters to train on the internet.
 
-The AGI narrative may be the most powerful narrative in history (especially while we were at the peak of the hype cycle) since it can frame things as "everything else economically valuable will be solved by this problem.")
+**This narrative is also a good indicator of how impactful narratives are in fundraising.**
 
-Clearly, this was used effectively with the [rumored $7T OpenAI fundraising attempt](https://www.wsj.com/tech/ai/sam-altman-seeks-trillions-of-dollars-to-reshape-business-of-chips-and-ai-89ab3db0) (which was of course just a rumor, but indication of the absurdity of the narrative that people could consider that as a possibility).
+The AGI narrative may be the most powerful narrative in history since it can claim that "everything else economically valuable will be solved by this problem."
+
+Clearly, this was used effectively with the [rumored $7T OpenAI fundraising attempt](https://www.wsj.com/tech/ai/sam-altman-seeks-trillions-of-dollars-to-reshape-business-of-chips-and-ai-89ab3db0) (which was of course just a rumor, but an indication of the power of the AGI narrative, since people believed it was a possibility).
 
 <br />
 
@@ -726,9 +732,9 @@ This is a nice ex-post rationalization, but may overly construct a clean narrati
 
 Additionally, early papers seem to intentionally feel pressure to fite ideas into neuroscientific and biological justifications, even where there may not have been any.
 
-[Dropout] struck me as the most blatant example of this, as they explain "one possible motivation" for dropout coming from animal sexual behavior, despite their prior explanation in the paper of dropout following from a rather logical line of thinking around regularization.
+[Dropout](/02-optimization-and-regularization/04-dropout/02-dropout.ipynb) struck me as the most blatant example of this, as they explain "one possible motivation" for dropout coming from animal sexual behavior, despite their prior explanation in the paper of dropout following from a rather logical line of thinking around regularization.
 
-This seems to be an ex-post rationalization of the architecture in an attempt to make it correspond with biology, rather than it actually serving as a source for inspiration (of course, I could be wrong about this).
+This seems to an attempt to make the architecture appear to correspond with biology after it was designed, rather than it actually serving as a source for inspiration (of course, I could be wrong about this).
 
 <br />
 
@@ -752,7 +758,7 @@ These systems involve noisy sampling, and these models turn to approaches used i
 
 ### Engineering
 
-In practice, most of the innovations in deep learning, though they can be understood from the source of inspiration after creation (especially those with neuroscientific correlates), actually are more often motivated by engineering problems in neural network design, and bear only surface-level resemblance to the apparent fields of inspiration.
+In practice, most of the innovations in deep learning are actually more motivated by engineering problems in neural network design, and bear only surface-level resemblance to the apparent fields of inspiration.
 
 <br />
 
@@ -764,11 +770,9 @@ I'll try to be purely empirical here, since it's easy to dip into unbased philos
 
 As we've disucssed, one way way to view intelligence (motivated by the [Free Energy Principle](https://www.nature.com/articles/nrn2787)) is as a measure of our ability to model complex distributions that describe reality, and then run active inference on these models to accomplish things in the world[^20].
 
-With this definition, the creation of digital intelligence that appears to behave intelligently is surprising.
+It seems that the combination of data about reality (dataset vs. our senses), compute (transistors vs. neurons), and energy (electricity vs. food) along with scale (parameters vs. connections), and of course, an effective learning algorithm, yields systems that appear intelligent.
 
-It seems that the combination of data about reality (dataset vs. our sense), compute (transistors vs. neurons), and energy (electricity vs. food) along with scale (parameters vs. connections), and of course, an effective learning algorithm, yields systems that appear to be intelligent.
-
-Additionally, it seems that the respective efficacy of different architectures may also have something interesting to add about intelligence - the inductive biases offered by various architectural approaches seems to indicate something inherent about the way the data they're trying to model works.
+Additionally, the efficacy of various inductive biases offered by different architectes may indicate something inherent about the structure of the information they're trying to model.
 
 For example, the effectiveness of the attention mechanism raises the question of why this inductive bias alone appears to be so effective at modeling data.
 
@@ -786,13 +790,13 @@ Everything in the past that has contributed to progress has been determined by t
 
 Importantly, nothing about this changes in the future - **these same 7 constraints will always determine where we're headed, and how close we are to AGI.[^21]**
 
-We've solved the _theoretical problem_ of AGI in the sense that we know exactly what would get us to AGI[^22].
+At this point, we've solved the _theoretical problem_ of AGI, in the sense that we know exactly what would get us to AGI[^22].
 
-This was not obvious until the past decade, where we've really seen the power of how far deep learning can go.
+This was not obvious until the past decade, where we've seen the power of how far deep learning can go.
 
-The question is now can whether we will solve the _engineering_ problem of AGI. Will we be able to keep pushing on all the constraints to keep increasing intelligence?
+The question is now whether we will solve the _engineering_ problem of AGI. Will we be able to keep pushing on all the constraints to keep improving digital intelligence?
 
-Although scaling laws are currently at play and the current path forward is to acquire larger amounts of compute to train larger models, the efficacy of this approach may hit a bottleneck, at which point we will have to turn to the constraints again to keep progressing.
+Although scaling laws are currently at play and the current path forward is to acquire larger amounts of compute to train larger models, the efficacy of this approach will hit a limit in the future (it's difficult to know when).
 
 It's possible that we may hit a bottleneck in how good models can get based on the quality of the empirical distribution of the internet, in which case we'll have to seek other sources of data.
 
@@ -800,7 +804,7 @@ It's possible that we may hit a bottleneck in how good models can get based on t
 >
 > It's critical to remember that the core principle of progress in deep learning is that pushing on the 7 constraints will lead to increasingly intelligence systems.
 >
-> Though the scaling laws indicate that the current limiting constraints are compute and parameters, these may shift over time to data and energy, in which case the approaches to deep learning will shift.
+> Though the scaling laws indicate that the current limiting constraints are compute and parameters, these may shift to data and energy over time, which will bring new challenges.
 
 <br />
 
