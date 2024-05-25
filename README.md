@@ -486,7 +486,7 @@ So we can train a certain number of parameters per device. And then we need to g
 
 > [!NOTE]
 >
-> **Constraint #5: The total available compute determines the maximum number of parameters trainable parameters in a model in a certain amount of time.**
+> **Constraint #5: The total available compute constraints the maximum number of trainable parameters a model can have.**
 
 In practice, the constraint may be caused by a lack of resources (to buy devices), supply (due to constrained supply chains), or energy (discussed later)[^17].
 
