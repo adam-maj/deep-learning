@@ -590,6 +590,7 @@ Initially, GPUs were challenging to work with as they depended on a completely n
 The introduction of [CUDA](https://en.wikipedia.org/wiki/CUDA) as a GPU programming paradigm familiar to C programmers made writing GPU code far more approachable.
 
 This language enabled [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) to manually implement their own kernels to speed up the convolution operation on GPUs, unlocking a new level of parallelization for training CNNs.
+
 <br />
 
 ### Breakthrough #2: Kernel Libraries
@@ -730,7 +731,7 @@ This pattern suggests that rather than taking direct inspiration from neuroscien
 
 This is a nice ex-post rationalization, but may overly construct a clean narrative that doesn't actually reflect the situation.
 
-Additionally, early papers seem to intentionally feel pressure to fite ideas into neuroscientific and biological justifications, even where there may not have been any.
+Additionally, early papers seem to intentionally feel pressure to fit ideas into neuroscientific and biological justifications, even where there may not have been any.
 
 [Dropout](/02-optimization-and-regularization/04-dropout/02-dropout.ipynb) struck me as the most blatant example of this, as they explain "one possible motivation" for dropout coming from animal sexual behavior, despite their prior explanation in the paper of dropout following from a rather logical line of thinking around regularization.
 
