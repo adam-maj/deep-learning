@@ -432,7 +432,7 @@ The now famous [_Attention Is All You Need_](/04-transformers/01-transformer/01-
 
 The CNN introduced the ability to understand samples from the complex distribution of images.
 
-However, the problem of synthesizing images appeared to be much harder - CNNs could learn to filter out the details in images and focus on high-level features, whereas image geneartion models would need to learn to create both high-level features and complex details.
+However, the problem of synthesizing images appeared to be much harder - CNNs could learn to filter out the details in images and focus on high-level features, whereas image generation models would need to learn to create both high-level features and complex details.
 
 Image generation models like [Variational Auto-Encoders](/05-image-generation/02-vae/04-vae.ipynb) and [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models learn to generate both high-level features and complex details by introducing random sampling and noise directly into their architectures.
 
