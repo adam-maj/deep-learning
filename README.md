@@ -440,7 +440,7 @@ VAEs create a bottleneck that forces the models to learn useful representations 
 
 **Diffusion models, instead, starts with noise, and learn to add information into to the noise slowly.**
 
-Without these designs, modern image generation models like [Stable Diffusion](https://arxiv.org/abs/2112.10752) and [DALL E](/05-image-generation/05-dall-e/) wouldn't exist.
+Without these designs, modern image generation models like [Stable Diffusion](https://arxiv.org/abs/2112.10752) and [DALL·E](/05-image-generation/05-dall-e/) wouldn't exist.
 
 <br />
 
@@ -452,7 +452,7 @@ A commonly used example of the power of such embeddings is that the following eq
 
 Embeddings show us how the relationships between concepts can be represented in a highly condensed format.
 
-Later models like [CLIP](/05-image-generation/04-clip/02-clip.ipynb) based on the [Transformer](/04-transformers/07-vision-transformer/02-vision-transformer.ipynb) architecture have led to complex embedding spaces mapping understandings of concepts across modalities to a single representation space, enabling multi-modal models like [DALL E 2](/05-image-generation/05-dall-e/02-dall-e-2.pdf).
+Later models like [CLIP](/05-image-generation/04-clip/02-clip.ipynb) based on the [Transformer](/04-transformers/07-vision-transformer/02-vision-transformer.ipynb) architecture have led to complex embedding spaces mapping understandings of concepts across modalities to a single representation space, enabling multi-modal models like [DALL·E 2](/05-image-generation/05-dall-e/02-dall-e-2.pdf).
 
 <br />
 
@@ -865,7 +865,7 @@ It's possible that we may hit a bottleneck in how good models can get based on t
 - [5.2. VAEs](/05-image-generation/02-vae/)
 - [5.3. Diffusion](/05-image-generation/03-diffusion/)
 - [5.4. CLIP](/05-image-generation/05-clip/)
-- [5.5. DALL E & DALL E 2](/05-image-generation/06-dall-e/)
+- [5.5. DALL·E & DALL·E 2](/05-image-generation/06-dall-e/)
 
 <br />
 
@@ -947,5 +947,5 @@ I used A100's to train most of the larger models.
 - **Denoising Diffusion 2** - Improved Denoising Diffusion Probabilistic Models (2021), A. Nichol and P. Dhariwal [[PDF]](https://arxiv.org/pdf/2102.09672)
 - **Diffusion Beats GANs** - Diffusion Models Beat GANs on Image Synthesis, P. Dhariwal and A. Nichol [[PDF]](https://arxiv.org/pdf/2105.05233)
 - **CLIP** - Learning Transferable Visual Models From Natural Language Supervision (2021), A. Radford et al. [[PDF]](https://arxiv.org/pdf/2103.00020)
-- **DALL E** - Zero-Shot Text-to-Image Generation (2021), A. Ramesh et al. [[PDF]](https://arxiv.org/pdf/2102.12092)
-- **DALL E 2** - Hierarchical Text-Conditional Image Generation with CLIP Latents (2022), A. Ramesh et al. [[PDF]](https://arxiv.org/pdf/2204.06125)
+- **DALL·E** - Zero-Shot Text-to-Image Generation (2021), A. Ramesh et al. [[PDF]](https://arxiv.org/pdf/2102.12092)
+- **DALL·E 2** - Hierarchical Text-Conditional Image Generation with CLIP Latents (2022), A. Ramesh et al. [[PDF]](https://arxiv.org/pdf/2204.06125)
