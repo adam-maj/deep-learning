@@ -772,7 +772,7 @@ As we've disucssed, one way way to view intelligence (motivated by the [Free Ene
 
 It seems that the combination of data about reality (dataset vs. our senses), compute (transistors vs. neurons), and energy (electricity vs. food) along with scale (parameters vs. connections), and of course, an effective learning algorithm, yields systems that appear intelligent.
 
-Additionally, the efficacy of various inductive biases offered by different architectes may indicate something inherent about the structure of the information they're trying to model.
+Additionally, the efficacy of various inductive biases offered by different architectures may indicate something inherent about the structure of the information they're trying to model.
 
 For example, the effectiveness of the attention mechanism raises the question of why this inductive bias alone appears to be so effective at modeling data.
 
