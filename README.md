@@ -676,7 +676,7 @@ The introduction of the Transformer alone was not what created the largest narra
 
 Arguably, it was the introduction of [BERT](/04-transformers/02-bert/03-bert.ipynb) that really showed how transformers could take advantage of massive datasets scraped from the internet via pre-training and fine-tuning, which kicked off the modern trends in AI focusing on achieving general intelligence.
 
-Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks withou training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence.
+Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks without training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence.
 
 The shock caused by BERT is evident in the [Google executive statement](https://x.com/TechEmails/status/1756765277478621620) claiming that BERT will replace all the 20 years of progress on the search product.
 
