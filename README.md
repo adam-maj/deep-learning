@@ -724,7 +724,7 @@ Similarly, the effectiveness of [ReLU](/02-optimization-and-regularization/02-re
 
 Other systems, like the [LSTM](/03-sequence-modeling/02-lstm/02-lstm.ipynb) and [Attention](/03-sequence-modeling/06-attention/02-attention.ipynb) mechanisms appear to draw from neuroscientific concepts (memory and attention) on a surface level, although in reality, their implementations are more motivated by the math of neural networks and engineering to specific problems rather than they are directly modeled after the brain.
 
-For example, the LSTM design is perfectly engineering to address the vanishing & exploding gradients problem in RNNs, and it happens that a long-term memory based system is an effective way to fix this problem.
+For example, the LSTM design is perfectly engineered to address the vanishing & exploding gradients problem in RNNs, and it happens that a long-term memory based system is an effective way to fix this problem.
 
 This pattern suggests that rather than taking direct inspiration from neuroscience, **deep learning may have converged on similar approaches to how nature has built intelligence in the brain, partly through first principles.**
 
