@@ -730,7 +730,7 @@ This pattern suggests that rather than taking direct inspiration from neuroscien
 
 This is a nice ex-post rationalization, but may overly construct a clean narrative that doesn't actually reflect the situation.
 
-Additionally, early papers seem to intentionally feel pressure to fite ideas into neuroscientific and biological justifications, even where there may not have been any.
+Additionally, early papers seem to intentionally feel pressure to fit ideas into neuroscientific and biological justifications, even where there may not have been any.
 
 [Dropout](/02-optimization-and-regularization/04-dropout/02-dropout.ipynb) struck me as the most blatant example of this, as they explain "one possible motivation" for dropout coming from animal sexual behavior, despite their prior explanation in the paper of dropout following from a rather logical line of thinking around regularization.
 
