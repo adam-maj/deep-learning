@@ -766,7 +766,7 @@ In practice, most of the innovations in deep learning are actually more motivate
 
 What can this progression of progress in deep learning tell us about our own intelligence?
 
-I'll try to be purely empirical here, since it's easy to dip into unbased philosophizing with this topic given it's subjective nature.
+I'll try to be purely empirical here, since it's easy to dip into unbased philosophizing with this topic given its subjective nature.
 
 As we've disucssed, one way way to view intelligence (motivated by the [Free Energy Principle](https://www.nature.com/articles/nrn2787)) is as a measure of our ability to model complex distributions that describe reality, and then run active inference on these models to accomplish things in the world[^20].
 
