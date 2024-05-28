@@ -353,7 +353,7 @@ The [Adam](/02-optimization-and-regularization/08-adam/02-adam.ipynb) optimizer 
 
 ### The Forgotten Constraint
 
-The advancements mentioned above (and related developments) are all used in most models to date. For example, the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb) architecture uses [Dropout](/02-optimization-and-regularization/04-dropout/), [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/02-layer-norm.ipynb), and[Residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) throughout it's architecture, and was trained using the [Adam](/02-optimization-and-regularization/08-adam/) optimizer.
+The advancements mentioned above (and related developments) are all used in most models to date. For example, the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb) architecture uses [Dropout](/02-optimization-and-regularization/04-dropout/), [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/02-layer-norm.ipynb), and [Residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) throughout its architecture, and was trained using the [Adam](/02-optimization-and-regularization/08-adam/) optimizer.
 
 Because of how effective they've been completely removing prior problems, optimization & regularization appear to be largely solved now.
 
