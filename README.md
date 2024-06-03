@@ -279,7 +279,7 @@ As mentioned previosly, increasing the number of parameters in a neural network 
 
 ![constraint-3-optimization-and-regularization](./images/readme/constraint-3-optimization-and-regularization.png)
 
-In reality, you can't keep scaling up the number of parameters in a model and expect quality to keep increasing.Scaling up a model (via increasing the depth or the number of parameters per layer) introduces two new classes of problems.
+In reality, you can't keep scaling up the number of parameters in a model and expect quality to keep increasing. Scaling up a model (via increasing the depth or the number of parameters per layer) introduces two new classes of problems.
 
 First, increasing the depth of a network can make it take far longer to converge to an optimal solution, or in the worst cases, can prevent the network from converging.
 
