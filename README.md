@@ -269,7 +269,7 @@ The scaling laws show no sign of letting up, which has motivated the current con
   <i>Scaling laws for model performance as a function of parameters</i>
 </p>
 
-**Importantly, the reason for this trend is not that increasing the number of parameters in a model always increases it's intelligence.** Instead, it's due to the fact that current models still don't have enough representational capacity to capture all the information in internet-scale datasets.
+**Importantly, the reason for this trend is not that increasing the number of parameters in a model always increases its intelligence.** Instead, it's due to the fact that current models still don't have enough representational capacity to capture all the information in internet-scale datasets.
 
 As mentioned previosly, increasing the number of parameters in a neural network is actually governed by the other constraints.
 
