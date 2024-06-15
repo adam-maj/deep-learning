@@ -14,6 +14,10 @@ The rest of this page is my breakdown of everything we can learn from this histo
 
 > [!NOTE]
 >
+> For more context, checkout the [original twitter thread](https://x.com/MajmudarAdam/status/1794190796411027791)
+
+> [!NOTE]
+>
 > Thanks to [Pavan Jayasinha](https://x.com/pavanjayasinha) and [Anand Majmudar](https://x.com/Almondgodd) for their constant feedback while I made this 😄
 
 ## Table of Contents
