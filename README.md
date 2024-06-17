@@ -157,7 +157,7 @@ The introduction of datasets like [MNIST](https://en.wikipedia.org/wiki/MNIST_da
 
 Early [CNNs](/01-deep-neural-networks/02-cnn/03-cnn.ipynb) like [LeNet](/01-deep-neural-networks/02-cnn/02-le-net.pdf) and [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) used these datasets to show that deep neural networks could compete with the traditional machine learning approaches used at the time.
 
-It's easy to take for granted the impact of these datasets now, as they have long been obselete - but they clearly had a huge impact on the field. Notably, AlexNet, which [completely changed the field of deep learning](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf), could not have existed without the creation of the ImageNet dataset.
+It's easy to take for granted the impact of these datasets now, as they have long been obsolete - but they clearly had a huge impact on the field. Notably, AlexNet, which [completely changed the field of deep learning](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf), could not have existed without the creation of the ImageNet dataset.
 
 **The introduction of large labeled datasets can be seen as the first breakthrough in pushing the data constraint toward larger datasets.**
 
@@ -211,8 +211,8 @@ Regardless, current scaling laws have shown that current models are far from rea
 
 <br />
 
-[^9]: This may not actually be sufficient to keep increasing the quality of models, as a recent [analysis of zero-shot learning](https://arxiv.org/abs/2404.04125) shows that large language models ability to perform tasks increases logartihmically with the amount of relevant data in the dataset.
-[^10]: The internet is a lossy compression of the entirety of human knowledge, with lot's of noise (complex and contrasting intentions behind different posts). Additionally, human knowledge itself is a very lossy (and partially inaccurate) compression of the laws of reality.
+[^9]: This may not actually be sufficient to keep increasing the quality of models, as a recent [analysis of zero-shot learning](https://arxiv.org/abs/2404.04125) shows that large language models ability to perform tasks increases logarithmically with the amount of relevant data in the dataset.
+[^10]: The internet is a lossy compression of the entirety of human knowledge, with lots of noise (complex and contrasting intentions behind different posts). Additionally, human knowledge itself is a very lossy (and partially inaccurate) compression of the laws of reality.
 
 ### Modeling Data
 
@@ -250,7 +250,7 @@ Let's look at the times in the past where this constraint has been particularly 
 
 The earliest neural networks consisted of just a single input and output layer, heavily limiting their representational capacity.
 
-The original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf) discussed the addition of a hidden layer, adding more parameters to the network which significantly increased it's ability to represent more complex problems (like shift-registers, the XOR gate, etc. - all very simple examples, but impressive at the time).
+The original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf) discussed the addition of a hidden layer, adding more parameters to the network which significantly increased its ability to represent more complex problems (like shift-registers, the XOR gate, etc. - all very simple examples, but impressive at the time).
 
 [AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) is one of the clearest examples of increasing parameters leading to better models[^11] - the AlexNet architecture used 5 convolutional layers, far more than the previous largest CNN at the time, which enabled it to crush the previous best score in the ImageNet competition.
 
@@ -273,9 +273,9 @@ The scaling laws show no sign of letting up, which has motivated the current con
   <i>Scaling laws for model performance as a function of parameters</i>
 </p>
 
-**Importantly, the reason for this trend is not that increasing the number of parameters in a model always increases it's intelligence.** Instead, it's due to the fact that current models still don't have enough representational capacity to capture all the information in internet-scale datasets.
+**Importantly, the reason for this trend is not that increasing the number of parameters in a model always increases its intelligence.** Instead, it's due to the fact that current models still don't have enough representational capacity to capture all the information in internet-scale datasets.
 
-As mentioned previosly, increasing the number of parameters in a neural network is actually governed by the other constraints.
+As mentioned previously, increasing the number of parameters in a neural network is actually governed by the other constraints.
 
 <br />
 
@@ -289,7 +289,7 @@ First, increasing the depth of a network can make it take far longer to converge
 
 **The process of ensuring models can converge effectively, even as they grow in depth, is known as optimization.**
 
-Additionally, when you scale up the number of parameters in a model so it's representational capacity exceeds the complexity of the empirical distribution, the model can start fitting trivial _noise_ in the distribution. This effect is known as _overfitting_.
+Additionally, when you scale up the number of parameters in a model so its representational capacity exceeds the complexity of the empirical distribution, the model can start fitting trivial _noise_ in the distribution. This effect is known as _overfitting_.
 
 **The process of regularization is used to ensure models learn useful _generalizations_ of the dataset and don't overfit to noise.**
 
@@ -315,11 +315,11 @@ This unlock removed a significant constraint on network depth, enabling much lar
 
 <br />
 
-[^12]: Understanding this section relies on a basic understanding of the fundamentals of the backpropagation algorith. [3blue1brown's neural network series](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) is an intuitive and interesting introduction for anyone who wants to learn.
+[^12]: Understanding this section relies on a basic understanding of the fundamentals of the backpropagation algorithm. [3blue1brown's neural network series](https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi) is an intuitive and interesting introduction for anyone who wants to learn.
 
 ### Breakthrough #2: Network of Networks
 
-[Dropout](/02-optimization-and-regularization/04-dropout/) introduced a critical regularization strategy that has been used in most networks after it's creation, notably contributing to the success of [AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) which initially popularized it.
+[Dropout](/02-optimization-and-regularization/04-dropout/) introduced a critical regularization strategy that has been used in most networks after its creation, notably contributing to the success of [AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) which initially popularized it.
 
 Conceptually, the ideal way to prevent a model from overfitting to a particular problem would be to train a variety of neural networks on the same problem and then take the average of their predictions. This process would cancel out the noise fitted by each network, leaving only the true representations.
 
@@ -335,11 +335,11 @@ Dropout enabled a computationally effective equivalent approach involving random
 
 Another problem when training deep networks is that later layers suffer from improving while the activations of earlier layers change, potentially rendering their early stages of training useless.
 
-**This problem is known as internal covariate shift**, and also prohibitted the training of deeper networks.
+**This problem is known as internal covariate shift**, and also prohibited the training of deeper networks.
 
 The introduction of [Batch Normalization](/02-optimization-and-regularization/05-batch-norm/) and [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/) solved this by forcing neuron activations into predictable distributions, preventing the covariate shift problem.
 
-This breakthrough, combined with residuals, provided the basis for building much deeper networks. Layer Normalization in particular enabled the training of deeper reccurent models like [RNNs](/03-sequence-modeling/01-rnn/02-rnn.ipynb) and [LSTMs](/03-sequence-modeling/02-lstm/02-lstm.ipynb)'s that led to the innovations eventually resulting in the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb).
+This breakthrough, combined with residuals, provided the basis for building much deeper networks. Layer Normalization in particular enabled the training of deeper recurrent models like [RNNs](/03-sequence-modeling/01-rnn/02-rnn.ipynb) and [LSTMs](/03-sequence-modeling/02-lstm/02-lstm.ipynb)'s that led to the innovations eventually resulting in the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb).
 
 <br />
 
@@ -349,7 +349,7 @@ The initial optimization algorithm, _stochastic gradient-descent_, involves taki
 
 In practice, this can be highly inefficient and hurt convergence[^14].
 
-The [Adam](/02-optimization-and-regularization/08-adam/02-adam.ipynb) optimizer introduced an efficient algorith to keep track of **adaptive moments** tracking the history of gradients throughout the optimization process. This allowed the optimizer to adjust step-sizes based on past information, often leading to much faster convergence.
+The [Adam](/02-optimization-and-regularization/08-adam/02-adam.ipynb) optimizer introduced an efficient algorithm to keep track of **adaptive moments** tracking the history of gradients throughout the optimization process. This allowed the optimizer to adjust step-sizes based on past information, often leading to much faster convergence.
 
 [^14]: Specifically in parameter spaces with large variance in the gradients, a certain step-size may cause over-adjustments in certain parts of the landscape, and result in painfully slow changes in other cases.
 
@@ -357,13 +357,13 @@ The [Adam](/02-optimization-and-regularization/08-adam/02-adam.ipynb) optimizer 
 
 ### The Forgotten Constraint
 
-The advancements mentioned above (and related developments) are all used in most models to date. For example, the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb) architecture uses [Dropout](/02-optimization-and-regularization/04-dropout/), [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/02-layer-norm.ipynb), and[Residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) throughout it's architecture, and was trained using the [Adam](/02-optimization-and-regularization/08-adam/) optimizer.
+The advancements mentioned above (and related developments) are all used in most models to date. For example, the [Transformer](/04-transformers/01-transformer/02-transformer.ipynb) architecture uses [Dropout](/02-optimization-and-regularization/04-dropout/), [Layer Normalization](/02-optimization-and-regularization/06-layer-norm/02-layer-norm.ipynb), and[Residuals](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb) throughout its architecture, and was trained using the [Adam](/02-optimization-and-regularization/08-adam/) optimizer.
 
 Because of how effective they've been completely removing prior problems, optimization & regularization appear to be largely solved now.
 
 This is especially augmented by the fact that we're far from reaching the peak of the scaling laws on current internet-scale datasets, so overfitting is not a concern.
 
-**Despite this, it's important to remember that optimization & regularization are still real constraints on the size of neural networks**, although they no longer effect models in their current state.
+**Despite this, it's important to remember that optimization & regularization are still real constraints on the size of neural networks**, although they no longer affect models in their current state.
 
 <br />
 
@@ -371,7 +371,7 @@ This is especially augmented by the fact that we're far from reaching the peak o
 
 ![constraint-4-architecture](./images/readme/constraint-4-architecture.png)
 
-We covered how increasing the number of parameters in a neural network increases its _representational capacity_. This can be understood as the networks ability to store _useful representations_ that effectively model the empirical distribution.
+We covered how increasing the number of parameters in a neural network increases its _representational capacity_. This can be understood as the network's ability to store _useful representations_ that effectively model the empirical distribution.
 
 By default, deep neural networks are forced to learn the most optimal ways to store representations for different problems.
 
@@ -379,7 +379,7 @@ However, when we already know an effective method for the model to store useful 
 
 **Building specific structures into the neural network design to make it easier for the model to store useful representations is known as adding inductive bias.**
 
-Desiging good neural network architectures into our models is about increasing the density of _useful representations_ in the model, meaning more efficient usage of parameters.
+Designing good neural network architectures into our models is about increasing the density of _useful representations_ in the model, meaning more efficient usage of parameters.
 
 In this way, improved architectures can achieve similar effects to scaling up parameters.
 
@@ -436,13 +436,13 @@ The now famous [_Attention Is All You Need_](/04-transformers/01-transformer/01-
 
 The CNN introduced the ability to understand samples from the complex distribution of images.
 
-However, the problem of synthesizing images appeared to be much harder - CNNs could learn to filter out the details in images and focus on high-level features, whereas image geneartion models would need to learn to create both high-level features and complex details.
+However, the problem of synthesizing images appeared to be much harder - CNNs could learn to filter out the details in images and focus on high-level features, whereas image generation models would need to learn to create both high-level features and complex details.
 
 Image generation models like [Variational Auto-Encoders](/05-image-generation/02-vae/04-vae.ipynb) and [Diffusion](/05-image-generation/03-diffusion/05-diffusion.ipynb) models learn to generate both high-level features and complex details by introducing random sampling and noise directly into their architectures.
 
 VAEs create a bottleneck that forces the models to learn useful representations in a low dimensional space. Then, they add back noise on top of these representations through random sampling. **So VAEs start by learning representations, and then add noise.**
 
-**Diffusion models, instead, starts with noise, and learn to add information into to the noise slowly.**
+**Diffusion models, instead, starts with noise, and learn to add information into the noise slowly.**
 
 Without these designs, modern image generation models like [Stable Diffusion](https://arxiv.org/abs/2112.10752) and [DALL E](/05-image-generation/05-dall-e/) wouldn't exist.
 
@@ -452,7 +452,7 @@ Without these designs, modern image generation models like [Stable Diffusion](ht
 
 The [Word2Vec](/03-sequence-modeling/04-word2vec/03-word2vec.ipynb) model popularized the concept of text embeddings that preserve semantic and syntactic meaning by forcing models to create vector representations for concepts with interesting properties.
 
-A commonly used example of the power of such embeddings is that the following equation holds true in the embedding space: Emedding("King") - Embedding("Man") + Embedding("Woman") = Embedding("Queen").
+A commonly used example of the power of such embeddings is that the following equation holds true in the embedding space: Embedding ("King") - Embedding("Man") + Embedding("Woman") = Embedding("Queen").
 
 Embeddings show us how the relationships between concepts can be represented in a highly condensed format.
 
@@ -504,11 +504,11 @@ In practice, the constraint may be caused by a lack of resources (to buy devices
 
 They were also the first people to train a deep learning model across multiple GPUs at once to speed up training.
 
-**They were able to accomplish this because of the recent addition of the ability for NVIDIA GPUs to write to each others memory**, which enabled much faster direct communication between GPUs rather than communicating through the host machine.
+**They were able to accomplish this because of the recent addition of the ability for NVIDIA GPUs to write to each other's memory**, which enabled much faster direct communication between GPUs rather than communicating through the host machine.
 
 This innovation (introduced due to gaming, not deep learning), has become critical in training large models, where communication between large clusters of GPUs has become essential.
 
-This paper pushed the compute constraint in several ways - first, just by using GPUs for training the first place, and additionally by using multiple GPUs to shard training, and using inter-GPU communication.
+This paper pushed the compute constraint in several ways - first, just by using GPUs for training the first place, and additionally by using multiple GPUs to shared training, and using inter-GPU communication.
 
 <br />
 
@@ -565,11 +565,11 @@ As supply chains inevitably adjust to meet these demands, the constraint will li
 
 ### AI ASICs
 
-In recent fundraising cycles, many startups have raised money to build dedic-ated AI chips for inference and training, promising to further speed up the efficiency of training large models.
+In recent fundraising cycles, many startups have raised money to build dedicated AI chips for inference and training, promising to further speed up the efficiency of training large models.
 
 These specialized chips, broadly known as **Application Specific Integrated Circuits**, build assumption about how deep learning models work directly into hardware, offering the ability to drastically accelerate training.
 
-The question is, will other companies be able to compete in this space, or will NVIDIA maintain it's domination of the AI training market (most likely).
+The question is, will other companies be able to compete in this space, or will NVIDIA maintain its domination of the AI training market (most likely).
 
 <br />
 
@@ -659,7 +659,7 @@ Since narratives are a powerful tool for allocating capital and talent toward pr
 
 ### Narrative #1: Deep Learning Works
 
-The first major narrative shift in deep learning occured after the release of [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) in 2012.
+The first major narrative shift in deep learning occurred after the release of [AlexNet](/01-deep-neural-networks/03-alex-net/01-alex-net.pdf) in 2012.
 
 Prior to this paper, deep learning was considered inferior to traditional ML, as it consistently lost to manual feature engineering approaches in image classification and other challenges.
 
@@ -667,7 +667,7 @@ The success of AlexNet brought down the top-5 error rate on the ImageNet challen
 
 This directly enabled further innovations like [GoogLeNet](https://arxiv.org/abs/1409.4842) and [ResNet](/02-optimization-and-regularization/03-residuals/02-residuals.ipynb), but more importantly, it shifted attention back on deep learning and created new interest in the field.
 
-The narrative shift that occured as a result of this work was from one of skepticism about the utility of deep learning to belief that it was a viable, and even superior approach to traditional machine learning.
+The narrative shift that occurred as a result of this work was from one of skepticism about the utility of deep learning to belief that it was a viable, and even superior approach to traditional machine learning.
 
 This narrative shift was essential to get us to the point that we're at today, and it seems that Ilya Sutskever (who co-authored AlexNet) realized how scaling laws would playout long before it reached consensus, as [discussed in this interview with Geoffrey Hinton](https://www.youtube.com/watch?v=n4IQOBka8bc).
 
@@ -681,7 +681,7 @@ The introduction of the Transformer alone was not what created the largest narra
 
 Arguably, it was the introduction of [BERT](/04-transformers/02-bert/03-bert.ipynb) that really showed how transformers could take advantage of massive datasets scraped from the internet via pre-training and fine-tuning, which kicked off the modern trends in AI focusing on achieving general intelligence.
 
-Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks withou training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence.
+Because of it's transfer learning approach, BERT achieved state-of-the-art results on many NLP tasks without training on them explicitly, showing one of the first indications of some form of _generalized_ intelligence.
 
 The shock caused by BERT is evident in the [Google executive statement](https://x.com/TechEmails/status/1756765277478621620) claiming that BERT will replace all the 20 years of progress on the search product.
 
@@ -693,7 +693,7 @@ The arrow of progress defined by the improvements from [GPT-2](/04-transformers/
 
 Importantly, OpenAI took a bet on the scaling laws early on, well before they were widely recognized as being valid[^19]. A few years ago, most people thought the scaling laws were naive.
 
-Now, they look clear in hindisght because of the series of bets OpenAI took to validate these laws, with GPT-2 and GPT-3 further validating their hypothesis.
+Now, they look clear in hindsight because of the series of bets OpenAI took to validate these laws, with GPT-2 and GPT-3 further validating their hypothesis.
 
 **Extrapolating out the progression of scaling laws correctly is challenging** - as [Zuck points out in this clip](https://www.youtube.com/watch?v=i-o5YbNfmh0), trends like these rarely continue until we reach the goal - we usually run into bottlenecks and then have to readjust strategy.
 
@@ -771,13 +771,13 @@ In practice, most of the innovations in deep learning are actually more motivate
 
 What can this progression of progress in deep learning tell us about our own intelligence?
 
-I'll try to be purely empirical here, since it's easy to dip into unbased philosophizing with this topic given it's subjective nature.
+I'll try to be purely empirical here, since it's easy to dip into unbiased philosophizing with this topic given its subjective nature.
 
-As we've disucssed, one way way to view intelligence (motivated by the [Free Energy Principle](https://www.nature.com/articles/nrn2787)) is as a measure of our ability to model complex distributions that describe reality, and then run active inference on these models to accomplish things in the world[^20].
+As we've discussed, one way to view intelligence (motivated by the [Free Energy Principle](https://www.nature.com/articles/nrn2787)) is as a measure of our ability to model complex distributions that describe reality, and then run active inference on these models to accomplish things in the world[^20].
 
 It seems that the combination of data about reality (dataset vs. our senses), compute (transistors vs. neurons), and energy (electricity vs. food) along with scale (parameters vs. connections), and of course, an effective learning algorithm, yields systems that appear intelligent.
 
-Additionally, the efficacy of various inductive biases offered by different architectes may indicate something inherent about the structure of the information they're trying to model.
+Additionally, the efficacy of various inductive biases offered by different architects may indicate something inherent about the structure of the information they're trying to model.
 
 For example, the effectiveness of the attention mechanism raises the question of why this inductive bias alone appears to be so effective at modeling data.
 
@@ -807,13 +807,13 @@ It's possible that we may hit a bottleneck in how good models can get based on t
 
 > [!IMPORTANT]
 >
-> It's critical to remember that the core principle of progress in deep learning is that pushing on the 7 constraints will lead to increasingly intelligence systems.
+> It's critical to remember that the core principle of progress in deep learning is that pushing on the 7 constraints will lead to increasingly intelligent systems.
 >
 > Though the scaling laws indicate that the current limiting constraints are compute and parameters, these may shift to data and energy over time, which will bring new challenges.
 
 <br />
 
-[^21]: This is not saying that scaling laws will get us to AGI, but that constantly pushing the constraints will get us to AGI. We may run into bottlenecks that render the scaling laws obselete at some point.
+[^21]: This is not saying that scaling laws will get us to AGI, but that constantly pushing the constraints will get us to AGI. We may run into bottlenecks that render the scaling laws obsolete at some point.
 [^22]: Assuming you believe that the current systems exhibit intelligent behavior, which some people still disagree with.
 
 # Resources
