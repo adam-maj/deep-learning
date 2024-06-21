@@ -508,7 +508,7 @@ They were also the first people to train a deep learning model across multiple G
 
 This innovation (introduced due to gaming, not deep learning), has become critical in training large models, where communication between large clusters of GPUs has become essential.
 
-This paper pushed the compute constraint in several ways - first, just by using GPUs for training the first place, and additionally by using multiple GPUs to shard training, and using inter-GPU communication.
+This paper pushed the compute constraint in several ways - first, just by using GPUs for training in the first place, and additionally by using multiple GPUs to shard training, and using inter-GPU communication.
 
 <br />
 
