@@ -579,7 +579,7 @@ The question is, will other companies be able to compete in this space, or will 
 
 While the power of compute increases, making effective use of this compute is not a guarantee. Using compute efficiently is a software problem that takes active effort and optimization.
 
-Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135), which drastically accelerated the speed of Transformers through an optimization in how attention access memory, are a reminder that compute optimizations are another lever to increase the efficiency of training and scale up models.
+Innovations like [FlashAttention](https://arxiv.org/abs/2205.14135), which drastically accelerated the speed of Transformers through an optimization in how attention accesses memory, are a reminder that compute optimizations are another lever to increase the efficiency of training and scale up models.
 
 > [!NOTE]
 >
