@@ -627,7 +627,7 @@ Specifically, energy grids are limited to allowing a certain amount of energy be
 >
 > **Constraint #7: The energy available to draw from the grid in a single location constrains the amount of compute that can be used for a training run.**
 
-As many companies plan to build large data-centers for AI training, we'll see how the energy constraint plays out - notably, [Microsfot and OpenAI are rumored to be launching a $100B data-center project](https://www.reuters.com/technology/microsoft-openai-planning-100-billion-data-center-project-information-reports-2024-03-29/).
+As many companies plan to build large data-centers for AI training, we'll see how the energy constraint plays out - notably, [Microsoft and OpenAI are rumored to be launching a $100B data-center project](https://www.reuters.com/technology/microsoft-openai-planning-100-billion-data-center-project-information-reports-2024-03-29/).
 
 <br />
 
