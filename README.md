@@ -452,7 +452,7 @@ Without these designs, modern image generation models like [Stable Diffusion](ht
 
 The [Word2Vec](/03-sequence-modeling/04-word2vec/03-word2vec.ipynb) model popularized the concept of text embeddings that preserve semantic and syntactic meaning by forcing models to create vector representations for concepts with interesting properties.
 
-A commonly used example of the power of such embeddings is that the following equation holds true in the embedding space: Emedding("King") - Embedding("Man") + Embedding("Woman") = Embedding("Queen").
+A commonly used example of the power of such embeddings is that the following equation holds true in the embedding space: Embedding("King") - Embedding("Man") + Embedding("Woman") = Embedding("Queen").
 
 Embeddings show us how the relationships between concepts can be represented in a highly condensed format.
 
