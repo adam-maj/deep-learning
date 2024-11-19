@@ -565,7 +565,7 @@ As supply chains inevitably adjust to meet these demands, the constraint will li
 
 ### AI ASICs
 
-In recent fundraising cycles, many startups have raised money to build dedic-ated AI chips for inference and training, promising to further speed up the efficiency of training large models.
+In recent fundraising cycles, many startups have raised money to build dedicated AI chips for inference and training, promising to further speed up the efficiency of training large models.
 
 These specialized chips, broadly known as **Application Specific Integrated Circuits**, build assumption about how deep learning models work directly into hardware, offering the ability to drastically accelerate training.
 
