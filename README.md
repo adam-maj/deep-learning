@@ -250,7 +250,7 @@ Let's look at the times in the past where this constraint has been particularly 
 
 The earliest neural networks consisted of just a single input and output layer, heavily limiting their representational capacity.
 
-The original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf) discussed the addition of a hidden layer, adding more parameters to the network which significantly increased it's ability to represent more complex problems (like shift-registers, the XOR gate, etc. - all very simple examples, but impressive at the time).
+The original [backpropagation paper](/01-deep-neural-networks/01-dnn/01-dnn.pdf) discussed the addition of a hidden layer, adding more parameters to the network which significantly increased its ability to represent more complex problems (like shift-registers, the XOR gate, etc. - all very simple examples, but impressive at the time).
 
 [AlexNet](/01-deep-neural-networks/03-alex-net/02-alex-net.ipynb) is one of the clearest examples of increasing parameters leading to better models[^11] - the AlexNet architecture used 5 convolutional layers, far more than the previous largest CNN at the time, which enabled it to crush the previous best score in the ImageNet competition.
 
