@@ -655,7 +655,7 @@ Since narratives are a powerful tool for allocating capital and talent toward pr
 
 <br />
 
-[^18]: For those curious, [Kevin Kwok's essay on Narrative Distillation](https://kwokchain.com/2021/09/29/narrative-distillation-1/) an excellent exploration of the power of narratives in capital and resource allocation.
+[^18]: For those curious, [Kevin Kwok's essay on Narrative Distillation](https://kwokchain.com/2021/09/29/narrative-distillation-1/) is an excellent exploration of the power of narratives in capital and resource allocation.
 
 ### Narrative #1: Deep Learning Works
 
