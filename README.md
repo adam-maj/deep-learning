@@ -289,7 +289,7 @@ First, increasing the depth of a network can make it take far longer to converge
 
 **The process of ensuring models can converge effectively, even as they grow in depth, is known as optimization.**
 
-Additionally, when you scale up the number of parameters in a model so it's representational capacity exceeds the complexity of the empirical distribution, the model can start fitting trivial _noise_ in the distribution. This effect is known as _overfitting_.
+Additionally, when you scale up the number of parameters in a model so its representational capacity exceeds the complexity of the empirical distribution, the model can start fitting trivial _noise_ in the distribution. This effect is known as _overfitting_.
 
 **The process of regularization is used to ensure models learn useful _generalizations_ of the dataset and don't overfit to noise.**
 
