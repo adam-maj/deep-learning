@@ -785,7 +785,7 @@ If intelligence is really just a function of data, compute, energy, and training
 
 <br />
 
-[^20]: This view of intelligence also paints the framework of thinking in the WaitButWhy post [The Cook and the Chef: Musk's Secret Suace](https://waitbutwhy.com/2015/11/the-cook-and-the-chef-musks-secret-sauce.html) particularly well
+[^20]: This view of intelligence also paints the framework of thinking in the WaitButWhy post [The Cook and the Chef: Musk's Secret Sauce](https://waitbutwhy.com/2015/11/the-cook-and-the-chef-musks-secret-sauce.html) particularly well
 
 # 5. Future
 
