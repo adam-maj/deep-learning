@@ -442,7 +442,7 @@ Image generation models like [Variational Auto-Encoders](/05-image-generation/02
 
 VAEs create a bottleneck that forces the models to learn useful representations in a low dimensional space. Then, they add back noise on top of these representations through random sampling. **So VAEs start by learning representations, and then add noise.**
 
-**Diffusion models, instead, starts with noise, and learn to add information into to the noise slowly.**
+**Diffusion models, instead, start with noise, and learn to add information into to the noise slowly.**
 
 Without these designs, modern image generation models like [Stable Diffusion](https://arxiv.org/abs/2112.10752) and [DALL E](/05-image-generation/05-dall-e/) wouldn't exist.
 
