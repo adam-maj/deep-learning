@@ -569,7 +569,7 @@ In recent fundraising cycles, many startups have raised money to build dedic-ate
 
 These specialized chips, broadly known as **Application Specific Integrated Circuits**, build assumption about how deep learning models work directly into hardware, offering the ability to drastically accelerate training.
 
-The question is, will other companies be able to compete in this space, or will NVIDIA maintain it's domination of the AI training market (most likely).
+The question is, will other companies be able to compete in this space, or will NVIDIA maintain its domination of the AI training market (most likely).
 
 <br />
 
